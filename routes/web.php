@@ -17,6 +17,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+Route::group(['prefix' => 'registrasi', 'middleware' => ['guest']], function () {
+    Route::get('/', 'User\PendaftarController@index')->name('daftar.index');
+    Route::post('/store', 'User\PendaftarController@store')->name('daftar.store');
+});
 
-Route::get('/home', 'HomeController@index')->name('home');
+
