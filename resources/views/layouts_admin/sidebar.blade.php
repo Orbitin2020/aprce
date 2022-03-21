@@ -83,7 +83,11 @@
         <div class="content-side content-side-full">
             <ul class="nav-main">
                 <li>
-                    <a href=""><i class="si si-user"></i><span
+                    <a href=""><i class="si si-bar-chart"></i><span
+                            class="sidebar-mini-hide">Dashboard</span></a>
+                </li>
+                <li>
+                    <a href="{{route('admin.registrasi')}}"><i class="si si-user"></i><span
                             class="sidebar-mini-hide">Daftar User Registrasi</span></a>
                 </li>
             </ul>

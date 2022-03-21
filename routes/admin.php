@@ -13,10 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/admin', function () {
-    return view('layouts_admin.master');
+Route::group(['prefix' => 'admin'], function () {
+    Auth::routes();
+    Route::get('/registrasi', 'Admin\RegistrasiController@index')->name('admin.registrasi');
 });
 
-Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
