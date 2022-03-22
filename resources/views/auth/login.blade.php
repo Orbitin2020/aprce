@@ -21,9 +21,9 @@
 
     <!-- Icons -->
     <!-- The following icons can be replaced with your own, they are used by desktop and mobile browsers -->
-    <link rel="shortcut icon" href="{{asset('assets/media/aprce/aprindo-favicon.png')}}">
-    <link rel="icon" type="image/png" sizes="192x192" href="{{asset('assets/media/aprce/aprindo-favicon.ico')}}">
-    <link rel="apple-touch-icon" sizes="180x180" href="{{asset('assets/media/aprce/aprindo-apple.png')}}">
+    <link rel="shortcut icon" href="{{asset('assets/media/aprce/aprce-favicon.png')}}">
+    <link rel="icon" type="image/png" sizes="192x192" href="{{asset('assets/media/aprce/aprce-favicon.ico')}}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{asset('assets/media/aprce/aprce-apple.png')}}">
     <!-- END Icons -->
 
     <!-- Stylesheets -->
@@ -79,7 +79,7 @@
                     <div class="py-50 px-5 text-center">
                         <h1 class="display-3 font-w700 text-black mb-10 invisible" data-toggle="appear" data-class="animated fadeInDown" >
                             <a href="">
-                                <img src="{{asset('assets/media/aprce/aprindo.jpg')}}" alt="" style="max-height: 120px">
+                                <img src="{{asset('assets/media/aprce/LOGO APRCE-01.png')}}" alt="" style="max-height: 120px">
                             </a>
                         </h1>
                         <h2 class="h4 font-w400 text-muted mb-0 invisible" data-toggle="appear" data-class="animated fadeInUp">Admin sign in</h2>
@@ -124,7 +124,7 @@
                                 <div class="form-group row gutters-tiny mx-5">
                                     <div class="col-12 mb-10">
                                         <button type="submit"
-                                            class="btn btn-block btn-hero btn-noborder btn-rounded btn-danger">
+                                            class="btn btn-block btn-hero btn-noborder btn-rounded btn-warning">
                                             Login
                                         </button>
                                     </div>

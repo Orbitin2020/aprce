@@ -18,9 +18,9 @@
 
 <!-- Icons -->
 <!-- The following icons can be replaced with your own, they are used by desktop and mobile browsers -->
-<link rel="shortcut icon" href="{{asset('assets/media/aprce/aprindo-favicon.png')}}">
-<link rel="icon" type="image/png" sizes="192x192" href="{{asset('assets/media/aprce/aprindo-favicon.ico')}}">
-<link rel="apple-touch-icon" sizes="180x180" href="{{asset('assets/media/aprce/aprindo-apple.png')}}">
+<link rel="shortcut icon" href="{{asset('assets/media/aprce/aprce-favicon.png')}}">
+<link rel="icon" type="image/png" sizes="192x192" href="{{asset('assets/media/aprce/aprce-favicon.ico')}}">
+<link rel="apple-touch-icon" sizes="180x180" href="{{asset('assets/media/aprce/aprce-apple.png')}}">
 <!-- END Icons -->
 
 <!-- Stylesheets -->

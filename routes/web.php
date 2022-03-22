@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('layouts_user.master');
 });
 
 Route::group(['prefix' => 'registrasi', 'middleware' => ['guest']], function () {
