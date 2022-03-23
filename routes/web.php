@@ -14,8 +14,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('layouts_user.master');
+    return view('user.home');
 });
+
+Route::get('/home','User\HomeController@index')->name('user.index');
+Route::get('/about','User\HomeController@about')->name('user.about');
+Route::get('/speaker','User\HomeController@speaker')->name('user.speaker');
+Route::get('/schedule','User\HomeController@schedule')->name('user.schedule');
+Route::get('/contact','User\HomeController@contact')->name('user.contact');
 
 Route::group(['prefix' => 'registrasi', 'middleware' => ['guest']], function () {
     Route::get('/', 'User\PendaftarController@index')->name('daftar.index');

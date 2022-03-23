@@ -16,7 +16,14 @@ use Illuminate\Support\Facades\Route;
 Route::group(['prefix' => 'admin'], function () {
     Auth::routes();
     Route::get('/registrasi', 'Admin\RegistrasiController@index')->name('admin.registrasi');
+
+    Route::group(['preifx' => 'speaker'],function(){
+        Route::get('/', 'Admin\SpeakerController@index')->name('admin.speaker');
+        Route::get('/getData', 'Admin\SpeakerController@getData')->name('admin.speaker.data');
+        Route::get('/store', 'Admin\SpeakerController@store')->name('admin.speaker.store');
+    });
+   
+    
 });
 
 
-Route::get('/home', 'HomeController@index')->name('home');

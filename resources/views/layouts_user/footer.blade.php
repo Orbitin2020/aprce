@@ -11,12 +11,12 @@
             <div class="footer-logo"><a href="#"><img src="{{asset('assets_user/images/logo-2.png')}}" alt=""></a></div>
             <ul class="footer-nav">
                 <li><a href="#">Home</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Projects</a></li>
-                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Speakers</a></li>
+                <li><a href="#">Schedule</a></li>
+                <li><a href="#">Contact</a></li>
             </ul>
-            <div class="copyright-text">© Copyright 2020 All Rights Reserved by <a href="index.html">Expert-Themes</a></div>
+            <div class="copyright-text">© Copyright 2022 All Rights Reserved by <a href="index.html">APRCE</a></div>
             <ul class="social-icon-one">
                 <li><a href="#"><span class="fab fa-facebook-f"></span></a></li>
                 <li><a href="#"><span class="fab fa-twitter"></span></a></li>
