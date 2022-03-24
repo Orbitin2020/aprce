@@ -87,7 +87,7 @@
                             class="sidebar-mini-hide">Dashboard</span></a>
                 </li>
                 <li>
-                    <a href="{{route('admin.speaker')}}"><i class="si si-users"></i><span
+                    <a href="{{route('admin.speaker.index')}}"><i class="si si-users"></i><span
                             class="sidebar-mini-hide">List Speaker</span></a>
                 </li>
                 <li>
