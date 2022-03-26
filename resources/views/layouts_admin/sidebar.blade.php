@@ -91,6 +91,10 @@
                             class="sidebar-mini-hide">List Speaker</span></a>
                 </li>
                 <li>
+                    <a href="{{route('admin.schedule.index')}}"><i class="si si-calendar"></i><span
+                            class="sidebar-mini-hide">Schedule</span></a>
+                </li>
+                <li>
                     <a href="{{route('admin.registrasi')}}"><i class="si si-user"></i><span
                             class="sidebar-mini-hide">Daftar User Registrasi</span></a>
                 </li>

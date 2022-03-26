@@ -25,6 +25,16 @@ Route::group(['prefix' => 'admin'], function () {
         Route::put('/update/{id}', 'Admin\SpeakerController@update')->name('admin.speaker.update');
         Route::delete('/delete/{id}', 'Admin\SpeakerController@delete')->name('admin.speaker.delete');
     });
+
+    Route::group(['prefix' => 'schedule'], function () {
+        Route::get('/', 'Admin\ScheduleController@index')->name('admin.schedule.index');
+        Route::get('/getData', 'Admin\ScheduleController@getData')->name('admin.schedule.data');
+        Route::get('/getSpeaker', 'Admin\ScheduleController@getSpeaker')->name('admin.schedule.speaker.data');
+        Route::post('/store', 'Admin\ScheduleController@store')->name('admin.schedule.store');
+        Route::get('/edit/{id}', 'Admin\ScheduleController@edit')->name('admin.schedule.edit');
+        Route::put('/update/{id}', 'Admin\ScheduleController@update')->name('admin.schedule.update');
+        Route::delete('/delete/{id}', 'Admin\ScheduleController@delete')->name('admin.schedule.delete');
+    });
    
     
 });

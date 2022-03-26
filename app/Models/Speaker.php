@@ -10,5 +10,10 @@ class Speaker extends Model
     protected $fillable = [
         'speakName','speakJob','speakDesc','speakFoto'
     ];
+
+    public function schedule()
+    {
+        return $this->belongsToMany(Schedule::class)->withPivot('created_at');;
+    }
     
 }
