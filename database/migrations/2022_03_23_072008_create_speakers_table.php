@@ -19,6 +19,8 @@ class CreateSpeakersTable extends Migration
             $table->string('speakJob');
             $table->string('speakDesc')->nullable();
             $table->string('speakFoto')->nullable();
+            $table->integer('speakPrioritas')->nullable();
+            $table->enum('speakKategori', ['Lokal', 'International']);
             $table->timestamps();
         });
     }

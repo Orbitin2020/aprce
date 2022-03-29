@@ -4,30 +4,17 @@
         theme: 'bootstrap4',
     });
     // End
-
     // Inisialisasi select2
-    $('#prioritas').select2({
+    $('#participant').select2({
         theme: 'bootstrap4',
     });
     // End
+    
     $(document).ready(function(){
 
         var idEdit = 0;
 
-        $("#foto").fileinput({
-            uploadUrl: "#",
-            theme: 'fa',
-            required: false,
-            allowedFileExtensions:  ["jpg", "png", "jpeg", "JPG", "JPEG", "PNG"],
-            showUpload: false,
-            "fileActionSettings":{
-                "showDrag":false,
-                "showUpload":false,
-                "showRemove":false
-            }
-        })
-
-        var table = $('.tableSpeaker').DataTable({
+        var table = $('.tableTiket').DataTable({
             processing: true,
             serverSide: true,
             searching:  true,
@@ -36,30 +23,28 @@
                 'copy', 'csv', 'excel', 'pdf', 'print'
             ],
             ajax: {
-            url: "{{ route('admin.speaker.data') }}",
+            url: "{{ route('admin.tiket.data') }}",
             },
             columns: [
                 {data: 'id', name: 'id'},
-                {data: 'speakFoto', name: 'speakFoto'},
-                {data: 'speakName', name: 'speakName'},
-                {data: 'speakJob', name: 'speakJob'},
-                {data: 'speakKategori', name: 'speakKategori'},
-                {data: 'speakPrioritas', name: 'speakPrioritas'},
-                {data: 'speakDesc', name: 'speakDesc'},
+                {data: 'nama', name: 'nama'},
+                {data: 'harga', name: 'harga'},
+                {data: 'kategori', name: 'kategori'},
+                {data: 'participant', name: 'participant'},
                 {data: 'created_at', name: 'created_at'},
                 {data: 'action', name: 'action', orderable: false, searchable: false},
             ]
         });
 
-        $('#addSpeaker').click(function () {
+        $('#addTiket').click(function () {
             idEdit = 0;
-            $('#frm_speaker').trigger("reset");
-            $('#modalSpeaker').modal('show');
+            $('#frm_tiket').trigger("reset");
+            $('#modalTiket').modal('show');
         });
 
         $('#saveBtn').click(function(e){
             e.preventDefault();
-            var formData = new FormData(document.getElementById("frm_speaker"));
+            var formData = new FormData(document.getElementById("frm_tiket"));
             
             console.log(formData)
             var url;
@@ -67,11 +52,11 @@
             
             if(idEdit === 0)
             {
-                url = "{{ route('admin.speaker.store') }}"
+                url = "{{ route('admin.tiket.store') }}"
                 type = "POST"
             }else{
                 formData.append('_method', 'PUT');
-                url = '{{ route("admin.speaker.update", ":id") }}';
+                url = '{{ route("admin.tiket.update", ":id") }}';
                 url = url.replace(':id', idEdit );
                 
                 type = "POST"
@@ -93,8 +78,8 @@
                         showConfirmButton : true
                     })
                     idEdit = 0;
-                    $('#frm_speaker').trigger("reset");
-                    $('#modalSpeaker').modal('hide');
+                    $('#frm_tiket').trigger("reset");
+                    $('#modalTiket').modal('hide');
                     table.draw()
                     // perform operation
                 },
@@ -107,7 +92,7 @@
         // EDIT DATA
         $('body').on('click','#edit',function(){
             var id = $(this).attr('data-id');
-            var url = '{{ route("admin.speaker.edit",":id") }}'
+            var url = '{{ route("admin.tiket.edit",":id") }}'
             url = url.replace(':id',id)
 
             $.ajax({
@@ -116,16 +101,17 @@
                 success:function(res){
                     console.log(res.data)
                     idEdit = res.data.id;
-                    $('#frm_speaker').trigger("reset");
-                    $('#modalSpeaker').modal('show');
-                    $('#nama').val(res.data.speakName);
-                    $('#jabatan').val(res.data.speakJob);
-                    $('#deskripsi').val(res.data.speakDesc);
-                    $('#prioritas').append('<option value='+res.data.speakPrioritas+' selected=true>'+res.data.speakPrioritas+'</option>');
-                    $('#kategori').append('<option value='+res.data.speakKategori+' selected=true>'+res.data.speakKategori+'</option>');
-                    
-
-                   
+                    $('#frm_tiket').trigger("reset");
+                    $('#modalTiket').modal('show');
+                    $('#nama').val(res.data.nama);
+                    $('#harga').val(res.data.harga);
+                    // $("#speaker").empty()
+                    // $("#admin").append('<option value="'+res.data.id+'">Default=='+data.default.name+'</option>');
+                    // $.each(res.data.kategori,function(key, value)
+                    // {
+                       
+                    //     $("#speaker").append('<option value=' + value.id + '>' + value.kategori + '</option>');
+                    // });
                 }
             })
         })
@@ -134,7 +120,7 @@
          // Delete
         $('body').on('click','#delete',function(){
             var id = $(this).attr('data-id');
-            var url = '{{ route("admin.speaker.delete", ":id") }}';
+            var url = '{{ route("admin.tiket.delete", ":id") }}';
             url = url.replace(':id', id );
             Swal.fire({
                 title : 'Anda Yakin ?',

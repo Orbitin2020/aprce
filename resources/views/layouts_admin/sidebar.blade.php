@@ -95,6 +95,10 @@
                             class="sidebar-mini-hide">Schedule</span></a>
                 </li>
                 <li>
+                    <a href="{{route('admin.tiket.index')}}"><i class="fa fa-ticket"></i><span
+                            class="sidebar-mini-hide">Tiket</span></a>
+                </li>
+                <li>
                     <a href="{{route('admin.registrasi')}}"><i class="si si-user"></i><span
                             class="sidebar-mini-hide">Daftar User Registrasi</span></a>
                 </li>

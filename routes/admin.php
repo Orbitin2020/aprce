@@ -35,6 +35,15 @@ Route::group(['prefix' => 'admin'], function () {
         Route::put('/update/{id}', 'Admin\ScheduleController@update')->name('admin.schedule.update');
         Route::delete('/delete/{id}', 'Admin\ScheduleController@delete')->name('admin.schedule.delete');
     });
+
+    Route::group(['prefix' => 'tiket'], function () {
+        Route::get('/', 'Admin\TiketController@index')->name('admin.tiket.index');
+        Route::get('/getData', 'Admin\TiketController@getData')->name('admin.tiket.data');
+        Route::post('/store', 'Admin\TiketController@store')->name('admin.tiket.store');
+        Route::get('/edit/{id}', 'Admin\TiketController@edit')->name('admin.tiket.edit');
+        Route::put('/update/{id}', 'Admin\TiketController@update')->name('admin.tiket.update');
+        Route::delete('/delete/{id}', 'Admin\TiketController@delete')->name('admin.tiket.delete');
+    });
    
     
 });

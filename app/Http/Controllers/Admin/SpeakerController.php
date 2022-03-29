@@ -60,6 +60,8 @@ class SpeakerController extends Controller
         $speaker->speakName = $request->nama;
         $speaker->speakDesc = $request->deskripsi;
         $speaker->speakJob = $request->jabatan;
+        $speaker->speakkategori = $request->kategori;
+        $speaker->speakPrioritas = $request->prioritas;
         $speaker->speakFoto = $name;
         $speaker->save();
         return response()->json([
@@ -96,16 +98,20 @@ class SpeakerController extends Controller
             $speaker->speakDesc = $request->deskripsi;
             $speaker->speakJob = $request->jabatan;
             $speaker->speakFoto = $name;
+            $speaker->speakkategori = $request->kategori;
+            $speaker->speakPrioritas = $request->prioritas;
             $speaker->save();
         }else{
             $speaker = Speaker::find($id);
             $speaker->speakName = $request->nama;
             $speaker->speakDesc = $request->deskripsi;
             $speaker->speakJob = $request->jabatan;
+            $speaker->speakkategori = $request->kategori;
+            $speaker->speakPrioritas = $request->prioritas;
             $speaker->save();
         }
         return response()->json([
-            'message' => 'Kategori Berhasil Di Update'
+            'message' => 'speakkategori Berhasil Di Update'
         ], 200);
     }
 

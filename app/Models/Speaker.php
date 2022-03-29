@@ -8,7 +8,7 @@ class Speaker extends Model
 {
     protected $table = 'speakers';
     protected $fillable = [
-        'speakName','speakJob','speakDesc','speakFoto'
+        'speakName','speakJob','speakDesc','speakFoto','speakkategori','speakPrioritas'
     ];
 
     public function schedule()

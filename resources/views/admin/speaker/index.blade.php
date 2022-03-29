@@ -15,9 +15,11 @@
                         <th class="text-center" style="width: 5%">Foto</th>
                         <th class="text-center">nama</th>
                         <th class="d-none d-sm-table-cell text-center">jabatan</th>
-                        <th class="d-none d-sm-table-cell text-center" style="width: 15%;">deskripsi</th>
-                        <th class="d-none d-sm-table-cell text-center" style="width: 15%;">created_at</th>
-                        <th class="text-center" style="width: 15%;">action</th>
+                        <th class="d-none d-sm-table-cell text-center">kategori</th>
+                        <th class="d-none d-sm-table-cell text-center">prioritas</th>
+                        <th class="d-none d-sm-table-cell text-center">deskripsi</th>
+                        <th class="d-none d-sm-table-cell text-center">created_at</th>
+                        <th class="text-center">action</th>
                     </tr>
                 </thead>
             </table>
@@ -48,6 +50,28 @@
                         <div class="form-group">
                             <label for="nama">Jabatan</label>
                             <input type="text" class="form-control" id="jabatan" name="jabatan" placeholder="Jabatan">
+                        </div>
+                        <div class="form-group">
+                            <label for="nama">Prioritas</label>
+                            <div class="">
+                                <select class="js-select2 form-control" name="prioritas" id="prioritas" style="width: 100%;" data-placeholder="Choose one">
+                                    <option value=""></option>
+                                    <option value="1">1</option><!-- Required for data-placeholder attribute to work with Select2 plugin -->
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="nama">Kategori</label>
+                            <div class="">
+                                <select class="js-select2 form-control" name="kategori" id="kategori" style="width: 100%;" data-placeholder="Choose one">
+                                    <option value=""></option>
+                                    <option value="Lokal">Lokal</option><!-- Required for data-placeholder attribute to work with Select2 plugin -->
+                                    <option value="International">International</option>
+                                </select>
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="nama">Deskripsi</label>

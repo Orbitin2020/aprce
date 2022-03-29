@@ -41,7 +41,7 @@
             <div class="content-box">
                 <span class="title">1st to 10 March 2020, Gold-Land Hotel, Canada</span>
                 <h2>World Digital <br>Conference 2020</h2>
-                <div class="time-counter"><div class="time-countdown clearfix" data-countdown="12/10/2021"></div></div>
+                <div class="time-counter"><div class="time-countdown clearfix" data-countdown="09/27/2022"></div></div>
                 <div class="btn-box"><a href="buy-ticket.html" class="theme-btn btn-style-two"><span class="btn-title">Booking Now</span></a></div>
             </div>
         </div>
@@ -79,7 +79,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="btn-box"><a href="contact.html" class="theme-btn btn-style-three"><span class="btn-title">Register Now</span></a></div>
+                        <button type="button" id="addSchedule" data-toggle="modal" data-target="#modalSchedule"
+                        class="theme-btn btn-style-three"><span class="btn-title">Register Now</span></button>
                     </div>
                 </div>
 
@@ -93,7 +94,6 @@
         </div>
     </section>
     <!--End About Section -->
-
 
     <!-- Features Section Three -->
     <section class="features-section-three no-pd-top">
@@ -919,7 +919,6 @@
     </section>
     <!--End Gallery Section -->
 
-
     <!--Sponsor Section-->
     <section class="clients-section-three" style="background-image: url(assets_user/images/background/9.jpg);">
         <div class="auto-container">
@@ -989,4 +988,10 @@
         </div>
     </section>
     <!--End Sponsor Section-->
+
+
+
 @endsection
+@push('scripts')
+
+@endpush
