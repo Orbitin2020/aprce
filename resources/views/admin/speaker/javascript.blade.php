@@ -121,9 +121,8 @@
                     $('#nama').val(res.data.speakName);
                     $('#jabatan').val(res.data.speakJob);
                     $('#deskripsi').val(res.data.speakDesc);
-                    $('#prioritas').append('<option value='+res.data.speakPrioritas+' selected=true>'+res.data.speakPrioritas+'</option>');
-                    $('#kategori').append('<option value='+res.data.speakKategori+' selected=true>'+res.data.speakKategori+'</option>');
-                    
+                    $("div.s_kategori select").val(res.data.speakKategori).change();
+                    $("div.s_prioritas select").val(res.data.speakPrioritas).change();
 
                    
                 }

@@ -1,7 +1,7 @@
 <div class="main-box">
     <div class="auto-container clearfix">
         <div class="logo-box">
-            <div class="logo"><a href="index.html"><img src="{{asset('assets_user/images/logo-2.png')}}" alt="" title=""></a></div>
+            <div class="logo"><a href="index.html"><img src="{{asset('assets_user/images/LOGO APRCE-01_white.png')}}" style="width:160px" alt="" title=""></a></div>
         </div>
 
         <!--Nav Box-->
@@ -32,9 +32,9 @@
             <!-- Outer box -->
             <div class="outer-box">
                 <!-- Button Box -->
-                <div class="btn-box">
+                {{-- <div class="btn-box">
                     <a href="buy-ticket.html" class="theme-btn btn-style-one"><span class="btn-title">Get Tickets</span></a>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>

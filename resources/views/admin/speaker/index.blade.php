@@ -53,7 +53,7 @@
                         </div>
                         <div class="form-group">
                             <label for="nama">Prioritas</label>
-                            <div class="">
+                            <div class="s_prioritas">
                                 <select class="js-select2 form-control" name="prioritas" id="prioritas" style="width: 100%;" data-placeholder="Choose one">
                                     <option value=""></option>
                                     <option value="1">1</option><!-- Required for data-placeholder attribute to work with Select2 plugin -->
@@ -65,7 +65,7 @@
                         </div>
                         <div class="form-group">
                             <label for="nama">Kategori</label>
-                            <div class="">
+                            <div class="s_kategori">
                                 <select class="js-select2 form-control" name="kategori" id="kategori" style="width: 100%;" data-placeholder="Choose one">
                                     <option value=""></option>
                                     <option value="Lokal">Lokal</option><!-- Required for data-placeholder attribute to work with Select2 plugin -->

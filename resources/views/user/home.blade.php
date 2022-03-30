@@ -1,7 +1,8 @@
 @extends('layouts_user.master')
 @section('content')
     <!-- Banner Conference Two -->
-    <section class="banner-conference-two" style="background-image: url(assets_user/images/background/6.jpg)">
+    <section class="banner-conference-two image-banner" style="">
+        <div class="color-overlay"></div>
         <!-- Icons -->
         {{-- <div class="icons parallax-scene-1">
             <!-- Icon One -->
@@ -39,8 +40,8 @@
 
         <div class="auto-container">
             <div class="content-box">
-                <span class="title">1st to 10 March 2020, Gold-Land Hotel, Canada</span>
-                <h2>World Digital <br>Conference 2020</h2>
+                <h2 style="margin-bottom: 0px;margin-top:10px;">World Digital <br>APRCE Indonesia Conference 2022</h2>
+                <span style="margin-bottom: 40px" class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit.<br> Quaerat illum hic aperiam temporibus nostrum veniam aut, debitis ab dolorum magni commodi rem atque numquam voluptates eius consectetur error! Neque, error.</span>
                 <div class="time-counter"><div class="time-countdown clearfix" data-countdown="09/27/2022"></div></div>
                 <div class="btn-box"><a href="buy-ticket.html" class="theme-btn btn-style-two"><span class="btn-title">Booking Now</span></a></div>
             </div>
@@ -48,8 +49,77 @@
     </section>
     <!--End Banner Conference Two -->
 
-    <!-- About Section -->
+    <!-- Speaker Section -->
     <section class="about-section-two">
+        <div class="row">
+            <!-- Content Column -->
+            <div class="content-column col-lg-6 col-md-12 col-sm-12 order-2">
+                <div class="row">
+                    <!-- Gallery Item -->
+                    <div class="gallery-item col-lg-4 col-md-6 col-sm-12 wow fadeIn">
+                        <div class="image-box">
+                            <figure class="image"><img src="{{asset('assets_user/images/gallery/1.jpg')}}" alt=""></figure>
+                            <div class="overlay-box"><a href="{{asset('assets_user/images/gallery/1.jpg')}}" class="lightbox-image" data-fancybox="gallery"><span class="icon fa fa-expand-arrows-alt"></span></a></div>
+                        </div>
+                    </div>
+
+                    <!-- Gallery Item -->
+                    <div class="gallery-item col-lg-4 col-md-6 col-sm-12 wow fadeIn" data-wow-delay="400ms">
+                        <div class="image-box">
+                            <figure class="image"><img src="{{asset('assets_user/images/gallery/2.jpg')}}" alt=""></figure>
+                            <div class="overlay-box"><a href="{{asset('assets_user/images/gallery/2.jpg')}}" class="lightbox-image" data-fancybox="gallery"><span class="icon fa fa-expand-arrows-alt"></span></a></div>
+                        </div>
+                    </div>
+
+                    <!-- Gallery Item -->
+                    <div class="gallery-item col-lg-4 col-md-6 col-sm-12 wow fadeIn" data-wow-delay="800ms">
+                        <div class="image-box">
+                            <figure class="image"><img src="{{asset('assets_user/images/gallery/3.jpg')}}" alt=""></figure>
+                            <div class="overlay-box"><a href="{{asset('assets_user/images/gallery/3.jpg')}}" class="lightbox-image" data-fancybox="gallery"><span class="icon fa fa-expand-arrows-alt"></span></a></div>
+                        </div>
+                    </div>
+
+                    <!-- Gallery Item -->
+                    <div class="gallery-item col-lg-4 col-md-6 col-sm-12 wow fadeIn">
+                        <div class="image-box">
+                            <figure class="image"><img src="{{asset('assets_user/images/gallery/4.jpg')}}" alt=""></figure>
+                            <div class="overlay-box"><a href="{{asset('assets_user/images/gallery/4.jpg')}}" class="lightbox-image" data-fancybox="gallery"><span class="icon fa fa-expand-arrows-alt"></span></a></div>
+                        </div>
+                    </div>
+
+                    <!-- Gallery Item -->
+                    <div class="gallery-item col-lg-4 col-md-6 col-sm-12 wow fadeIn" data-wow-delay="400ms">
+                        <div class="image-box">
+                            <figure class="image"><img src="{{asset('assets_user/images/gallery/5.jpg')}}" alt=""></figure>
+                            <div class="overlay-box"><a href="{{asset('assets_user/images/gallery/5.jpg')}}" class="lightbox-image" data-fancybox="gallery"><span class="icon fa fa-expand-arrows-alt"></span></a></div>
+                        </div>
+                    </div>
+
+                    <!-- Gallery Item -->
+                    <div class="gallery-item col-lg-4 col-md-6 col-sm-12 wow fadeIn" data-wow-delay="800ms">
+                        <div class="image-box">
+                            <figure class="image"><img src="{{asset('assets_user/images/gallery/6.jpg')}}" alt=""></figure>
+                            <div class="overlay-box"><a href="{{asset('assets_user/images/gallery/6.jpg')}}" class="lightbox-image" data-fancybox="gallery"><span class="icon fa fa-expand-arrows-alt"></span></a></div>
+                        </div>
+                    </div>
+                </div>
+                {{-- <div class="inner-column"> --}}
+                     
+                {{-- </div> --}}
+            </div>
+
+            <!-- Image Column -->
+            <div class="image-column col-lg-5 col-md-12 col-sm-12">
+                <div class="">
+                    <figure class="image wow fadeIn"><img src="{{asset('assets_user/images/resource/JOKOWI.png')}}" alt=""></figure>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--End Speaker Section -->
+
+    <!-- About Section -->
+    {{-- <section class="about-section-two">
         <div class="anim-icons full-width">
             <span class="icon icon-circle-blue wow fadeIn"></span>
             <span class="icon icon-dots wow fadeInleft"></span>
@@ -92,7 +162,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!--End About Section -->
 
     <!-- Features Section Three -->
@@ -154,9 +224,8 @@
                     <div class="shape-1"></div>
                 </div>
                 <div class="inner-column">
-                    <h3>Modern Marketing <br>Summit Sydney 2018</h3>
+                    <h3>Welcome to the APRCE <br>Indonesia Summit 2022</h3>
                     <div class="text">Dolor sit amet consectetur elit sed do eiusmod tempor incd idunt labore et dolore magna aliqua enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip exea commodo consequat</div>
-                    <div class="btn-box"><a href="buy-ticket.html" class="theme-btn btn-style-four"><span class="btn-title">Buy Ticket</span></a></div>
                 </div>
             </div>
 
@@ -989,6 +1058,63 @@
     </section>
     <!--End Sponsor Section-->
 
+    <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    Launch demo modal
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <div class="inner-column">
+                <div class="ticket-form">
+                    <form method="post" action="contact.html">
+                        <div class="form-group">
+                            <input type="text" name="username" placeholder="Your Name" required="">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Your Email" required="">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="phone" name="email" placeholder="Phone" required="">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="number" name="qty" placeholder="Quantity" required="">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="checkbox" name="terms" id="term" required="">
+                            <label for="term">I accept the <span>Terms &amp; Conditions</span></label>
+                        </div>
+
+                        <div class="form-group">
+                            <button class="theme-btn btn-style-three" type="submit" name="Submit"><span class="btn-title">Purchase</span></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+          
+            <div class="form-group">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button class="theme-btn btn-style-three" type="submit" name="Submit"><span class="btn-title">Purchase</span></button>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
 @endsection

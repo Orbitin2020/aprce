@@ -8,7 +8,7 @@
     <div class="auto-container">
         <!-- Footer Content -->
         <div class="footer-content">
-            <div class="footer-logo"><a href="#"><img src="{{asset('assets_user/images/logo-2.png')}}" alt=""></a></div>
+            <div class="footer-logo"><a href="#"><img src="{{asset('assets_user/images/LOGO APRCE-01_white.png')}}" style="width:160px;margin-left:60px" alt=""></a></div>
             <ul class="footer-nav">
                 <li><a href="#">Home</a></li>
                 <li><a href="#">About</a></li>
