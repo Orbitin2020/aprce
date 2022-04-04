@@ -48,11 +48,11 @@
                         </div>
                         <div class="form-group">
                             <label for="nama">Tanggal Mulai</label>
-                            <input type="text" class="form-control" id="tgl_mulai" name="tgl_mulai" placeholder="Jabatan">
+                            <input type="text" class="form-control" id="tgl_mulai" name="tgl_mulai" placeholder="Tanggal Mulai">
                         </div>
                         <div class="form-group">
                             <label for="nama">Tanggal Akhir</label>
-                            <input type="text" class="form-control" id="tgl_akhir" name="tgl_akhir" placeholder="Jabatan">
+                            <input type="text" class="form-control" id="tgl_akhir" name="tgl_akhir" placeholder="Tanggal Akhir">
                         </div>
                         <div class="form-group">
                             <label for="nama">Speaker</label>

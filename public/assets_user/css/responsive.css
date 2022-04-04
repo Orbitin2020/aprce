@@ -208,8 +208,9 @@
 		font-size: 60px;
 	}
 
-	.event-info-section .info-column,
-	.about-section-two .content-column{
+	/* .about-section-two .content-column */
+	.event-info-section .info-column
+	{
 		order: 0;
 	}
 

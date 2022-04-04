@@ -176,6 +176,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         Yajra\DataTables\DataTablesServiceProvider::class,
         Artesaos\SEOTools\Providers\SEOToolsServiceProvider::class,
+        'Intervention\Image\ImageServiceProvider',
         
 
     ],
@@ -230,6 +231,8 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'DataTables' => Yajra\DataTables\Facades\DataTables::class,
+        'SEO' => Artesaos\SEOTools\Facades\SEOTools::class,
+        'Image' => 'Intervention\Image\Facades\Image',
 
     ],
 

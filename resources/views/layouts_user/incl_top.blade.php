@@ -1,5 +1,5 @@
 <meta charset="utf-8">
-<title>Eventrox - Digital Events HTML Template | Homepage 05</title>
+
 <!-- Stylesheets -->
 <link href="{{asset('assets_user/css/bootstrap.css')}}" rel="stylesheet">
 <link href="{{asset('assets_user/css/style.css')}}" rel="stylesheet">
@@ -14,3 +14,4 @@
 <!-- Responsive -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+{!! SEO::generate() !!}

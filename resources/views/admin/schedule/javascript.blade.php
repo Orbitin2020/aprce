@@ -5,18 +5,20 @@
     });
     // End
     // Datepicker
-    $("#tgl_mulai").datepicker({ 
-        format: 'yyyy-mm-dd'
+    $("#tgl_mulai").flatpickr({ 
+        enableTime: true,
+        dateFormat: "Y-m-d H:i",
     });
 
-    $("#tgl_akhir").datepicker({ 
-        format: 'yyyy-mm-dd'
+    $("#tgl_akhir").flatpickr({ 
+        enableTime: true,
+        dateFormat: "Y-m-d H:i",
     });
     // EndDatePicker
 
     // inisiasi summernote
      $('#description').summernote({
-      placeholder: 'Describe your product like product overview, advantage of product, main feature, core benefits etc...',
+      placeholder: 'Deskripsi Schedule',
       toolbar: [
         ['style', ['bold', 'italic', 'underline', 'clear']],
         ['font', ['strikethrough', 'superscript', 'subscript']],
@@ -58,6 +60,7 @@
         $('#addSchedule').click(function () {
                 $('#frm_schedule').trigger("reset");
                 $('#modalSchedule').modal('show');
+                $('#description').summernote('reset')
                     $.ajax({
                     url:"{{ route('admin.schedule.speaker.data') }}",
                     type:'GET',
@@ -138,8 +141,8 @@
                     $('#frm_schedule').trigger("reset");
                     $('#modalSchedule').modal('show');
                     $('#agenda').val(res.data.agenda);
-                    $('#tgl_mulai').datepicker('setDate', res.data.tgl_mulai);
-                    $('#tgl_akhir').datepicker('setDate', res.data.tgl_akhir);
+                    $('#tgl_mulai').val(res.data.tgl_mulai);
+                    $('#tgl_akhir').val(res.data.tgl_akhir);
                     $('#description').summernote('code', res.data.description)
                     $("#speaker").empty()
                     // $("#admin").append('<option value="'+res.data.id+'">Default=='+data.default.name+'</option>');

@@ -5,6 +5,9 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Artesaos\SEOTools\Facades\SEOTools;
+use App\Models\Speaker;
+use App\Models\Schedule;
+use DB;
 
 class HomeController extends Controller
 {
@@ -15,7 +18,27 @@ class HomeController extends Controller
         SEOTools::opengraph()->setUrl(url()->current());
         SEOTools::setCanonical(url()->current());
 
-        return view('user.home');
+        $jokowi = Speaker::where('speakPrioritas','1')->first();
+        $speaker = Speaker::where('speakPrioritas','!=','1')->orderBy('speakPrioritas')->get();
+        
+        $schedule = Schedule::orderBy('tgl_mulai')->get()->groupBy(function($item) {
+            $tanggal = $item->tgl_mulai;
+            $tgl_mulai = date("Y-m-d", strtotime($tanggal));
+            return $tgl_mulai;
+        });
+        
+
+    //     foreach($schedule as $d)
+    //     {
+    //         foreach ($d as $n)
+    //         {
+    //             echo $n->tgl_mulai;
+    //         }
+    //     }
+
+    //    dd($schedule);
+
+        return view('user.home',compact('jokowi','speaker','schedule'));
     }
 
     public function about()

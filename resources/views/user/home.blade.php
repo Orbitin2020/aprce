@@ -54,54 +54,26 @@
         <div class="row">
             <!-- Content Column -->
             <div class="content-column col-lg-6 col-md-12 col-sm-12 order-2">
+                <div class="mb-3 pl-3">
+                    <h2 style="color: #FF0000;line-height: 50px;font-weight: 700;">Keynote Speaker</h2>
+                    <h1 style="color: #000000;font-weight:bold;line-height: 50px;">{{$jokowi->speakName}}</h1>
+                    <h3 style="color: #000000;line-height: 50px;font-weight: 400;font-size: 20px;">{{$jokowi->speakJob}}</h3>
+                </div>
                 <div class="row">
+                    @foreach ($speaker as $d)
                     <!-- Gallery Item -->
-                    <div class="gallery-item col-lg-4 col-md-6 col-sm-12 wow fadeIn">
+                    <div class="gallery-item col-lg-6 col-md-6 col-sm-12 wow fadeIn">
                         <div class="image-box">
-                            <figure class="image"><img src="{{asset('assets_user/images/gallery/1.jpg')}}" alt=""></figure>
-                            <div class="overlay-box"><a href="{{asset('assets_user/images/gallery/1.jpg')}}" class="lightbox-image" data-fancybox="gallery"><span class="icon fa fa-expand-arrows-alt"></span></a></div>
+                            <figure class="image"><img src="{{ asset('uploads/speaker/'.$d->speakFoto)}}" alt=""></figure>
+                            <div class="overlay-box"><a href="{{ asset('uploads/speaker/'.$d->speakFoto)}}" class="lightbox-image" data-fancybox="gallery"><span class="icon fa fa-expand-arrows-alt"></span></a></div>
+                        </div>
+                        <div class="text-center">
+                            <h5>{{$d->speakName}}</h5>
+                            <h6>{{$d->speakJob}}</h6>
                         </div>
                     </div>
-
-                    <!-- Gallery Item -->
-                    <div class="gallery-item col-lg-4 col-md-6 col-sm-12 wow fadeIn" data-wow-delay="400ms">
-                        <div class="image-box">
-                            <figure class="image"><img src="{{asset('assets_user/images/gallery/2.jpg')}}" alt=""></figure>
-                            <div class="overlay-box"><a href="{{asset('assets_user/images/gallery/2.jpg')}}" class="lightbox-image" data-fancybox="gallery"><span class="icon fa fa-expand-arrows-alt"></span></a></div>
-                        </div>
-                    </div>
-
-                    <!-- Gallery Item -->
-                    <div class="gallery-item col-lg-4 col-md-6 col-sm-12 wow fadeIn" data-wow-delay="800ms">
-                        <div class="image-box">
-                            <figure class="image"><img src="{{asset('assets_user/images/gallery/3.jpg')}}" alt=""></figure>
-                            <div class="overlay-box"><a href="{{asset('assets_user/images/gallery/3.jpg')}}" class="lightbox-image" data-fancybox="gallery"><span class="icon fa fa-expand-arrows-alt"></span></a></div>
-                        </div>
-                    </div>
-
-                    <!-- Gallery Item -->
-                    <div class="gallery-item col-lg-4 col-md-6 col-sm-12 wow fadeIn">
-                        <div class="image-box">
-                            <figure class="image"><img src="{{asset('assets_user/images/gallery/4.jpg')}}" alt=""></figure>
-                            <div class="overlay-box"><a href="{{asset('assets_user/images/gallery/4.jpg')}}" class="lightbox-image" data-fancybox="gallery"><span class="icon fa fa-expand-arrows-alt"></span></a></div>
-                        </div>
-                    </div>
-
-                    <!-- Gallery Item -->
-                    <div class="gallery-item col-lg-4 col-md-6 col-sm-12 wow fadeIn" data-wow-delay="400ms">
-                        <div class="image-box">
-                            <figure class="image"><img src="{{asset('assets_user/images/gallery/5.jpg')}}" alt=""></figure>
-                            <div class="overlay-box"><a href="{{asset('assets_user/images/gallery/5.jpg')}}" class="lightbox-image" data-fancybox="gallery"><span class="icon fa fa-expand-arrows-alt"></span></a></div>
-                        </div>
-                    </div>
-
-                    <!-- Gallery Item -->
-                    <div class="gallery-item col-lg-4 col-md-6 col-sm-12 wow fadeIn" data-wow-delay="800ms">
-                        <div class="image-box">
-                            <figure class="image"><img src="{{asset('assets_user/images/gallery/6.jpg')}}" alt=""></figure>
-                            <div class="overlay-box"><a href="{{asset('assets_user/images/gallery/6.jpg')}}" class="lightbox-image" data-fancybox="gallery"><span class="icon fa fa-expand-arrows-alt"></span></a></div>
-                        </div>
-                    </div>
+                    @endforeach
+                   
                 </div>
                 {{-- <div class="inner-column"> --}}
                      
@@ -110,8 +82,11 @@
 
             <!-- Image Column -->
             <div class="image-column col-lg-5 col-md-12 col-sm-12">
-                <div class="">
-                    <figure class="image wow fadeIn"><img src="{{asset('assets_user/images/resource/JOKOWI.png')}}" alt=""></figure>
+                <div class="gallery-item col-lg-12 col-md-12 col-sm-12 wow fadeIn" data-wow-delay="400ms">
+                    <div class="image-box">
+                        <figure class="image"><img src="{{ asset('uploads/speaker/'.$jokowi->speakFoto)}}" alt=""></figure>
+                        <div class="overlay-box"><a href="{{asset('uploads/speaker/'.$jokowi->speakFoto)}}" class="lightbox-image" data-fancybox="gallery"><span class="icon fa fa-expand-arrows-alt"></span></a></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -433,13 +408,17 @@
                 <div class="btns-box">
                     <!--Tabs Box-->
                     <ul class="tab-buttons clearfix">
-                        <li class="tab-btn active-btn" data-tab="#tab-1">
-                            <span class="day">Day 01</span>
-                            <span class="date">01</span>
-                            <span class="month">Jan</span> 2020
+                        @foreach ($schedule as $key => $node)
+                        {{var_dump($key == 0)}}
+                        <li class="tab-btn" data-tab="#tab-{{$key}}">
+                            {{-- <span class="day">Day 01</span> --}}
+                            <span class="date">{{date('d', strtotime($key))}}</span>
+                            <span class="month">{{date('M', strtotime($key))}}</span> {{date('Y', strtotime($key))}}
                         </li>
+                        @endforeach
+                        
 
-                        <li class="tab-btn" data-tab="#tab-2">
+                        {{-- <li class="tab-btn" data-tab="#tab-2">
                             <span class="day">Day 02</span>
                             <span class="date">02</span>
                             <span class="month">Jan</span> 2020
@@ -455,14 +434,14 @@
                             <span class="day">Day 04</span>
                             <span class="date">04</span>
                             <span class="month">Jan</span> 2020
-                        </li>
+                        </li> --}}
                     </ul>
                 </div>
 
                 <div class="tabs-content">
-
+                    @foreach ($schedule as $index => $value)
                     <!--Tab-->
-                    <div class="tab active-tab" id="tab-1">
+                    <div class="tab active-tab" data-tab="#tab-{{$index}}">
                         <div class="schedule-timeline row">
                             <!-- schedule Block -->
                             <div class="schedule-block col-lg-6 col-md-12 col-sm-12">
@@ -541,8 +520,8 @@
                             </div>
                         </div>
                     </div>
-
-                    <!--Tab-->
+                    @endforeach
+                    {{-- <!--Tab-->
                     <div class="tab" id="tab-2">
                         <div class="schedule-timeline row">
                             <!-- schedule Block -->
@@ -783,7 +762,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>

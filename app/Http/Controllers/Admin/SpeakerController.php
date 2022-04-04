@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Speaker;
 use DataTables;
 use File;
+use Image;
 
 class SpeakerController extends Controller
 {
@@ -54,7 +55,19 @@ class SpeakerController extends Controller
         $extension = $gambar->getClientOriginalExtension();
         $name = $request->input('nama').'.'.$extension;
         $path = public_path().'/uploads/speaker';
-        $upload = $gambar->move($path,$name);
+
+        if($request->prioritas == 1)
+        {
+            $upload = $gambar->move($path,$name);
+        }else{
+            $img = Image::make($gambar->path());
+
+            $img->resize(370, 370, function ($constraint) {
+                $constraint->aspectRatio();
+            })->save($path.'/'.$name);
+        }
+
+      
 
         $speaker = new Speaker;
         $speaker->speakName = $request->nama;
@@ -91,7 +104,19 @@ class SpeakerController extends Controller
             $extension = $gambar->getClientOriginalExtension();
             $name = $request->input('nama').'.'.$extension;
             $path = public_path().'/uploads/speaker';
-            $upload = $gambar->move($path,$name);
+            // $upload = $gambar->move($path,$name);
+
+            if($request->prioritas == 1)
+            {
+                $upload = $gambar->move($path,$name);
+            }else{
+                $img = Image::make($gambar->path());
+
+                $img->resize(370, 370, function ($constraint) {
+                    $constraint->aspectRatio();
+                })->save($path.'/'.$name);
+            }
+            
 
             $speaker = Speaker::find($id);
             $speaker->speakName = $request->nama;

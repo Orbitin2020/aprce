@@ -2761,7 +2761,7 @@ img{
 }
 
 .about-section-two .image-column .image:before{
-	position: absolute;
+	/* position: absolute; */
 	left: -1px;
 	top: -1px;
 	right: -1px;
@@ -6098,7 +6098,7 @@ img{
 
 .gallery-item .image-box{
 	position: relative;
-	box-shadow: 0 0px 30px rgba(8,13,62,.10);
+	/* box-shadow: 0 0px 30px rgba(8,13,62,.10); */
 	overflow: hidden;
 }
 

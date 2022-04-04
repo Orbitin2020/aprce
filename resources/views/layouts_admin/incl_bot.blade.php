@@ -25,9 +25,9 @@
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 {{-- End Swal --}}
 
-{{-- Datepicer --}}
-<script src="{{asset('assets/js/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js')}}"></script>
-{{-- End Datepicker --}}
+{{-- FlatPicker --}}
+<script src="{{asset('assets/js/plugins/flatpickr/flatpickr.min.js')}}"></script>
+{{-- End FlatPicker --}}
 
 {{-- Form Input File --}}
 <script src="{{asset('assets/js/plugins/kartik/js/plugins/sortable.js')}}"></script>

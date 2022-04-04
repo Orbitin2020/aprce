@@ -106,6 +106,7 @@ class ScheduleController extends Controller
         $schedule->tgl_mulai = $request->tgl_mulai;
         $schedule->tgl_akhir = $request->tgl_akhir;
         $schedule->speaker()->sync($request->speaker);
+        $schedule->save();
         return response()->json([
             'message' => 'Schedule berhasil di Update',
         ],200);

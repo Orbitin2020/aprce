@@ -32,7 +32,7 @@
 {{-- plugins --}}
 <link rel="stylesheet" href="{{asset('assets/js/plugins/datatables/dataTables.bootstrap4.css')}}">
 <link rel="stylesheet" href="{{asset('assets/js/plugins/select2/css/select2.css')}}">
-<link rel="stylesheet" href="{{asset('assets/js/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css')}}">
+<link rel="stylesheet" href="{{asset('assets/js/plugins/flatpickr/flatpickr.min.css')}}">
 <link href="{{asset('assets/js/plugins/kartik/css/fileinput.css')}}" media="all" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="{{asset('assets/js/plugins/summernote/summernote-bs4.css')}}">
 
