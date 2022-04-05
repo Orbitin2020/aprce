@@ -156,28 +156,28 @@
 	if ($('.gallery-carousel').length) {
 		$('.gallery-carousel').owlCarousel({
 			loop:true,
-			margin:0,
+			margin:30,
 			nav:true,
 			smartSpeed: 500,
-			autoplay: true,
+			autoplay: false,
 			navText: [ '<span class="arrow_carrot-left"></span>', '<span class="arrow_carrot-right"></span>' ],
-			responsive:{
-				0:{
-					items:1
-				},
-				480:{
-					items:2
-				},
-				767:{
-					items:3
-				},
-				800:{
-					items:4
-				},
-				1200:{
-					items:5
-				}
-			}
+			// responsive:{
+			// 	0:{
+			// 		items:1
+			// 	},
+			// 	480:{
+			// 		items:2
+			// 	},
+			// 	767:{
+			// 		items:3
+			// 	},
+			// 	800:{
+			// 		items:4
+			// 	},
+			// 	1200:{
+			// 		items:5
+			// 	}
+			// }
 		});    		
 	}
 

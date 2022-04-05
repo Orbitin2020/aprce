@@ -688,17 +688,17 @@ color:#ffffff;
 	width:100%;
 	height:100%;
 	z-index:999999;
-	background-color: #ffffff;
+	background-color: #D20000;
 	background-position:center center;
 	background-repeat:no-repeat;
-	background-image:url(../images/icons/preloader.svg);
-	background-size:100px;
+	background-image:url(../images/logo_white.png);
+	background-size:500px;
 }
 
 .preloader:after{
 	position: absolute;
 	left: 50%;
-	top: 50%;
+	top: 60%;
 	content: "loading..";
 	-webkit-transform: translateX(-50%);
 	-moz-transform: translateX(-50%);
@@ -708,7 +708,7 @@ color:#ffffff;
 	margin-top: 45px;
 	font-size: 24px;
 	line-height: 1em;
-	color: #f20487;
+	color: #D20000;
 	text-decoration: underline;
 	font-family: "Ubuntu", sans-serif;
 	font-weight: 400;

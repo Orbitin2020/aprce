@@ -54,25 +54,29 @@
         <div class="row">
             <!-- Content Column -->
             <div class="content-column col-lg-6 col-md-12 col-sm-12 order-2">
-                <div class="mb-3 pl-3">
+                <div class="mb-3">
                     <h2 style="color: #FF0000;line-height: 50px;font-weight: 700;">Keynote Speaker</h2>
                     <h1 style="color: #000000;font-weight:bold;line-height: 50px;">{{$jokowi->speakName}}</h1>
                     <h3 style="color: #000000;line-height: 50px;font-weight: 400;font-size: 20px;">{{$jokowi->speakJob}}</h3>
                 </div>
                 <div class="row">
+                    <div class="gallery-carousel owl-carousel owl-theme">
                     @foreach ($speaker as $d)
                     <!-- Gallery Item -->
-                    <div class="gallery-item col-lg-6 col-md-6 col-sm-12 wow fadeIn">
-                        <div class="image-box">
-                            <figure class="image"><img src="{{ asset('uploads/speaker/'.$d->speakFoto)}}" alt=""></figure>
-                            <div class="overlay-box"><a href="{{ asset('uploads/speaker/'.$d->speakFoto)}}" class="lightbox-image" data-fancybox="gallery"><span class="icon fa fa-expand-arrows-alt"></span></a></div>
+                    
+                        <div class="gallery-item wow fadeIn">
+                            <div class="image-box">
+                                <figure class="image"><img src="{{ asset('uploads/speaker/'.$d->speakFoto)}}" alt="" style="height: 140px;width:140px"></figure>
+                                <div class="overlay-box"><a href="{{ asset('uploads/speaker/'.$d->speakFoto)}}" class="lightbox-image" data-fancybox="gallery"><span class="icon fa fa-expand-arrows-alt"></span></a></div>
+                            </div>
+                            <div class="text-center">
+                                <h5>{{$d->speakName}}</h5>
+                                <h6>{{$d->speakJob}}</h6>
+                            </div>
                         </div>
-                        <div class="text-center">
-                            <h5>{{$d->speakName}}</h5>
-                            <h6>{{$d->speakJob}}</h6>
-                        </div>
-                    </div>
+                    
                     @endforeach
+                </div>
                    
                 </div>
                 {{-- <div class="inner-column"> --}}
@@ -81,7 +85,7 @@
             </div>
 
             <!-- Image Column -->
-            <div class="image-column col-lg-5 col-md-12 col-sm-12">
+            <div class="image-column col-lg-6 col-md-12 col-sm-12">
                 <div class="gallery-item col-lg-12 col-md-12 col-sm-12 wow fadeIn" data-wow-delay="400ms">
                     <div class="image-box">
                         <figure class="image"><img src="{{ asset('uploads/speaker/'.$jokowi->speakFoto)}}" alt=""></figure>
@@ -92,53 +96,6 @@
         </div>
     </section>
     <!--End Speaker Section -->
-
-    <!-- About Section -->
-    {{-- <section class="about-section-two">
-        <div class="anim-icons full-width">
-            <span class="icon icon-circle-blue wow fadeIn"></span>
-            <span class="icon icon-dots wow fadeInleft"></span>
-            <span class="icon icon-circle-1 wow zoomIn"></span>
-        </div>
-        <div class="auto-container">
-            <div class="row">
-                <!-- Content Column -->
-                <div class="content-column col-lg-6 col-md-12 col-sm-12 order-2">
-                    <div class="inner-column">
-                        <div class="sec-title">
-                            <span class="title">ABOUT MEETUP</span>
-                            <h2>Welcome to the World <br>Digital Meetup 2020</h2>
-                            <div class="text">Dolor sit amet consectetur elit sed do eiusmod tempor incd idunt labore et dolore magna aliqua enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip exea commodo consequat.</div>
-                        </div>
-                        <div class="row">
-                            <div class="about-block col-lg-6 col-md-6 col-sm-12">
-                                <div class="inner-box">
-                                    <h4><span class="icon fa fa-map-marker-alt"></span> Where</h4>
-                                    <div class="text">Pearl Hotel, New York, USA</div>
-                                </div>
-                            </div>
-                            <div class="about-block col-lg-6 col-md-6 col-sm-12">
-                                <div class="inner-box">
-                                    <h4><span class="icon fa fa-clock"></span> when</h4>
-                                    <div class="text">January 20, 2020 09:00 AM</div>
-                                </div>
-                            </div>
-                        </div>
-                        <button type="button" id="addSchedule" data-toggle="modal" data-target="#modalSchedule"
-                        class="theme-btn btn-style-three"><span class="btn-title">Register Now</span></button>
-                    </div>
-                </div>
-
-                <!-- Image Column -->
-                <div class="image-column col-lg-6 col-md-12 col-sm-12">
-                    <div class="image-box">
-                        <figure class="image wow fadeIn"><img src="{{asset('assets_user/images/resource/about-img-2.jpg')}}" alt=""></figure>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> --}}
-    <!--End About Section -->
 
     <!-- Features Section Three -->
     <section class="features-section-three no-pd-top">
@@ -214,188 +171,6 @@
     </section>
     <!--End Fluid Section One -->
 
-    <!-- Speakers Section -->
-    <section class="speakers-section-three">
-        <div class="auto-container">
-            <div class="sec-title text-center">
-                <span class="title">Speakers</span>
-                <h2>Todays Performers</h2>
-            </div>
-
-            <div class="row">
-
-                <!-- Speaker Block -->
-                <div class="speaker-block-three col-xl-3 col-lg-4 col-md-6 col-sm-12 wow fadeInUp">
-                    <div class="inner-box">
-                        <div class="image-box">
-                            <figure class="image"><a href="speakers-detail.html"><img src="{{asset('assets_user/images/resource/speaker-1.jpg')}}" alt=""></a></figure>
-                        </div>
-                        <div class="info-box">
-                            <h4 class="name"><a href="speakers-detail.html">Dale Marke</a></h4>
-                            <span class="designation">Event Manager</span>
-                        </div>
-                        <div class="social-box">
-                            <ul class="social-links social-icon-colored">
-                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
-                                <li><a href="#"><i class="fab fa-dribbble"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Speaker Block -->
-                <div class="speaker-block-three col-xl-3 col-lg-4 col-md-6 col-sm-12 wow fadeInUp">
-                    <div class="inner-box">
-                        <div class="image-box">
-                            <figure class="image"><a href="speakers-detail.html"><img src="{{asset('assets_user/images/resource/speaker-2.jpg')}}" alt=""></a></figure>
-                        </div>
-                        <div class="info-box">
-                            <h4 class="name"><a href="speakers-detail.html">Natisha Decoux</a></h4>
-                            <span class="designation">Event Manager</span>
-                        </div>
-                        <div class="social-box">
-                            <ul class="social-links social-icon-colored">
-                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
-                                <li><a href="#"><i class="fab fa-dribbble"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Speaker Block -->
-                <div class="speaker-block-three col-xl-3 col-lg-4 col-md-6 col-sm-12 wow fadeInUp">
-                    <div class="inner-box">
-                        <div class="image-box">
-                            <figure class="image"><a href="speakers-detail.html"><img src="{{asset('assets_user/images/resource/speaker-4.jpg')}}" alt=""></a></figure>
-                        </div>
-                        <div class="info-box">
-                            <h4 class="name"><a href="speakers-detail.html">Adolfo Plahs</a></h4>
-                            <span class="designation">Event Manager</span>
-                        </div>
-                        <div class="social-box">
-                            <ul class="social-links social-icon-colored">
-                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
-                                <li><a href="#"><i class="fab fa-dribbble"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Speaker Block -->
-                <div class="speaker-block-three col-xl-3 col-lg-4 col-md-6 col-sm-12 wow fadeInUp">
-                    <div class="inner-box">
-                        <div class="image-box">
-                            <figure class="image"><a href="speakers-detail.html"><img src="{{asset('assets_user/images/resource/speaker-3.jpg')}}" alt=""></a></figure>
-                        </div>
-                        <div class="info-box">
-                            <h4 class="name"><a href="speakers-detail.html">Mitchell Hegg</a></h4>
-                            <span class="designation">Event Manager</span>
-                        </div>
-                        <div class="social-box">
-                            <ul class="social-links social-icon-colored">
-                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
-                                <li><a href="#"><i class="fab fa-dribbble"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Speaker Block -->
-                <div class="speaker-block-three col-xl-3 col-lg-4 col-md-6 col-sm-12 wow fadeInUp">
-                    <div class="inner-box">
-                        <div class="image-box">
-                            <figure class="image"><a href="speakers-detail.html"><img src="{{asset('assets_user/images/resource/speaker-5.jpg')}}" alt=""></a></figure>
-                        </div>
-                        <div class="info-box">
-                            <h4 class="name"><a href="speakers-detail.html">Kenyetta Lesley</a></h4>
-                            <span class="designation">Event Manager</span>
-                        </div>
-                        <div class="social-box">
-                            <ul class="social-links social-icon-colored">
-                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
-                                <li><a href="#"><i class="fab fa-dribbble"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Speaker Block -->
-                <div class="speaker-block-three col-xl-3 col-lg-4 col-md-6 col-sm-12 wow fadeInUp">
-                    <div class="inner-box">
-                        <div class="image-box">
-                            <figure class="image"><a href="speakers-detail.html"><img src="{{asset('assets_user/images/resource/speaker-6.jpg')}}" alt=""></a></figure>
-                        </div>
-                        <div class="info-box">
-                            <h4 class="name"><a href="speakers-detail.html">Shelly Verghese</a></h4>
-                            <span class="designation">Event Manager</span>
-                        </div>
-                        <div class="social-box">
-                            <ul class="social-links social-icon-colored">
-                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
-                                <li><a href="#"><i class="fab fa-dribbble"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Speaker Block -->
-                <div class="speaker-block-three col-xl-3 col-lg-4 col-md-6 col-sm-12 wow fadeInUp">
-                    <div class="inner-box">
-                        <div class="image-box">
-                            <figure class="image"><a href="speakers-detail.html"><img src="{{asset('assets_user/images/resource/speaker-7.jpg')}}" alt=""></a></figure>
-                        </div>
-                        <div class="info-box">
-                            <h4 class="name"><a href="speakers-detail.html">Kenyetta Lesley</a></h4>
-                            <span class="designation">Event Manager</span>
-                        </div>
-                        <div class="social-box">
-                            <ul class="social-links social-icon-colored">
-                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
-                                <li><a href="#"><i class="fab fa-dribbble"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Speaker Block -->
-                <div class="speaker-block-three col-xl-3 col-lg-4 col-md-6 col-sm-12 wow fadeInUp">
-                    <div class="inner-box">
-                        <div class="image-box">
-                            <figure class="image"><a href="speakers-detail.html"><img src="{{asset('assets_user/images/resource/speaker-8.jpg')}}" alt=""></a></figure>
-                        </div>
-                        <div class="info-box">
-                            <h4 class="name"><a href="speakers-detail.html">Shelly Verghese</a></h4>
-                            <span class="designation">Event Manager</span>
-                        </div>
-                        <div class="social-box">
-                            <ul class="social-links social-icon-colored">
-                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
-                                <li><a href="#"><i class="fab fa-dribbble"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End Speakers Section -->
-
     <!-- Schedule Section Style two -->
     <section class="schedule-section style-three">
         <div class="auto-container">
@@ -408,361 +183,62 @@
                 <div class="btns-box">
                     <!--Tabs Box-->
                     <ul class="tab-buttons clearfix">
-                        @foreach ($schedule as $key => $node)
-                        {{var_dump($key == 0)}}
-                        <li class="tab-btn" data-tab="#tab-{{$key}}">
-                            {{-- <span class="day">Day 01</span> --}}
-                            <span class="date">{{date('d', strtotime($key))}}</span>
-                            <span class="month">{{date('M', strtotime($key))}}</span> {{date('Y', strtotime($key))}}
+                        
+                        @foreach ($schedule as $key => $value)
+                        {{-- {{var_dump($value[$key]["tgl_mulai"])}} --}}
+                        <li class="tab-btn {{$key == 0 ? 'active-btn': '' }} " data-tab="#{{$key}}">
+                            <span class="day">Day {{$key + 1}}</span>
+                            <span class="date">{{date('d', strtotime($value[$key]["tgl_mulai"]))}}</span>
+                            <span class="month">{{date('M', strtotime($value[$key]["tgl_mulai"]))}}</span> {{date('Y', strtotime($value[$key]["tgl_mulai"]))}}
                         </li>
                         @endforeach
-                        
-
-                        {{-- <li class="tab-btn" data-tab="#tab-2">
-                            <span class="day">Day 02</span>
-                            <span class="date">02</span>
-                            <span class="month">Jan</span> 2020
-                        </li>
-
-                        <li class="tab-btn" data-tab="#tab-3">
-                            <span class="day">Day 03</span>
-                            <span class="date">03</span>
-                            <span class="month">Jan</span> 2020
-                        </li>
-
-                        <li class="tab-btn" data-tab="#tab-4">
-                            <span class="day">Day 04</span>
-                            <span class="date">04</span>
-                            <span class="month">Jan</span> 2020
-                        </li> --}}
+                       
                     </ul>
                 </div>
 
                 <div class="tabs-content">
-                    @foreach ($schedule as $index => $value)
+                    {{-- <div class="gallery-carousel owl-carousel owl-theme">
+                        <!-- Gallery Item -->
+                        
+                            <div class="speaker-info">
+                                <figure class="thumb"><img src="{{asset('assets_user/images/resource/thumb-1.jpg')}}" alt=""></figure>
+                                <h5 class="name">Ashli Scroggy</h5>
+                                <span class="designation">Founder & CEO</span>
+                            </div>
+                        
+            
+                        
+                    </div> --}}
+                    @foreach ($schedule as $key => $value)
                     <!--Tab-->
-                    <div class="tab active-tab" data-tab="#tab-{{$index}}">
+                    <div class="tab {{$key== 0 ? 'active-tab': '' }} " id="{{$key}}">
                         <div class="schedule-timeline row">
+                            @foreach ($value as $d)
                             <!-- schedule Block -->
                             <div class="schedule-block col-lg-6 col-md-12 col-sm-12">
                                 <div class="inner-box">
                                     <div class="inner">
-                                        <div class="date">9.00 AM - 10.00 AM</div>
+                                        <div class="date">{{date('h:i A', strtotime($d['tgl_mulai']))}} - {{date('h:i A', strtotime($d['tgl_akhir']))}}</div>
+                                        @foreach ($d['speaker'] as $s)
                                         <div class="speaker-info">
-                                            <figure class="thumb"><img src="{{asset('assets_user/images/resource/thumb-1.jpg')}}" alt=""></figure>
-                                            <h5 class="name">Ashli Scroggy</h5>
+                                            <figure class="thumb"><img src="{{ asset('uploads/speaker/'.$s['speakFoto'])}}" alt=""></figure>
+                                            <h5 class="name">{{$s['speakName']}}</h5>
                                             <span class="designation">Founder & CEO</span>
                                         </div>
-                                        <h4><a href="event-detail.html">Modern Marketing Summit Sydney 2018</a></h4>
-                                        <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmtempor incididunt labore et</div>
+                                        @endforeach
+                                        <h4><a href="event-detail.html">{{$d['agenda']}}</a></h4>
+                                        <div class="text">{!!$d['description']!!}</div>
                                         <div class="btn-box">
                                             <a href="event-detail.html" class="theme-btn">Read More</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
-                            <!-- schedule Block -->
-                            <div class="schedule-block col-lg-6 col-md-12 col-sm-12">
-                                <div class="inner-box">
-                                    <div class="inner">
-                                        <div class="date">10.00 AM - 11.00 AM</div>
-                                        <div class="speaker-info">
-                                            <figure class="thumb"><img src="{{asset('assets_user/images/resource/thumb-2.jpg')}}" alt=""></figure>
-                                            <h5 class="name">Ashli Scroggy</h5>
-                                            <span class="designation">Founder & CEO</span>
-                                        </div>
-                                        <h4><a href="event-detail.html">Modern Marketing Summit Sydney 2018</a></h4>
-                                        <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmtempor incididunt labore et</div>
-                                        <div class="btn-box">
-                                            <a href="event-detail.html" class="theme-btn">Read More</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- schedule Block -->
-                            <div class="schedule-block col-lg-6 col-md-12 col-sm-12">
-                                <div class="inner-box">
-                                    <div class="inner">
-                                        <div class="date">11.00 AM - 12.00 AM</div>
-                                        <div class="speaker-info">
-                                            <figure class="thumb"><img src="{{asset('assets_user/images/resource/thumb-1.jpg')}}" alt=""></figure>
-                                            <h5 class="name">Ashli Scroggy</h5>
-                                            <span class="designation">Founder & CEO</span>
-                                        </div>
-                                        <h4><a href="event-detail.html">Modern Marketing Summit Sydney 2018</a></h4>
-                                        <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmtempor incididunt labore et</div>
-                                        <div class="btn-box">
-                                            <a href="event-detail.html" class="theme-btn">Read More</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- schedule Block -->
-                            <div class="schedule-block col-lg-6 col-md-12 col-sm-12">
-                                <div class="inner-box">
-                                    <div class="inner">
-                                        <div class="date">12.00 AM - 01.00 PM</div>
-                                        <div class="speaker-info">
-                                            <figure class="thumb"><img src="{{asset('assets_user/images/resource/thumb-2.jpg')}}" alt=""></figure>
-                                            <h5 class="name">Ashli Scroggy</h5>
-                                            <span class="designation">Founder & CEO</span>
-                                        </div>
-                                        <h4><a href="event-detail.html">Modern Marketing Summit Sydney 2018</a></h4>
-                                        <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmtempor incididunt labore et</div>
-                                        <div class="btn-box">
-                                            <a href="event-detail.html" class="theme-btn">Read More</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
+                           
                         </div>
                     </div>
                     @endforeach
-                    {{-- <!--Tab-->
-                    <div class="tab" id="tab-2">
-                        <div class="schedule-timeline row">
-                            <!-- schedule Block -->
-                            <div class="schedule-block col-lg-6 col-md-12 col-sm-12">
-                                <div class="inner-box">
-                                    <div class="inner">
-                                        <div class="date">9.00 AM - 10.00 AM</div>
-                                        <div class="speaker-info">
-                                            <figure class="thumb"><img src="{{asset('assets_user/images/resource/thumb-1.jpg')}}" alt=""></figure>
-                                            <h5 class="name">Ashli Scroggy</h5>
-                                            <span class="designation">Founder & CEO</span>
-                                        </div>
-                                        <h4><a href="event-detail.html">Modern Marketing Summit Sydney 2018</a></h4>
-                                        <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmtempor incididunt labore et</div>
-                                        <div class="btn-box">
-                                            <a href="event-detail.html" class="theme-btn">Read More</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- schedule Block -->
-                            <div class="schedule-block col-lg-6 col-md-12 col-sm-12">
-                                <div class="inner-box">
-                                    <div class="inner">
-                                        <div class="date">10.00 AM - 11.00 AM</div>
-                                        <div class="speaker-info">
-                                            <figure class="thumb"><img src="{{asset('assets_user/images/resource/thumb-2.jpg')}}" alt=""></figure>
-                                            <h5 class="name">Ashli Scroggy</h5>
-                                            <span class="designation">Founder & CEO</span>
-                                        </div>
-                                        <h4><a href="event-detail.html">Modern Marketing Summit Sydney 2018</a></h4>
-                                        <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmtempor incididunt labore et</div>
-                                        <div class="btn-box">
-                                            <a href="event-detail.html" class="theme-btn">Read More</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- schedule Block -->
-                            <div class="schedule-block col-lg-6 col-md-12 col-sm-12">
-                                <div class="inner-box">
-                                    <div class="inner">
-                                        <div class="date">11.00 AM - 12.00 AM</div>
-                                        <div class="speaker-info">
-                                            <figure class="thumb"><img src="{{asset('assets_user/images/resource/thumb-1.jpg')}}" alt=""></figure>
-                                            <h5 class="name">Ashli Scroggy</h5>
-                                            <span class="designation">Founder & CEO</span>
-                                        </div>
-                                        <h4><a href="event-detail.html">Modern Marketing Summit Sydney 2018</a></h4>
-                                        <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmtempor incididunt labore et</div>
-                                        <div class="btn-box">
-                                            <a href="event-detail.html" class="theme-btn">Read More</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- schedule Block -->
-                            <div class="schedule-block col-lg-6 col-md-12 col-sm-12">
-                                <div class="inner-box">
-                                    <div class="inner">
-                                        <div class="date">12.00 AM - 01.00 PM</div>
-                                        <div class="speaker-info">
-                                            <figure class="thumb"><img src="{{asset('assets_user/images/resource/thumb-2.jpg')}}" alt=""></figure>
-                                            <h5 class="name">Ashli Scroggy</h5>
-                                            <span class="designation">Founder & CEO</span>
-                                        </div>
-                                        <h4><a href="event-detail.html">Modern Marketing Summit Sydney 2018</a></h4>
-                                        <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmtempor incididunt labore et</div>
-                                        <div class="btn-box">
-                                            <a href="event-detail.html" class="theme-btn">Read More</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!--Tab-->
-                    <div class="tab" id="tab-3">
-                        <div class="schedule-timeline row">
-                            <!-- schedule Block -->
-                            <div class="schedule-block col-lg-6 col-md-12 col-sm-12">
-                                <div class="inner-box">
-                                    <div class="inner">
-                                        <div class="date">9.00 AM - 10.00 AM</div>
-                                        <div class="speaker-info">
-                                            <figure class="thumb"><img src="{{asset('assets_user/images/resource/thumb-1.jpg')}}" alt=""></figure>
-                                            <h5 class="name">Ashli Scroggy</h5>
-                                            <span class="designation">Founder & CEO</span>
-                                        </div>
-                                        <h4><a href="event-detail.html">Modern Marketing Summit Sydney 2018</a></h4>
-                                        <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmtempor incididunt labore et</div>
-                                        <div class="btn-box">
-                                            <a href="event-detail.html" class="theme-btn">Read More</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- schedule Block -->
-                            <div class="schedule-block col-lg-6 col-md-12 col-sm-12">
-                                <div class="inner-box">
-                                    <div class="inner">
-                                        <div class="date">10.00 AM - 11.00 AM</div>
-                                        <div class="speaker-info">
-                                            <figure class="thumb"><img src="{{asset('assets_user/images/resource/thumb-2.jpg')}}" alt=""></figure>
-                                            <h5 class="name">Ashli Scroggy</h5>
-                                            <span class="designation">Founder & CEO</span>
-                                        </div>
-                                        <h4><a href="event-detail.html">Modern Marketing Summit Sydney 2018</a></h4>
-                                        <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmtempor incididunt labore et</div>
-                                        <div class="btn-box">
-                                            <a href="event-detail.html" class="theme-btn">Read More</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- schedule Block -->
-                            <div class="schedule-block col-lg-6 col-md-12 col-sm-12">
-                                <div class="inner-box">
-                                    <div class="inner">
-                                        <div class="date">11.00 AM - 12.00 AM</div>
-                                        <div class="speaker-info">
-                                            <figure class="thumb"><img src="{{asset('assets_user/images/resource/thumb-1.jpg')}}" alt=""></figure>
-                                            <h5 class="name">Ashli Scroggy</h5>
-                                            <span class="designation">Founder & CEO</span>
-                                        </div>
-                                        <h4><a href="event-detail.html">Modern Marketing Summit Sydney 2018</a></h4>
-                                        <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmtempor incididunt labore et</div>
-                                        <div class="btn-box">
-                                            <a href="event-detail.html" class="theme-btn">Read More</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- schedule Block -->
-                            <div class="schedule-block col-lg-6 col-md-12 col-sm-12">
-                                <div class="inner-box">
-                                    <div class="inner">
-                                        <div class="date">12.00 AM - 01.00 PM</div>
-                                        <div class="speaker-info">
-                                            <figure class="thumb"><img src="{{asset('assets_user/images/resource/thumb-2.jpg')}}" alt=""></figure>
-                                            <h5 class="name">Ashli Scroggy</h5>
-                                            <span class="designation">Founder & CEO</span>
-                                        </div>
-                                        <h4><a href="event-detail.html">Modern Marketing Summit Sydney 2018</a></h4>
-                                        <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmtempor incididunt labore et</div>
-                                        <div class="btn-box">
-                                            <a href="event-detail.html" class="theme-btn">Read More</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!--Tab-->
-                    <div class="tab" id="tab-4">
-                        <div class="schedule-timeline row">
-                            <!-- schedule Block -->
-                            <div class="schedule-block col-lg-6 col-md-12 col-sm-12">
-                                <div class="inner-box">
-                                    <div class="inner">
-                                        <div class="date">9.00 AM - 10.00 AM</div>
-                                        <div class="speaker-info">
-                                            <figure class="thumb"><img src="{{asset('assets_user/images/resource/thumb-1.jpg')}}" alt=""></figure>
-                                            <h5 class="name">Ashli Scroggy</h5>
-                                            <span class="designation">Founder & CEO</span>
-                                        </div>
-                                        <h4><a href="event-detail.html">Modern Marketing Summit Sydney 2018</a></h4>
-                                        <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmtempor incididunt labore et</div>
-                                        <div class="btn-box">
-                                            <a href="event-detail.html" class="theme-btn">Read More</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- schedule Block -->
-                            <div class="schedule-block col-lg-6 col-md-12 col-sm-12">
-                                <div class="inner-box">
-                                    <div class="inner">
-                                        <div class="date">10.00 AM - 11.00 AM</div>
-                                        <div class="speaker-info">
-                                            <figure class="thumb"><img src="{{asset('assets_user/images/resource/thumb-2.jpg')}}" alt=""></figure>
-                                            <h5 class="name">Ashli Scroggy</h5>
-                                            <span class="designation">Founder & CEO</span>
-                                        </div>
-                                        <h4><a href="event-detail.html">Modern Marketing Summit Sydney 2018</a></h4>
-                                        <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmtempor incididunt labore et</div>
-                                        <div class="btn-box">
-                                            <a href="event-detail.html" class="theme-btn">Read More</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- schedule Block -->
-                            <div class="schedule-block col-lg-6 col-md-12 col-sm-12">
-                                <div class="inner-box">
-                                    <div class="inner">
-                                        <div class="date">11.00 AM - 12.00 AM</div>
-                                        <div class="speaker-info">
-                                            <figure class="thumb"><img src="{{asset('assets_user/images/resource/thumb-1.jpg')}}" alt=""></figure>
-                                            <h5 class="name">Ashli Scroggy</h5>
-                                            <span class="designation">Founder & CEO</span>
-                                        </div>
-                                        <h4><a href="event-detail.html">Modern Marketing Summit Sydney 2018</a></h4>
-                                        <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmtempor incididunt labore et</div>
-                                        <div class="btn-box">
-                                            <a href="event-detail.html" class="theme-btn">Read More</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- schedule Block -->
-                            <div class="schedule-block col-lg-6 col-md-12 col-sm-12">
-                                <div class="inner-box">
-                                    <div class="inner">
-                                        <div class="date">12.00 AM - 01.00 PM</div>
-                                        <div class="speaker-info">
-                                            <figure class="thumb"><img src="{{asset('assets_user/images/resource/thumb-2.jpg')}}" alt=""></figure>
-                                            <h5 class="name">Ashli Scroggy</h5>
-                                            <span class="designation">Founder & CEO</span>
-                                        </div>
-                                        <h4><a href="event-detail.html">Modern Marketing Summit Sydney 2018</a></h4>
-                                        <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmtempor incididunt labore et</div>
-                                        <div class="btn-box">
-                                            <a href="event-detail.html" class="theme-btn">Read More</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> --}}
                 </div>
             </div>
         </div>
@@ -785,8 +261,6 @@
                             <!--Tabs Box-->
                             <ul class="tab-buttons clearfix">
                                 <li class="tab-btn active-btn" data-tab="#tab1">Time</li>
-                                <li class="tab-btn" data-tab="#tab2">Venue</li>
-                                <li class="tab-btn" data-tab="#tab3">How to</li>
                             </ul>
 
                             <div class="tabs-content">
@@ -1038,7 +512,9 @@
     <!--End Sponsor Section-->
 
     <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+
+
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
     Launch demo modal
   </button>
   

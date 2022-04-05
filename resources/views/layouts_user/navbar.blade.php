@@ -1,7 +1,7 @@
 <div class="main-box">
     <div class="auto-container clearfix">
         <div class="logo-box">
-            <div class="logo"><a href="index.html"><img src="{{asset('assets_user/images/LOGO APRCE-01_white.png')}}" style="width:160px" alt="" title=""></a></div>
+            <div class="logo"><a href="index.html"><img src="{{asset('assets_user/images/logo_white.png')}}" style="width:160px" alt="" title=""></a></div>
         </div>
 
         <!--Nav Box-->
@@ -20,10 +20,14 @@
                 <div class="collapse navbar-collapse clearfix" id="navbarSupportedContent">
                     <ul class="navigation clearfix">
                         <li class="dropdown"><a href="{{route('user.index')}}">Home</a></li>
-                        <li class="dropdown"><a href="{{route('user.about')}}">About</a></li>
+                        <li class="dropdown"><a href="">About</a></li>
+                        <li class="dropdown"><a href="">Speakers</a></li>
+                        <li class="dropdown"><a href="">Schedule</a></li>
+                        <li><a href="">Contact</a></li>
+                        {{-- <li class="dropdown"><a href="{{route('user.about')}}">About</a></li>
                         <li class="dropdown"><a href="{{route('user.speaker')}}">Speakers</a></li>
                         <li class="dropdown"><a href="{{route('user.schedule')}}">Schedule</a></li>
-                        <li><a href="{{route('user.contact')}}">Contact</a></li>
+                        <li><a href="{{route('user.contact')}}">Contact</a></li> --}}
                     </ul>
                 </div>
             </nav>

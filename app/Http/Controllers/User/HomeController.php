@@ -21,22 +21,18 @@ class HomeController extends Controller
         $jokowi = Speaker::where('speakPrioritas','1')->first();
         $speaker = Speaker::where('speakPrioritas','!=','1')->orderBy('speakPrioritas')->get();
         
-        $schedule = Schedule::orderBy('tgl_mulai')->get()->groupBy(function($item) {
-            $tanggal = $item->tgl_mulai;
-            $tgl_mulai = date("Y-m-d", strtotime($tanggal));
-            return $tgl_mulai;
-        });
+        // $schedule = Schedule::with('speaker')->orderBy('tgl_mulai')->get()->groupBy(function($item) {
+        //     $tanggal = $item->tgl_mulai;
+        //     $tgl_mulai = date("Y-m-d", strtotime($tanggal));
+        //     return $tgl_mulai;
+        // });
+
+        $schedule = Schedule::with('speaker')
+        ->select('*',DB::raw('DATE(tgl_mulai) as date'))
+        ->get()->groupBy('date')->toArray();
         
-
-    //     foreach($schedule as $d)
-    //     {
-    //         foreach ($d as $n)
-    //         {
-    //             echo $n->tgl_mulai;
-    //         }
-    //     }
-
-    //    dd($schedule);
+        $schedule = array_values($schedule);
+        // dd($schedule->first());
 
         return view('user.home',compact('jokowi','speaker','schedule'));
     }
