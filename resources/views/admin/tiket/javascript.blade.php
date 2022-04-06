@@ -40,6 +40,8 @@
             idEdit = 0;
             $('#frm_tiket').trigger("reset");
             $('#modalTiket').modal('show');
+            $('#kategori').val();
+            $('#participant').val();
         });
 
         $('#saveBtn').click(function(e){
@@ -99,19 +101,14 @@
                 type : 'GET',
                 url : url,
                 success:function(res){
-                    console.log(res.data)
+                    console.log(res.data.participant)
                     idEdit = res.data.id;
                     $('#frm_tiket').trigger("reset");
                     $('#modalTiket').modal('show');
                     $('#nama').val(res.data.nama);
                     $('#harga').val(res.data.harga);
-                    // $("#speaker").empty()
-                    // $("#admin").append('<option value="'+res.data.id+'">Default=='+data.default.name+'</option>');
-                    // $.each(res.data.kategori,function(key, value)
-                    // {
-                       
-                    //     $("#speaker").append('<option value=' + value.id + '>' + value.kategori + '</option>');
-                    // });
+                    $("div.s_kategori select").val(res.data.kategori).change();
+                    $("div.s_participant select").val(res.data.participant).change();
                 }
             })
         })

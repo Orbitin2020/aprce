@@ -29,195 +29,49 @@
             <div class="btns-box">
                 <!--Tabs Box-->
                 <ul class="tab-buttons clearfix">
-                    <li class="tab-btn active-btn" data-tab="#tab-1">
-                        <span class="day">Day 01</span>
-                        <span class="date">01</span>
-                        <span class="month">Jan</span> 2020
-                    </li>
-
-                    <li class="tab-btn" data-tab="#tab-2">
-                        <span class="day">Day 02</span>
-                        <span class="date">02</span>
-                        <span class="month">Jan</span> 2020
-                    </li>
-
-                    <li class="tab-btn" data-tab="#tab-3">
-                        <span class="day">Day 03</span>
-                        <span class="date">03</span>
-                        <span class="month">Jan</span> 2020
-                    </li>
+                    @foreach ($schedule as $key => $value)
+                        {{-- {{var_dump($value[$key]["tgl_mulai"])}} --}}
+                        <li class="tab-btn {{$key == 0 ? 'active-btn': '' }} " data-tab="#{{$key}}">
+                            <span class="day">Day {{$key + 1}}</span>
+                            <span class="date">{{date('d', strtotime($value[$key]["tgl_mulai"]))}}</span>
+                            <span class="month">{{date('M', strtotime($value[$key]["tgl_mulai"]))}}</span> {{date('Y', strtotime($value[$key]["tgl_mulai"]))}}
+                        </li>
+                    @endforeach
                 </ul>
             </div>
 
             <div class="tabs-content">
-
+                @foreach ($schedule as $key => $value)
                 <!--Tab-->
-                <div class="tab active-tab" id="tab-1">
+                <div class="tab {{$key == 0 ? 'active-tab': '' }} " id="{{$key}}">
                     <div class="schedule-timeline">
+                        @foreach ($value as $d)
                         <!-- schedule Block -->
-                        <div class="schedule-block">
+                        <div class="schedule-block {{$loop->iteration % 2 == 0 ? 'even': '' }}">
                             <div class="inner-box">
                                 <div class="inner">
-                                    <div class="date">9.00 AM <br> 10.00 AM</div>
-                                    <div class="speaker-info">
-                                        <figure class="thumb"><img src="{{asset('assets_user/images/resource/thumb-1.jpg')}}" alt=""></figure>
-                                        <h5 class="name">Ashli Scroggy</h5>
-                                        <span class="designation">Founder & CEO</span>
+                                    <div class="date">{{date('h:i A', strtotime($d['tgl_mulai']))}}<br>{{date('h:i A', strtotime($d['tgl_akhir']))}}</div>
+                                    <div class="schedule-carousel owl-carousel owl-theme">
+                                        @foreach ($d['speaker'] as $s)
+                                        <div class="speaker-info">
+                                            <figure class="thumb"><img src="{{ asset('uploads/speaker/'.$s['speakFoto'])}}" alt=""></figure>
+                                            <h5 class="name">{{$s['speakName']}}</h5>
+                                            <span class="designation">{{$s['speakJob']}}</span>
+                                        </div>
+                                        @endforeach
                                     </div>
-                                    <h4><a href="event-detail.html">Modern Marketing Summit Sydney 2018</a></h4>
-                                    <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmtempor incididunt labore et</div>
+                                    <h4><a href="event-detail.html">{{$d['agenda']}}</a></h4>
+                                    <div class="text">{!!$d['description']!!}</div>
                                     <div class="btn-box">
                                         <a href="event-detail.html" class="theme-btn">Read More</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-                         <!-- schedule Block -->
-                        <div class="schedule-block even">
-                            <div class="inner-box">
-                                <div class="inner">
-                                    <div class="date">10.00 AM <br> 11.00 AM</div>
-                                    <div class="speaker-info">
-                                        <figure class="thumb"><img src="{{asset('assets_user/images/resource/thumb-2.jpg')}}" alt=""></figure>
-                                        <h5 class="name">Ashli Scroggy</h5>
-                                        <span class="designation">Founder & CEO</span>
-                                    </div>
-                                    <h4><a href="event-detail.html">Modern Marketing Summit Sydney 2018</a></h4>
-                                    <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmtempor incididunt labore et</div>
-                                    <div class="btn-box">
-                                        <a href="event-detail.html" class="theme-btn">Read More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- schedule Block -->
-                        <div class="schedule-block">
-                            <div class="inner-box">
-                                <div class="inner">
-                                    <div class="date">11.00 AM <br> 12.00 AM</div>
-                                    <div class="speaker-info">
-                                        <figure class="thumb"><img src="{{asset('assets_user/images/resource/thumb-1.jpg')}}" alt=""></figure>
-                                        <h5 class="name">Ashli Scroggy</h5>
-                                        <span class="designation">Founder & CEO</span>
-                                    </div>
-                                    <h4><a href="event-detail.html">Modern Marketing Summit Sydney 2018</a></h4>
-                                    <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmtempor incididunt labore et</div>
-                                    <div class="btn-box">
-                                        <a href="event-detail.html" class="theme-btn">Read More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                         <!-- schedule Block -->
-                        <div class="schedule-block even">
-                            <div class="inner-box">
-                                <div class="inner">
-                                    <div class="date">12.00 AM <br> 01.00 PM</div>
-                                    <div class="speaker-info">
-                                        <figure class="thumb"><img src="{{asset('assets_user/images/resource/thumb-2.jpg')}}" alt=""></figure>
-                                        <h5 class="name">Ashli Scroggy</h5>
-                                        <span class="designation">Founder & CEO</span>
-                                    </div>
-                                    <h4><a href="event-detail.html">Modern Marketing Summit Sydney 2018</a></h4>
-                                    <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmtempor incididunt labore et</div>
-                                    <div class="btn-box">
-                                        <a href="event-detail.html" class="theme-btn">Read More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
-
-                <!--Tab-->
-                <div class="tab" id="tab-2">
-                    <div class="schedule-timeline">
-                        <!-- schedule Block -->
-                        <div class="schedule-block">
-                            <div class="inner-box">
-                                <div class="inner">
-                                    <div class="date">9.00 AM <br> 10.00 AM</div>
-                                    <div class="speaker-info">
-                                        <figure class="thumb"><img src="{{asset('assets_user/images/resource/thumb-1.jpg')}}" alt=""></figure>
-                                        <h5 class="name">Ashli Scroggy</h5>
-                                        <span class="designation">Founder & CEO</span>
-                                    </div>
-                                    <h4><a href="event-detail.html">Modern Marketing Summit Sydney 2018</a></h4>
-                                    <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmtempor incididunt labore et</div>
-                                    <div class="btn-box">
-                                        <a href="event-detail.html" class="theme-btn">Read More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                         <!-- schedule Block -->
-                        <div class="schedule-block even">
-                            <div class="inner-box">
-                                <div class="inner">
-                                    <div class="date">10.00 AM <br> 11.00 AM</div>
-                                    <div class="speaker-info">
-                                        <figure class="thumb"><img src="{{asset('assets_user/images/resource/thumb-2.jpg')}}" alt=""></figure>
-                                        <h5 class="name">Ashli Scroggy</h5>
-                                        <span class="designation">Founder & CEO</span>
-                                    </div>
-                                    <h4><a href="event-detail.html">Modern Marketing Summit Sydney 2018</a></h4>
-                                    <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmtempor incididunt labore et</div>
-                                    <div class="btn-box">
-                                        <a href="event-detail.html" class="theme-btn">Read More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- schedule Block -->
-                        <div class="schedule-block">
-                            <div class="inner-box">
-                                <div class="inner">
-                                    <div class="date">11.00 AM <br> 12.00 AM</div>
-                                    <div class="speaker-info">
-                                        <figure class="thumb"><img src="{{asset('assets_user/images/resource/thumb-1.jpg')}}" alt=""></figure>
-                                        <h5 class="name">Ashli Scroggy</h5>
-                                        <span class="designation">Founder & CEO</span>
-                                    </div>
-                                    <h4><a href="event-detail.html">Modern Marketing Summit Sydney 2018</a></h4>
-                                    <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmtempor incididunt labore et</div>
-                                    <div class="btn-box">
-                                        <a href="event-detail.html" class="theme-btn">Read More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <!--Tab-->
-                <div class="tab" id="tab-3">
-                    <div class="schedule-timeline">
-                        <!-- schedule Block -->
-                        <div class="schedule-block">
-                            <div class="inner-box">
-                                <div class="inner">
-                                    <div class="date">9.00 AM <br> 10.00 AM</div>
-                                    <div class="speaker-info">
-                                        <figure class="thumb"><img src="{{asset('assets_user/images/resource/thumb-1.jpg')}}" alt=""></figure>
-                                        <h5 class="name">Ashli Scroggy</h5>
-                                        <span class="designation">Founder & CEO</span>
-                                    </div>
-                                    <h4><a href="event-detail.html">Modern Marketing Summit Sydney 2018</a></h4>
-                                    <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmtempor incididunt labore et</div>
-                                    <div class="btn-box">
-                                        <a href="event-detail.html" class="theme-btn">Read More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>

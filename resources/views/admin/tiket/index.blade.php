@@ -47,11 +47,18 @@
                         </div>
                         <div class="form-group">
                             <label for="nama">Harga</label>
-                            <input type="text" class="form-control" id="harga" name="harga" placeholder="Harga Tiket">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="fa fa-dollar"></i>
+                                    </span>
+                                </div>
+                                <input type="text" class="form-control" id="harga" name="harga" placeholder="Harga">
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="nama">Kategori</label>
-                            <div class="">
+                            <div class="s_kategori">
                                 <select class="js-select2 form-control" name="kategori" id="kategori" style="width: 100%;" data-placeholder="Choose one">
                                     <option value=""></option>
                                     <option value="offline">offline</option><!-- Required for data-placeholder attribute to work with Select2 plugin -->
@@ -62,11 +69,11 @@
                         </div>
                         <div class="form-group">
                             <label for="nama">Participant</label>
-                            <div class="">
+                            <div class="s_participant">
                                 <select class="js-select2 form-control" name="participant" id="participant" style="width: 100%;" data-placeholder="Choose one">
                                     <option value=""></option>
                                     <option value="FAPRA">FAPRA</option><!-- Required for data-placeholder attribute to work with Select2 plugin -->
-                                    <option value="Non-FAPRA">Non-FAPRA</option>
+                                    <option value="NON-FAPRA">NON-FAPRA</option>
                                 </select>
                             </div>
                         </div>

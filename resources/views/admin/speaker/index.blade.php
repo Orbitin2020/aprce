@@ -56,10 +56,11 @@
                             <div class="s_prioritas">
                                 <select class="js-select2 form-control" name="prioritas" id="prioritas" style="width: 100%;" data-placeholder="Choose one">
                                     <option value=""></option>
-                                    <option value="1">1</option><!-- Required for data-placeholder attribute to work with Select2 plugin -->
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-
+                                    <option value="1">1(President)</option><!-- Required for data-placeholder attribute to work with Select2 plugin -->
+                                    <option value="2">2(Menteri)</option>
+                                    <option value="3">3(Aprindo & Fapra Chairman)</option>
+                                    <option value="4">4(APRCE OC Chairman)</option>
+                                    <option value="5">5(Speaker)</option>
                                 </select>
                             </div>
                         </div>

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Artesaos\SEOTools\Facades\SEOTools;
 use App\Models\Speaker;
 use App\Models\Schedule;
+use App\Models\Tiket;
 use DB;
 
 class HomeController extends Controller
@@ -19,22 +20,21 @@ class HomeController extends Controller
         SEOTools::setCanonical(url()->current());
 
         $jokowi = Speaker::where('speakPrioritas','1')->first();
-        $speaker = Speaker::where('speakPrioritas','!=','1')->orderBy('speakPrioritas')->get();
-        
-        // $schedule = Schedule::with('speaker')->orderBy('tgl_mulai')->get()->groupBy(function($item) {
-        //     $tanggal = $item->tgl_mulai;
-        //     $tgl_mulai = date("Y-m-d", strtotime($tanggal));
-        //     return $tgl_mulai;
-        // });
+        $speaker = Speaker::where('speakPrioritas','!=','1')->orderBy('speakPrioritas')->get()
+                    ->groupBy('speakPrioritas')->toArray();
 
+        $speaker = array_values($speaker);
+
+        // dd($speaker);
         $schedule = Schedule::with('speaker')
         ->select('*',DB::raw('DATE(tgl_mulai) as date'))
         ->get()->groupBy('date')->toArray();
-        
         $schedule = array_values($schedule);
-        // dd($schedule->first());
-
-        return view('user.home',compact('jokowi','speaker','schedule'));
+        
+        $offline = Tiket::where('kategori','offline')->orderBy('harga')->get()->toarray();
+        $online = Tiket::where('kategori','online')->orderBy('harga')->get()->toarray();
+        // dd($online);
+        return view('user.home',compact('jokowi','speaker','schedule','offline','online'));
     }
 
     public function about()
@@ -44,6 +44,7 @@ class HomeController extends Controller
         SEOTools::opengraph()->setUrl(url()->current());
         SEOTools::setCanonical(url()->current());
 
+      
         return view('user.about');
     }
 
@@ -53,8 +54,8 @@ class HomeController extends Controller
         SEOTools::setDescription('Speaker Asia Pacific Retail Conference 2022');
         SEOTools::opengraph()->setUrl(url()->current());
         SEOTools::setCanonical(url()->current());
-
-        return view('user.speaker');
+        $speaker = Speaker::orderBy('speakPrioritas')->get();
+        return view('user.speaker',compact('speaker'));
     }
 
     public function schedule()
@@ -64,7 +65,11 @@ class HomeController extends Controller
         SEOTools::opengraph()->setUrl(url()->current());
         SEOTools::setCanonical(url()->current());
 
-        return view('user.schedule');
+        $schedule = Schedule::with('speaker')
+        ->select('*',DB::raw('DATE(tgl_mulai) as date'))
+        ->get()->groupBy('date')->toArray();
+        $schedule = array_values($schedule);
+        return view('user.schedule',compact('schedule'));
     }
 
     public function contact()

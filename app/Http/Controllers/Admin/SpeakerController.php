@@ -23,7 +23,7 @@ class SpeakerController extends Controller
     public function getData(Request $request)
     {
         if ($request->ajax()) {
-            $speaker = Speaker::select('*');
+            $speaker = Speaker::select('*')->orderBy('speakPrioritas');
             return Datatables::of($speaker)
                 ->addIndexColumn()
                 ->addColumn('created_at', function ($speaker) {

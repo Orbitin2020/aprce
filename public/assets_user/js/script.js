@@ -159,7 +159,7 @@
 			margin:30,
 			nav:true,
 			smartSpeed: 500,
-			autoplay: false,
+			autoplay: true,
 			navText: [ '<span class="arrow_carrot-left"></span>', '<span class="arrow_carrot-right"></span>' ],
 			// responsive:{
 			// 	0:{
@@ -208,6 +208,20 @@
 					items:5
 				}
 			}
+		});    		
+	}
+
+	//Schedule Carousel
+	if ($('.schedule-carousel').length) {
+		$('.schedule-carousel').owlCarousel({
+			loop:false,
+			// margin:30,
+			items:3,
+			nav:true,
+			lazyLoad: true,
+			smartSpeed: 700,
+			autoplay: true,
+			navText: [ '<span class="la la-angle-left"></span>', '<span class="la la-angle-right"></span>' ],
 		});    		
 	}
 

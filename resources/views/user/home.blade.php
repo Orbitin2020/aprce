@@ -60,24 +60,22 @@
                     <h3 style="color: #000000;line-height: 50px;font-weight: 400;font-size: 20px;">{{$jokowi->speakJob}}</h3>
                 </div>
                 <div class="row">
-                    <div class="gallery-carousel owl-carousel owl-theme">
                     @foreach ($speaker as $d)
-                    <!-- Gallery Item -->
-                    
+                    <div class="schedule-carousel owl-carousel owl-theme">
+                        @foreach ($d as $f)
                         <div class="gallery-item wow fadeIn">
                             <div class="image-box">
-                                <figure class="image"><img src="{{ asset('uploads/speaker/'.$d->speakFoto)}}" alt="" style="height: 140px;width:140px"></figure>
-                                <div class="overlay-box"><a href="{{ asset('uploads/speaker/'.$d->speakFoto)}}" class="lightbox-image" data-fancybox="gallery"><span class="icon fa fa-expand-arrows-alt"></span></a></div>
+                                <figure class="image"><img src="{{ asset('uploads/speaker/'.$f['speakFoto'])}}" alt="" style="height: 140px;width:140px"></figure>
+                                <div class="overlay-box"><a href="{{ asset('uploads/speaker/'.$f['speakFoto'])}}" class="lightbox-image" data-fancybox="gallery"><span class="icon fa fa-expand-arrows-alt"></span></a></div>
                             </div>
                             <div class="text-center">
-                                <h5>{{$d->speakName}}</h5>
-                                <h6>{{$d->speakJob}}</h6>
+                                <h5>{{$f['speakName']}}</h5>
+                                <h6>{{$f['speakJob']}}</h6>
                             </div>
                         </div>
-                    
+                        @endforeach
+                    </div>
                     @endforeach
-                </div>
-                   
                 </div>
                 {{-- <div class="inner-column"> --}}
                      
@@ -197,18 +195,6 @@
                 </div>
 
                 <div class="tabs-content">
-                    {{-- <div class="gallery-carousel owl-carousel owl-theme">
-                        <!-- Gallery Item -->
-                        
-                            <div class="speaker-info">
-                                <figure class="thumb"><img src="{{asset('assets_user/images/resource/thumb-1.jpg')}}" alt=""></figure>
-                                <h5 class="name">Ashli Scroggy</h5>
-                                <span class="designation">Founder & CEO</span>
-                            </div>
-                        
-            
-                        
-                    </div> --}}
                     @foreach ($schedule as $key => $value)
                     <!--Tab-->
                     <div class="tab {{$key== 0 ? 'active-tab': '' }} " id="{{$key}}">
@@ -219,13 +205,17 @@
                                 <div class="inner-box">
                                     <div class="inner">
                                         <div class="date">{{date('h:i A', strtotime($d['tgl_mulai']))}} - {{date('h:i A', strtotime($d['tgl_akhir']))}}</div>
-                                        @foreach ($d['speaker'] as $s)
-                                        <div class="speaker-info">
-                                            <figure class="thumb"><img src="{{ asset('uploads/speaker/'.$s['speakFoto'])}}" alt=""></figure>
-                                            <h5 class="name">{{$s['speakName']}}</h5>
-                                            <span class="designation">Founder & CEO</span>
+                                       
+                                        <div class="schedule-carousel owl-carousel owl-theme">
+                                            @foreach ($d['speaker'] as $s)
+                                            <div class="speaker-info">
+                                                <figure class="thumb"><img src="{{ asset('uploads/speaker/'.$s['speakFoto'])}}" alt=""></figure>
+                                                <h5 class="name">{{$s['speakName']}}</h5>
+                                                <span class="designation">{{$s['speakJob']}}</span>
+                                            </div>
+                                            @endforeach
                                         </div>
-                                        @endforeach
+                                       
                                         <h4><a href="event-detail.html">{{$d['agenda']}}</a></h4>
                                         <div class="text">{!!$d['description']!!}</div>
                                         <div class="btn-box">
@@ -325,65 +315,66 @@
             <span class="icon icon-circle-1 wow zoomIn"></span>
             <span class="icon icon-dots wow zoomIn"></span>
         </div>
+        <div class="sec-title text-center">
+            <span class="title">Get Ticket</span>
+        </div>
+        @if ($offline)
+            <div class="auto-container">
+                <div class="sec-title text-center">
+                    <h2>Offline Tickets</h2>
+                </div>
 
-        <div class="auto-container">
-            <div class="sec-title text-center">
-                <span class="title">Get Ticket</span>
-                <h2>Choose a Ticket</h2>
-            </div>
-
-            <div class="outer-box">
-                <div class="row">
-                    <!-- Pricing Block -->
-                    <div class="pricing-block-three col-lg-4 col-md-6 col-sm-12 wow fadeInUp">
-                        <div class="inner-box">
-                            <div class="title">Parson</div>
-                            <h4 class="price">$19</h4>
-                            <ul class="features">
-                                <li>01 Conference Tickets</li>
-                                <li>Free Lunch And Coffee</li>
-                                <li>Certificate</li>
-                            </ul>
-                            <div class="btn-box">
-                                <a href="buy-ticket.html" class="theme-btn btn-style-one"><span class="btn-title">BUY Ticket</span></a>
+                <div class="outer-box">
+                    <div class="row">
+                        @foreach ($offline as $d)
+                            <div class="pricing-block-three col-lg-4 col-md-6 col-sm-12 wow fadeInUp centered">
+                                <div class="inner-box">
+                                    <div class="title">{{$d['nama']}}</div>
+                                    <h4 class="price">${{$d['harga']}}</h4>
+                                    <ul class="features">
+                                        <li>01 Conference Tickets</li>
+                                        <li>Free Lunch And Coffee</li>
+                                        <li>Certificate</li>
+                                    </ul>
+                                    <button class="theme-btn btn-style-one" type="button" data-toggle="modal" data-target="#exampleModal">
+                                        <span class="btn-title">BUY Ticket</span>
+                                    </button>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-
-                    <!-- Pricing Block -->
-                    <div class="pricing-block-three col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="400ms">
-                        <div class="inner-box">
-                            <div class="title">Family</div>
-                            <h4 class="price">$59</h4>
-                            <ul class="features">
-                                <li>05 Conference Tickets</li>
-                                <li>Free Lunch And Coffee</li>
-                                <li>Certificate</li>
-                            </ul>
-                            <div class="btn-box">
-                                <a href="buy-ticket.html" class="theme-btn btn-style-one"><span class="btn-title">BUY Ticket</span></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Pricing Block -->
-                    <div class="pricing-block-three col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="1200ms">
-                        <div class="inner-box">
-                            <div class="title">GROUP</div>
-                            <h4 class="price">$99</h4>
-                            <ul class="features">
-                                <li>10 Conference Tickets</li>
-                                <li>Free Lunch And Coffee</li>
-                                <li>Certificate</li>
-                            </ul>
-                            <div class="btn-box">
-                                <a href="buy-ticket.html" class="theme-btn btn-style-one"><span class="btn-title">BUY Ticket</span></a>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
-        </div>
+        @endif
+
+        @if ($online)
+            <div class="auto-container">
+                <div class="sec-title text-center">
+                    <h2>Online Tickets</h2>
+                </div>
+
+                <div class="outer-box">
+                    <div class="row">
+                        @foreach ($online as $d)
+                            <div class="pricing-block-three col-lg-4 col-md-6 col-sm-12 wow fadeInUp centered">
+                                <div class="inner-box">
+                                    <div class="title">{{$d['nama']}}</div>
+                                    <h4 class="price">${{$d['harga']}}</h4>
+                                    <ul class="features">
+                                        <li>01 Conference Tickets</li>
+                                        <li>Free Lunch And Coffee</li>
+                                        <li>Certificate</li>
+                                    </ul>
+                                    <button class="theme-btn btn-style-one" type="button" data-toggle="modal" data-target="#exampleModal">
+                                        <span class="btn-title">BUY Ticket</span>
+                                    </button>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        @endif
     </section>
     <!--End Pricing Section -->
 
@@ -513,10 +504,6 @@
 
     <!-- Button trigger modal -->
 
-
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-    Launch demo modal
-  </button>
   
   <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -547,15 +534,6 @@
                         <div class="form-group">
                             <input type="number" name="qty" placeholder="Quantity" required="">
                         </div>
-
-                        <div class="form-group">
-                            <input type="checkbox" name="terms" id="term" required="">
-                            <label for="term">I accept the <span>Terms &amp; Conditions</span></label>
-                        </div>
-
-                        <div class="form-group">
-                            <button class="theme-btn btn-style-three" type="submit" name="Submit"><span class="btn-title">Purchase</span></button>
-                        </div>
                     </form>
                 </div>
             </div>
@@ -563,7 +541,6 @@
         <div class="modal-footer">
           
             <div class="form-group">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 <button class="theme-btn btn-style-three" type="submit" name="Submit"><span class="btn-title">Purchase</span></button>
             </div>
         </div>
