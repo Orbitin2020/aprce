@@ -211,16 +211,78 @@
 		});    		
 	}
 
+	// Speaker  Carousel
+	if ($('.speaker-carousel').length) {
+		$('.speaker-carousel').owlCarousel({
+			loop:true,
+			margin:10,
+			nav:true,
+			smartSpeed: 500,
+			items:3,
+			autoplay: 1000,
+			navText: [ '<span class="arrow_carrot-left"></span>', '<span class="arrow_carrot-right"></span>' ],
+			// responsive:{
+			// 	0:{
+			// 		items:1
+			// 	},
+			// 	480:{
+			// 		items:2
+			// 	},
+			// 	767:{
+			// 		items:3
+			// 	},
+			// 	800:{
+			// 		items:4
+			// 	},
+			// 	1200:{
+			// 		items:5
+			// 	}
+			// }
+		});    		
+	}
+
+	//speaker2 Carousel
+	if ($('.speaker2-carousel').length) {
+		$('.speaker2-carousel').owlCarousel({
+			loop:false,
+			// margin:119,
+			nav:true,
+			items:5,
+			lazyLoad: true,
+			smartSpeed: 700,
+			autoplay: false,
+			navText: [ '<span class="la la-angle-left"></span>', '<span class="la la-angle-right"></span>' ],
+			// responsive:{
+			// 	0:{
+			// 		items:1
+			// 	},
+			// 	600:{
+			// 		items:2
+			// 	},
+			// 	768:{
+			// 		items:3
+			// 	},
+			// 	1024:{
+			// 		items:4
+			// 	},
+			// 	1200:{
+			// 		items:5
+			// 	}
+			// }
+		});    		
+	}
+
 	//Schedule Carousel
 	if ($('.schedule-carousel').length) {
 		$('.schedule-carousel').owlCarousel({
 			loop:false,
 			// margin:30,
-			items:3,
+			items:2,
 			nav:true,
 			lazyLoad: true,
 			smartSpeed: 700,
-			autoplay: true,
+			autoplay: 2000,
+			rewind:true,
 			navText: [ '<span class="la la-angle-left"></span>', '<span class="la la-angle-right"></span>' ],
 		});    		
 	}

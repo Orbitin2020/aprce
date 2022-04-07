@@ -13,7 +13,7 @@ class Schedule extends Model
 
     public function speaker()
     {
-        return $this->belongsToMany(Speaker::class)->withPivot('created_at');;
+        return $this->belongsToMany(Speaker::class)->orderBy('speakPrioritas')->withPivot('created_at');
     }
    
     

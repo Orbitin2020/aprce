@@ -55,27 +55,50 @@
             <!-- Content Column -->
             <div class="content-column col-lg-6 col-md-12 col-sm-12 order-2">
                 <div class="mb-3">
-                    <h2 style="color: #FF0000;line-height: 50px;font-weight: 700;">Keynote Speaker</h2>
+                    <h2 style="color: #FF0000;line-height: 50px;font-weight: 700;">Keynote Speech</h2>
                     <h1 style="color: #000000;font-weight:bold;line-height: 50px;">{{$jokowi->speakName}}</h1>
                     <h3 style="color: #000000;line-height: 50px;font-weight: 400;font-size: 20px;">{{$jokowi->speakJob}}</h3>
                 </div>
                 <div class="row">
-                    @foreach ($speaker as $d)
-                    <div class="schedule-carousel owl-carousel owl-theme">
-                        @foreach ($d as $f)
-                        <div class="gallery-item wow fadeIn">
-                            <div class="image-box">
-                                <figure class="image"><img src="{{ asset('uploads/speaker/'.$f['speakFoto'])}}" alt="" style="height: 140px;width:140px"></figure>
-                                <div class="overlay-box"><a href="{{ asset('uploads/speaker/'.$f['speakFoto'])}}" class="lightbox-image" data-fancybox="gallery"><span class="icon fa fa-expand-arrows-alt"></span></a></div>
-                            </div>
-                            <div class="text-center">
-                                <h5>{{$f['speakName']}}</h5>
-                                <h6>{{$f['speakJob']}}</h6>
-                            </div>
+                    @foreach ($speaker as $f)
+                    <div class="gallery-item col-lg-4 col-md-6 col-sm-12 wow fadeIn">
+                        <div class="image-box">
+                            <figure class="image"><img class="mx-auto" src="{{ asset('uploads/speaker/'.$f['speakFoto'])}}" alt="" style="height: 150px;width:150px"></figure>
+                            <div class="overlay-box"><a href="{{ asset('uploads/speaker/'.$f['speakFoto'])}}" class="lightbox-image" data-fancybox="gallery"><span class="icon fa fa-expand-arrows-alt"></span></a></div>
                         </div>
-                        @endforeach
+                        <div class="text-center">
+                            @if ($f['speakPrioritas'] == 2)
+                            <h5 style="color: #FF0000;">Keynote Speech</h5>
+                            <h5>{{$f['speakName']}}</h5>
+                            <h6>{{$f['speakJob']}}</h6>
+                            @elseif($f['speakPrioritas'] == 3)
+                            <h5 style="color: #FF0000;">Welcome Remarks</h5>
+                            <h5>{{$f['speakName']}}</h5>
+                            <h6>{{$f['speakJob']}}</h6>
+                            @elseif($f['speakPrioritas'] == 4)
+                            <h5 style="color: #FF0000;">Opening Remarks</h5>
+                            <h5>{{$f['speakName']}}</h5>
+                            <h6>{{$f['speakJob']}}</h6>
+                            @else
+                            <h5 style="color: yellow;">Speakers</h5>
+                            <h5>{{$f['speakName']}}</h5>
+                            <h6>{{$f['speakJob']}}</h6>
+                            @endif
+                        </div>
                     </div>
+                    <div class="gallery-item col-lg-4 col-md-6 col-sm-12 wow fadeIn">
+                        <div class="image-box">
+                            <figure class="image"><img src="{{asset('assets_user/images/gallery/1.jpg')}}"  style="height: 150px;width:150px" alt=""></figure>
+                            <div class="overlay-box"><a href="assets_user/images/gallery/1.jpg" class="lightbox-image" data-fancybox='gallery'><span class="icon fa fa-expand-arrows-alt"></span></a></div>
+                        </div>
+                        <div class="text-center">
+                            <h5>Test Image</h5>
+                            <h6>Test</h6>
+                        </div>
+                    </div>
+        
                     @endforeach
+                   
                 </div>
                 {{-- <div class="inner-column"> --}}
                      
@@ -92,6 +115,37 @@
                 </div>
             </div>
         </div>
+        {{-- <div class="row">
+            <div class="content-column col-lg-12 col-md-12 col-sm-12 order-2">
+                <div class="gallery-item col-lg-2 col-md-4 col-sm-12 wow fadeIn">
+                    <div class="image-box">
+                        <figure class="image"><img class="mx-auto" src="{{asset('assets_user/images/gallery/1.jpg')}}" alt="" style="height: 150px;width:150px"></figure>
+                        <div class="overlay-box"><a href="assets_user/images/gallery/1.jpg" class="lightbox-image" data-fancybox='gallery'><span class="icon fa fa-expand-arrows-alt"></span></a></div>
+                    </div>
+                    <div class="text-center">
+                        <h5>Test Image</h5>
+                        <h6>Test</h6>
+                    </div>
+                </div>
+            </div>
+        </div> --}}
+        
+        <div class="speaker2-carousel owl-carousel owl-theme">
+            @for ($i = 0; $i < 20; $i++)
+                <!-- Gallery Item -->
+                <div class="gallery-item">
+                    <div class="image-box">
+                        <figure class="image"><img  class="mx-auto" src="{{asset('assets_user/images/gallery/1.jpg')}}" alt="" style="height: 150px;width:150px"></figure>
+                        <div class="overlay-box"><a href="assets_user/images/gallery/1.jpg" class="lightbox-image" data-fancybox='gallery'><span class="icon fa fa-expand-arrows-alt"></span></a></div>
+                    </div>
+                    <div class="text-center">
+                        <h5>Test Image</h5>
+                        <h6>Test</h6>
+                    </div>
+                </div>
+            @endfor
+            
+        </div>
     </section>
     <!--End Speaker Section -->
 
@@ -103,9 +157,9 @@
                 <div class="feature-block-three col-lg-6 col-md-12 col-sm-12 wow fadeInUp">
                     <div class="inner-box">
                         <div class="icon-box"><span class="icon flaticon-lecture"></span></div>
-                        <h4><a href="about.html">Great Speakers</a></h4>
+                        <h4><a href="">Great Speakers</a></h4>
                         <div class="text">Dolor sit amet consectetur elit sed do eiusmod tempor incd idunt.</div>
-                        <div class="link-box"><a href="about.html" class="theme-btn"><span class="fa fa-angle-right"></span></a></div>
+                        <div class="link-box"><a href="" class="theme-btn"><span class="fa fa-angle-right"></span></a></div>
                     </div>
                 </div>
 
@@ -113,9 +167,9 @@
                 <div class="feature-block-three col-lg-6 col-md-12 col-sm-12 wow fadeInUp">
                     <div class="inner-box">
                         <div class="icon-box"><span class="icon flaticon-search"></span></div>
-                        <h4><a href="about.html">Experience</a></h4>
+                        <h4><a href="">Experience</a></h4>
                         <div class="text">Dolor sit amet consectetur elit sed do eiusmod tempor incd idunt.</div>
-                        <div class="link-box"><a href="about.html" class="theme-btn"><span class="fa fa-angle-right"></span></a></div>
+                        <div class="link-box"><a href="" class="theme-btn"><span class="fa fa-angle-right"></span></a></div>
                     </div>
                 </div>
 
@@ -123,9 +177,9 @@
                 <div class="feature-block-three col-lg-6 col-md-12 col-sm-12 wow fadeInUp" data-wow-delay="400ms">
                     <div class="inner-box">
                         <div class="icon-box"><span class="icon flaticon-diamond-1"></span></div>
-                        <h4><a href="about.html">Networking</a></h4>
+                        <h4><a href="">Networking</a></h4>
                         <div class="text">Dolor sit amet consectetur elit sed do eiusmod tempor incd idunt.</div>
-                        <div class="link-box"><a href="about.html" class="theme-btn"><span class="fa fa-angle-right"></span></a></div>
+                        <div class="link-box"><a href="" class="theme-btn"><span class="fa fa-angle-right"></span></a></div>
                     </div>
                 </div>
 
@@ -133,9 +187,9 @@
                 <div class="feature-block-three col-lg-6 col-md-12 col-sm-12 wow fadeInUp" data-wow-delay="800ms">
                     <div class="inner-box">
                         <div class="icon-box"><span class="icon flaticon-success"></span></div>
-                        <h4><a href="about.html">Party</a></h4>
+                        <h4><a href="">Party</a></h4>
                         <div class="text">Dolor sit amet consectetur elit sed do eiusmod tempor incd idunt.</div>
-                        <div class="link-box"><a href="about.html" class="theme-btn"><span class="fa fa-angle-right"></span></a></div>
+                        <div class="link-box"><a href="" class="theme-btn"><span class="fa fa-angle-right"></span></a></div>
                     </div>
                 </div>
             </div>

@@ -145,10 +145,12 @@
                     $('#tgl_akhir').val(res.data.tgl_akhir);
                     $('#description').summernote('code', res.data.description)
                     $("#speaker").empty()
+                    $("div.s_speaker select").val(res.speaker).change();
+                       
                     // $("#admin").append('<option value="'+res.data.id+'">Default=='+data.default.name+'</option>');
                     $.each(res.speaker,function(key, value)
                     {
-                       
+                        
                         $("#speaker").append('<option value=' + value.id + '>' + value.speakName + '</option>');
                     });
 

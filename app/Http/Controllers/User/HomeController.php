@@ -20,10 +20,10 @@ class HomeController extends Controller
         SEOTools::setCanonical(url()->current());
 
         $jokowi = Speaker::where('speakPrioritas','1')->first();
-        $speaker = Speaker::where('speakPrioritas','!=','1')->orderBy('speakPrioritas')->get()
-                    ->groupBy('speakPrioritas')->toArray();
+        $speaker = Speaker::where('speakPrioritas','!=','1')->orderBy('speakPrioritas')->get();
+                    // ->groupBy('speakPrioritas')->toArray();
 
-        $speaker = array_values($speaker);
+        // $speaker = array_values($speaker);
 
         // dd($speaker);
         $schedule = Schedule::with('speaker')

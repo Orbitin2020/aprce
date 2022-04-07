@@ -16,7 +16,7 @@
                         <th class="text-center">nama</th>
                         <th class="d-none d-sm-table-cell text-center">jabatan</th>
                         <th class="d-none d-sm-table-cell text-center">kategori</th>
-                        <th class="d-none d-sm-table-cell text-center">prioritas</th>
+                        <th class="d-none d-sm-table-cell text-center">urutan</th>
                         <th class="d-none d-sm-table-cell text-center">deskripsi</th>
                         <th class="d-none d-sm-table-cell text-center">created_at</th>
                         <th class="text-center">action</th>
@@ -78,12 +78,15 @@
                             <label for="nama">Deskripsi</label>
                             <input type="text" class="form-control" id="deskripsi" name="deskripsi" placeholder="Deskripsi">
                         </div>
+                        <div class="">
+                            <div class="form-group ">
+                                <label class="" for="foto">Foto</label>
+                                <input type="file" class="form-control" name="foto" id="foto" >
+                            </div>
+                        </div>
                         <div class="col-xl-12">
                             <div class="form-group ">
-                                <label class="col-form-label" for="foto">Foto</label>
-                                <div class="file-loading">
-                                    <input type="file" name="foto" id="foto">
-                                </div>
+                                <img class="img-preview img-fluid mt-3 col-sm-5">
                             </div>
                         </div>
                     </form>

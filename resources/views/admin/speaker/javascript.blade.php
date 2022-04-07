@@ -14,18 +14,22 @@
 
         var idEdit = 0;
 
-        $("#foto").fileinput({
-            uploadUrl: "#",
-            theme: 'fa',
-            required: false,
-            allowedFileExtensions:  ["jpg", "png", "jpeg", "JPG", "JPEG", "PNG"],
-            showUpload: false,
-            "fileActionSettings":{
-                "showDrag":false,
-                "showUpload":false,
-                "showRemove":false
+        function readURL(input) {
+
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function(e) {
+                    $('.img-preview').attr('src', e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]);
             }
-        })
+        }
+
+        $("#foto").change(function() {
+            readURL(this);
+        });
 
         var table = $('.tableSpeaker').DataTable({
             processing: true,
@@ -114,13 +118,17 @@
                 type : 'GET',
                 url : url,
                 success:function(res){
-                    console.log(res.data)
+                    
                     idEdit = res.data.id;
+                    gambar = res.data.speakFoto;
+                    base_url = 'http://localhost:8000/uploads/speaker/'+encodeURIComponent(res.data.speakFoto)+''
+
                     $('#frm_speaker').trigger("reset");
                     $('#modalSpeaker').modal('show');
                     $('#nama').val(res.data.speakName);
                     $('#jabatan').val(res.data.speakJob);
                     $('#deskripsi').val(res.data.speakDesc);
+                    $('.img-preview').attr('src', base_url);
                     $("div.s_kategori select").val(res.data.speakKategori).change();
                     $("div.s_prioritas select").val(res.data.speakPrioritas).change();
 
