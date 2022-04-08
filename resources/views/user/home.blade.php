@@ -3,37 +3,6 @@
     <!-- Banner Conference Two -->
     <section class="banner-conference-two image-banner" style="">
         <div class="color-overlay"></div>
-        <!-- Icons -->
-        {{-- <div class="icons parallax-scene-1">
-            <!-- Icon One -->
-            <div data-depth="0.20" class="icon-one parallax-layer" style="background-image:url(assets_user/images/icons/icon-1.png)"></div>
-            <!-- Icon Two -->
-            <div data-depth="0.50" class="icon-two parallax-layer" style="background-image:url(assets_user/images/icons/icon-2.png)"></div>
-            <!-- Icon Three -->
-            <div data-depth="0.10" class="icon-three parallax-layer" style="background-image:url(assets_user/images/icons/icon-3.png)"></div>
-            <!-- Icon Four -->
-            <div data-depth="0.30" class="icon-four parallax-layer" style="background-image:url(assets_user/images/icons/icon-4.png)"></div>
-            <!-- Icon Five -->
-            <div data-depth="0.10" class="icon-five parallax-layer" style="background-image:url(assets_user/images/icons/icon-5.png)"></div>
-            <!-- Icon Six -->
-            <div data-depth="0.20" class="icon-six parallax-layer" style="background-image:url(assets_user/images/icons/icon-6.png)"></div>
-            <!-- Icon Seven -->
-            <div data-depth="0.10" class="icon-seven parallax-layer" style="background-image:url(assets_user/images/icons/icon-7.png)"></div>
-            <!-- Icon One -->
-            <div data-depth="0.20" class="icon-eight parallax-layer" style="background-image:url(assets_user/images/icons/icon-1.png)"></div>
-            <!-- Icon Two -->
-            <div data-depth="0.50" class="icon-nine parallax-layer" style="background-image:url(assets_user/images/icons/icon-8.png)"></div>
-            <!-- Icon Three -->
-            <div data-depth="0.10" class="icon-ten parallax-layer" style="background-image:url(assets_user/images/icons/icon-3.png)"></div>
-            <!-- Icon Four -->
-            <div data-depth="0.30" class="icon-eleven parallax-layer" style="background-image:url(assets_user/images/icons/icon-4.png)"></div>
-            <!-- Icon Five -->
-            <div data-depth="0.10" class="icon-twelve parallax-layer" style="background-image:url(assets_user/images/icons/icon-5.png)"></div>
-            <!-- Icon Six -->
-            <div data-depth="0.20" class="icon-thirteen parallax-layer" style="background-image:url(assets_user/images/icons/icon-6.png)"></div>
-            <!-- Icon Seven -->
-            <div data-depth="0.10" class="icon-fourteen parallax-layer" style="background-image:url(assets_user/images/icons/icon-7.png)"></div>
-        </div> --}}
         <div class="images-outer">
             {{-- <figure class="speaker-img"><img src="{{asset('assets_user/images/main-slider/banner_img.png')}}" alt=""></figure> --}}
         </div>
@@ -54,17 +23,23 @@
         <div class="row">
             <!-- Content Column -->
             <div class="content-column col-lg-6 col-md-12 col-sm-12 order-2">
+                @if ($jokowi !== null)
                 <div class="mb-3">
                     <h2 style="color: #FF0000;line-height: 50px;font-weight: 700;">Keynote Speech</h2>
                     <h1 style="color: #000000;font-weight:bold;line-height: 50px;">{{$jokowi->speakName}}</h1>
                     <h3 style="color: #000000;line-height: 50px;font-weight: 400;font-size: 20px;">{{$jokowi->speakJob}}</h3>
                 </div>
+                @else
+                @endif
                 <div class="row">
                     @foreach ($speaker as $f)
                     <div class="gallery-item col-lg-4 col-md-6 col-sm-12 wow fadeIn">
                         <div class="image-box">
                             <figure class="image"><img class="mx-auto" src="{{ asset('uploads/speaker/'.$f['speakFoto'])}}" alt="" style="height: 150px;width:150px"></figure>
-                            <div class="overlay-box"><a href="{{ asset('uploads/speaker/'.$f['speakFoto'])}}" class="lightbox-image" data-fancybox="gallery"><span class="icon fa fa-expand-arrows-alt"></span></a></div>
+                            <div class="overlay-box" style="left: 0; right: 0;margin-left: auto; margin-right: auto;height: 150px;width:150px">
+                                <a href="{{ asset('uploads/speaker/'.$f['speakFoto'])}}" class="lightbox-image" data-fancybox="gallery"><span class="icon fa fa-expand-arrows-alt"></span>
+                                </a>
+                            </div>
                         </div>
                         <div class="text-center">
                             @if ($f['speakPrioritas'] == 2)
@@ -108,10 +83,18 @@
             <!-- Image Column -->
             <div class="image-column col-lg-6 col-md-12 col-sm-12">
                 <div class="gallery-item col-lg-12 col-md-12 col-sm-12 wow fadeIn" data-wow-delay="400ms">
+                    @if ($jokowi !== null)
                     <div class="image-box">
                         <figure class="image"><img src="{{ asset('uploads/speaker/'.$jokowi->speakFoto)}}" alt=""></figure>
-                        <div class="overlay-box"><a href="{{asset('uploads/speaker/'.$jokowi->speakFoto)}}" class="lightbox-image" data-fancybox="gallery"><span class="icon fa fa-expand-arrows-alt"></span></a></div>
+                        <div class="overlay-box">
+                            <a href="{{asset('uploads/speaker/'.$jokowi->speakFoto)}}" class="lightbox-image" data-fancybox="gallery"><span class="icon fa fa-expand-arrows-alt"></span>
+                            </a>
+                        </div>
                     </div>
+                    @else
+                        
+                    @endif
+                    
                 </div>
             </div>
         </div>
@@ -136,7 +119,10 @@
                 <div class="gallery-item">
                     <div class="image-box">
                         <figure class="image"><img  class="mx-auto" src="{{asset('assets_user/images/gallery/1.jpg')}}" alt="" style="height: 150px;width:150px"></figure>
-                        <div class="overlay-box"><a href="assets_user/images/gallery/1.jpg" class="lightbox-image" data-fancybox='gallery'><span class="icon fa fa-expand-arrows-alt"></span></a></div>
+                        <div class="overlay-box" style=" left: 0; right: 0;margin-left: auto; margin-right: auto;height: 150px;width:150px ">
+                            <a href="assets_user/images/gallery/1.jpg" class="lightbox-image" data-fancybox='gallery'><span class="icon fa fa-expand-arrows-alt"></span>
+                            </a>
+                        </div>
                     </div>
                     <div class="text-center">
                         <h5>Test Image</h5>
@@ -237,11 +223,11 @@
                     <ul class="tab-buttons clearfix">
                         
                         @foreach ($schedule as $key => $value)
-                        {{-- {{var_dump($value[$key]["tgl_mulai"])}} --}}
+                        {{-- {{var_dump($value[0]["tgl_mulai"])}} --}}
                         <li class="tab-btn {{$key == 0 ? 'active-btn': '' }} " data-tab="#{{$key}}">
                             <span class="day">Day {{$key + 1}}</span>
-                            <span class="date">{{date('d', strtotime($value[$key]["tgl_mulai"]))}}</span>
-                            <span class="month">{{date('M', strtotime($value[$key]["tgl_mulai"]))}}</span> {{date('Y', strtotime($value[$key]["tgl_mulai"]))}}
+                            <span class="date">{{date('d', strtotime($value[0]["tgl_mulai"]))}}</span>
+                            <span class="month">{{date('M', strtotime($value[0]["tgl_mulai"]))}}</span> {{date('Y', strtotime($value[0]["tgl_mulai"]))}}
                         </li>
                         @endforeach
                        
@@ -432,7 +418,7 @@
     </section>
     <!--End Pricing Section -->
 
-    <!-- Gallery Section -->
+    {{-- <!-- Gallery Section -->
     <section class="gallery-section style-two">
         <div class="gallery-carousel owl-carousel owl-theme">
             <!-- Gallery Item -->
@@ -484,10 +470,13 @@
             </div>
         </div>
     </section>
-    <!--End Gallery Section -->
+    <!--End Gallery Section --> --}}
 
     <!--Sponsor Section-->
-    <section class="clients-section-three" style="background-image: url(assets_user/images/background/9.jpg);">
+    <section class="clients-section-three" style="">
+        <div class="sec-title text-center">
+            <span class="title">Our Sponsor</span>
+        </div>
         <div class="auto-container">
             <div class="sponsors-outer">
                 <div class="sponsors-carousel owl-carousel owl-theme">

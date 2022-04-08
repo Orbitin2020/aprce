@@ -44,6 +44,15 @@ Route::group(['prefix' => 'admin'], function () {
         Route::put('/update/{id}', 'Admin\TiketController@update')->name('admin.tiket.update');
         Route::delete('/delete/{id}', 'Admin\TiketController@delete')->name('admin.tiket.delete');
     });
+
+    Route::group(['prefix' => 'sponsor'], function () {
+        Route::get('/', 'Admin\SponsorController@index')->name('admin.sponsor.index');
+        Route::get('/getData', 'Admin\SponsorController@getData')->name('admin.sponsor.data');
+        Route::post('/store', 'Admin\SponsorController@store')->name('admin.sponsor.store');
+        Route::get('/edit/{id}', 'Admin\SponsorController@edit')->name('admin.sponsor.edit');
+        Route::put('/update/{id}', 'Admin\SponsorController@update')->name('admin.sponsor.update');
+        Route::delete('/delete/{id}', 'Admin\SponsorController@delete')->name('admin.sponsor.delete');
+    });
    
     
 });

@@ -20,6 +20,7 @@ class HomeController extends Controller
         SEOTools::setCanonical(url()->current());
 
         $jokowi = Speaker::where('speakPrioritas','1')->first();
+        // dd($jokowi);
         $speaker = Speaker::where('speakPrioritas','!=','1')->orderBy('speakPrioritas')->get();
                     // ->groupBy('speakPrioritas')->toArray();
 
@@ -30,6 +31,7 @@ class HomeController extends Controller
         ->select('*',DB::raw('DATE(tgl_mulai) as date'))
         ->get()->groupBy('date')->toArray();
         $schedule = array_values($schedule);
+        // dd($schedule);
         
         $offline = Tiket::where('kategori','offline')->orderBy('harga')->get()->toarray();
         $online = Tiket::where('kategori','online')->orderBy('harga')->get()->toarray();

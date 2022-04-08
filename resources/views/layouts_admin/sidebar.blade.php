@@ -99,6 +99,10 @@
                             class="sidebar-mini-hide">Tiket</span></a>
                 </li>
                 <li>
+                    <a href="{{route('admin.sponsor.index')}}"><i class="fa fa-dollar"></i><span
+                            class="sidebar-mini-hide">Sponsor</span></a>
+                </li>
+                <li>
                     <a href="{{route('admin.registrasi')}}"><i class="si si-user"></i><span
                             class="sidebar-mini-hide">Daftar User Registrasi</span></a>
                 </li>

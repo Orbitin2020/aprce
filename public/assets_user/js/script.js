@@ -250,25 +250,25 @@
 			items:5,
 			lazyLoad: true,
 			smartSpeed: 700,
-			autoplay: false,
+			autoplay: true,
 			navText: [ '<span class="la la-angle-left"></span>', '<span class="la la-angle-right"></span>' ],
-			// responsive:{
-			// 	0:{
-			// 		items:1
-			// 	},
-			// 	600:{
-			// 		items:2
-			// 	},
-			// 	768:{
-			// 		items:3
-			// 	},
-			// 	1024:{
-			// 		items:4
-			// 	},
-			// 	1200:{
-			// 		items:5
-			// 	}
-			// }
+			responsive:{
+				0:{
+					items:1
+				},
+				600:{
+					items:2
+				},
+				768:{
+					items:3
+				},
+				1024:{
+					items:4
+				},
+				1200:{
+					items:5
+				}
+			}
 		});    		
 	}
 
@@ -281,7 +281,7 @@
 			nav:true,
 			lazyLoad: true,
 			smartSpeed: 700,
-			autoplay: 2000,
+			autoplay: 1000,
 			rewind:true,
 			navText: [ '<span class="la la-angle-left"></span>', '<span class="la la-angle-right"></span>' ],
 		});    		
