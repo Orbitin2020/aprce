@@ -10,5 +10,9 @@
 <script src="{{asset('assets_user/js/parallax.min.js')}}"></script>
 <script src="{{asset('assets_user/js/validate.js')}}"></script>
 <script src="{{asset('assets_user/js/script.js')}}"></script>
+{{-- Swal --}}
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+{{-- End Swal --}}
+
 <!-- Color Setting -->
 <script src="{{asset('assets_user/js/color-settings.js')}}"></script>

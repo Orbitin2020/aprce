@@ -20,10 +20,6 @@ Route::get('/about','User\HomeController@about')->name('user.about');
 Route::get('/speaker','User\HomeController@speaker')->name('user.speaker');
 Route::get('/schedule','User\HomeController@schedule')->name('user.schedule');
 Route::get('/contact','User\HomeController@contact')->name('user.contact');
-
-Route::group(['prefix' => 'registrasi', 'middleware' => ['guest']], function () {
-    Route::get('/', 'User\PendaftarController@index')->name('daftar.index');
-    Route::post('/store', 'User\PendaftarController@store')->name('daftar.store');
-});
+Route::post('/registrasi','User\PendaftarController@store')->name('daftar.store');
 
 

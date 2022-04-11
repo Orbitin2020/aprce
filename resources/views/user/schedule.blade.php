@@ -33,8 +33,8 @@
                         {{-- {{var_dump($value[$key]["tgl_mulai"])}} --}}
                         <li class="tab-btn {{$key == 0 ? 'active-btn': '' }} " data-tab="#{{$key}}">
                             <span class="day">Day {{$key + 1}}</span>
-                            <span class="date">{{date('d', strtotime($value[$key]["tgl_mulai"]))}}</span>
-                            <span class="month">{{date('M', strtotime($value[$key]["tgl_mulai"]))}}</span> {{date('Y', strtotime($value[$key]["tgl_mulai"]))}}
+                            <span class="date">{{date('d', strtotime($value[0]["tgl_mulai"]))}}</span>
+                            <span class="month">{{date('M', strtotime($value[0]["tgl_mulai"]))}}</span> {{date('Y', strtotime($value[0]["tgl_mulai"]))}}
                         </li>
                     @endforeach
                 </ul>

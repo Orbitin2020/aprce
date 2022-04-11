@@ -8,6 +8,6 @@ class Pendaftar extends Model
 {
     protected $table = 'pendaftars';
     protected $fillable = [
-        'nama','email','nohp'
+        'nama','email','nohp','tiket_id','quantity'
     ];
 }

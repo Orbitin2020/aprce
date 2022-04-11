@@ -184,7 +184,7 @@
 	//Clients Carousel
 	if ($('.sponsors-carousel').length) {
 		$('.sponsors-carousel').owlCarousel({
-			loop:true,
+			loop:false,
 			margin:30,
 			nav:true,
 			lazyLoad: true,
@@ -244,7 +244,7 @@
 	//speaker2 Carousel
 	if ($('.speaker2-carousel').length) {
 		$('.speaker2-carousel').owlCarousel({
-			loop:false,
+			loop:true,
 			// margin:119,
 			nav:true,
 			items:5,

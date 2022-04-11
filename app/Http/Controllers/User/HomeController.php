@@ -8,6 +8,7 @@ use Artesaos\SEOTools\Facades\SEOTools;
 use App\Models\Speaker;
 use App\Models\Schedule;
 use App\Models\Tiket;
+use App\Models\Sponsor;
 use DB;
 
 class HomeController extends Controller
@@ -33,10 +34,11 @@ class HomeController extends Controller
         $schedule = array_values($schedule);
         // dd($schedule);
         
-        $offline = Tiket::where('kategori','offline')->orderBy('harga')->get()->toarray();
-        $online = Tiket::where('kategori','online')->orderBy('harga')->get()->toarray();
+        $offline = Tiket::where('kategori','offline')->orderBy('harga')->get();
+        $online = Tiket::where('kategori','online')->orderBy('harga')->get();
+        $sponsor = Sponsor::all();
         // dd($online);
-        return view('user.home',compact('jokowi','speaker','schedule','offline','online'));
+        return view('user.home',compact('jokowi','speaker','schedule','offline','online','sponsor'));
     }
 
     public function about()

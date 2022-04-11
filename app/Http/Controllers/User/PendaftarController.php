@@ -18,6 +18,8 @@ class PendaftarController extends Controller
         $pendaftar->nama = $request->nama;
         $pendaftar->email = $request->email;
         $pendaftar->nohp = $request->nohp;
+        $pendaftar->quantity = $request->quantity;
+        $pendaftar->tiket_id = $request->tiket;
         $pendaftar->save();
         return response()->json([
             'message' => 'Pendaftar berhasi dikirim'

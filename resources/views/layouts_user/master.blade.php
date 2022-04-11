@@ -94,6 +94,7 @@
         
         {{-- Script --}}
             @include('layouts_user.incl_bot')
+            @stack('scripts')
         {{-- End Script --}}
 
     </body>

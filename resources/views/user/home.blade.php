@@ -341,7 +341,7 @@
                 <div class="text">WE’RE A LEADING MEETUP COMPANY</div>
                 <h2>We Are Always at The Forefront <br> of The Business Conference !</h2>
                 <div class="btn-box">
-                    <a href="contact.html" class="theme-btn btn-style-one"><span class="btn-title">Contact Us</span></a>
+                    <a href="{{route('user.contact')}}" class="theme-btn btn-style-one"><span class="btn-title">Contact Us</span></a>
                 </div>
             </div>
         </div>
@@ -369,14 +369,15 @@
                         @foreach ($offline as $d)
                             <div class="pricing-block-three col-lg-4 col-md-6 col-sm-12 wow fadeInUp centered">
                                 <div class="inner-box">
-                                    <div class="title">{{$d['nama']}}</div>
-                                    <h4 class="price">${{$d['harga']}}</h4>
+                                    <div class="title">{{$d->nama}}</div>
+                                    <h4 class="price">${{$d->harga}}</h4>
                                     <ul class="features">
                                         <li>01 Conference Tickets</li>
                                         <li>Free Lunch And Coffee</li>
                                         <li>Certificate</li>
                                     </ul>
-                                    <button class="theme-btn btn-style-one" type="button" data-toggle="modal" data-target="#exampleModal">
+                                    <input id type="hidden" value="{{$d->id}}">
+                                    <button id="userRegist" class="theme-btn btn-style-one" type="button" data-id="{{$d->id}}" data-toggle="modal" data-target="#modalRegist">
                                         <span class="btn-title">BUY Ticket</span>
                                     </button>
                                 </div>
@@ -398,15 +399,16 @@
                         @foreach ($online as $d)
                             <div class="pricing-block-three col-lg-4 col-md-6 col-sm-12 wow fadeInUp centered">
                                 <div class="inner-box">
-                                    <div class="title">{{$d['nama']}}</div>
-                                    <h4 class="price">${{$d['harga']}}</h4>
+                                    <div class="title">{{$d->nama}}</div>
+                                    <h4 class="price">${{$d->harga}}</h4>
                                     <ul class="features">
                                         <li>01 Conference Tickets</li>
                                         <li>Free Lunch And Coffee</li>
                                         <li>Certificate</li>
                                     </ul>
-                                    <button class="theme-btn btn-style-one" type="button" data-toggle="modal" data-target="#exampleModal">
-                                        <span class="btn-title">BUY Ticket</span>
+                                    <input id type="hidden" value="{{$d->id}}">
+                                    <button id="userRegist" class="theme-btn btn-style-one" type="button" data-toggle="modal" data-id="{{$d->id}}" data-target="#modalRegist">
+                                        <span class="btn-title">Buy Ticket</span>
                                     </button>
                                 </div>
                             </div>
@@ -481,64 +483,11 @@
             <div class="sponsors-outer">
                 <div class="sponsors-carousel owl-carousel owl-theme">
                     <!-- Client Block -->
+                    @foreach ($sponsor as $spon)
                     <div class="client-block">
-                        <figure class="image-box"><a href="#"><img src="{{asset('assets_user/images/clients/2-1.png')}}" alt=""></a></figure>
+                        <figure class="image-box"><a href="#"><img src="{{asset('uploads/sponsor/'.$spon['gambar'])}}" alt=""></a></figure>
                     </div>
-
-                    <!-- Client Block -->
-                    <div class="client-block">
-                        <figure class="image-box"><a href="#"><img src="{{asset('assets_user/images/clients/2-2.png')}}" alt=""></a></figure>
-                    </div>
-
-                    <!-- Client Block -->
-                    <div class="client-block">
-                        <figure class="image-box"><a href="#"><img src="{{asset('assets_user/images/clients/2-3.png')}}" alt=""></a></figure>
-                    </div>
-
-                    <!-- Client Block -->
-                    <div class="client-block">
-                        <figure class="image-box"><a href="#"><img src="{{asset('assets_user/images/clients/2-4.png')}}" alt=""></a></figure>
-                    </div>
-
-                    <!-- Client Block -->
-                    <div class="client-block">
-                        <figure class="image-box"><a href="#"><img src="{{asset('assets_user/images/clients/2-5.png')}}" alt=""></a></figure>
-                    </div>
-
-                    <!-- Client Block -->
-                    <div class="client-block">
-                        <figure class="image-box"><a href="#"><img src="{{asset('assets_user/images/clients/2-6.png')}}" alt=""></a></figure>
-                    </div>
-
-                    <!-- Client Block -->
-                    <div class="client-block">
-                        <figure class="image-box"><a href="#"><img src="{{asset('assets_user/images/clients/2-7.png')}}" alt=""></a></figure>
-                    </div>
-
-                    <!-- Client Block -->
-                    <div class="client-block">
-                        <figure class="image-box"><a href="#"><img src="{{asset('assets_user/images/clients/2-8.png')}}" alt=""></a></figure>
-                    </div>
-
-                    <!-- Client Block -->
-                    <div class="client-block">
-                        <figure class="image-box"><a href="#"><img src="{{asset('assets_user/images/clients/2-9.png')}}" alt=""></a></figure>
-                    </div>
-
-                    <!-- Client Block -->
-                    <div class="client-block">
-                        <figure class="image-box"><a href="#"><img src="{{asset('assets_user/images/clients/2-10.png')}}" alt=""></a></figure>
-                    </div>
-
-                    <!-- Client Block -->
-                    <div class="client-block">
-                        <figure class="image-box"><a href="#"><img src="{{asset('assets_user/images/clients/2-11.png')}}" alt=""></a></figure>
-                    </div>
-
-                    <!-- Client Block -->
-                    <div class="client-block">
-                        <figure class="image-box"><a href="#"><img src="{{asset('assets_user/images/clients/2-12.png')}}" alt=""></a></figure>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -549,11 +498,11 @@
 
   
   <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="modalRegist" tabindex="-1" role="dialog" aria-labelledby="modalRegistLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <h5 class="modal-title" id="modalRegistLabel">Registrasion Form</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -561,9 +510,10 @@
         <div class="modal-body">
             <div class="inner-column">
                 <div class="ticket-form">
-                    <form method="post" action="contact.html">
+                    <form method="post" action="" name="frm_regist" id="frm_regist">
+                        @csrf
                         <div class="form-group">
-                            <input type="text" name="username" placeholder="Your Name" required="">
+                            <input type="text" name="nama" placeholder="Your Name" required="">
                         </div>
 
                         <div class="form-group">
@@ -571,20 +521,22 @@
                         </div>
 
                         <div class="form-group">
-                            <input type="phone" name="email" placeholder="Phone" required="">
+                            <input type="phone" name="nohp" placeholder="Phone" required="">
                         </div>
 
                         <div class="form-group">
-                            <input type="number" name="qty" placeholder="Quantity" required="">
+                            <input type="number" name="quantity" placeholder="Quantity" required="">
+                        </div>
+                        <div class="form-group">
+                            <input type="hidden" id="tiket" name="tiket">
+                        </div>
+                        <div class="form-group">
+                            <button id="saveBtn" class="theme-btn btn-style-three" type="button" name="submit">
+                                <span class="btn-title">Purchase</span>
+                            </button>
                         </div>
                     </form>
                 </div>
-            </div>
-        </div>
-        <div class="modal-footer">
-          
-            <div class="form-group">
-                <button class="theme-btn btn-style-three" type="submit" name="Submit"><span class="btn-title">Purchase</span></button>
             </div>
         </div>
       </div>
@@ -595,4 +547,62 @@
 @endsection
 @push('scripts')
 
+<script>
+    $.ajaxSetup({
+     headers: {
+       'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+     }
+   });
+</script>
+<script>
+    $(document).ready(function(){
+        // Create Modal
+
+        idTiket = 0;
+        $(document).on("click", "#userRegist", function() {
+            idTiket = $(this).attr('data-id');
+            $('#frm_regist').trigger("reset");
+            $('#modalRegist').modal('show');
+
+        });
+
+        // Store Pengaduan
+        $('#saveBtn').click(function(e){
+            e.preventDefault();
+            $('#tiket').val(idTiket);
+            var formData = new FormData(document.getElementById("frm_regist"));
+            var url;
+            var type;
+            url = "{{ route('daftar.store') }}"
+            type = "POST"
+            $.ajax({
+                headers : {
+                    'X-CSRF-TOKEN' : "{{csrf_token()}}"
+                },
+                data : formData,
+                url: url,
+                type: type,
+                contentType:false,
+                processData:false,
+                success: function(response){
+                    Swal.fire({
+                        title : 'Success !',
+                        icon: 'success',
+                        text  : 'Success',
+                        showConfirmButton : true
+                    })
+                    $('#frm_regist').trigger("reset");
+                    $('#modalRegist').modal('hide');
+                    idTiket = 0;
+                },
+                error: function(json) {
+                    alert('Error occurs!');
+                    idTiket = 0;
+                }
+            })
+        })
+        // End Store
+
+    })
+</script>
 @endpush
