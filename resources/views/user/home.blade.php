@@ -35,42 +35,33 @@
                     @foreach ($speaker as $f)
                     <div class="gallery-item col-lg-4 col-md-6 col-sm-12 wow fadeIn">
                         <div class="image-box">
-                            <figure class="image"><img class="mx-auto" src="{{ asset('uploads/speaker/'.$f['speakFoto'])}}" alt="" style="height: 150px;width:150px"></figure>
-                            <div class="overlay-box" style="left: 0; right: 0;margin-left: auto; margin-right: auto;height: 150px;width:150px">
+                            <figure class="image"><img class="" src="{{ asset('uploads/speaker/'.$f['speakFoto'])}}" alt="" style="height: 150px;width:150px"></figure>
+                            <div class="overlay-box" style="left: 0; right: 0;height: 150px;width:150px">
                                 <a href="{{ asset('uploads/speaker/'.$f['speakFoto'])}}" class="lightbox-image" data-fancybox="gallery"><span class="icon fa fa-expand-arrows-alt"></span>
                                 </a>
                             </div>
                         </div>
-                        <div class="text-center">
+                        <div class="">
                             @if ($f['speakPrioritas'] == 2)
-                            <h5 style="color: #FF0000;">Keynote Speech</h5>
-                            <h5>{{$f['speakName']}}</h5>
-                            <h6>{{$f['speakJob']}}</h6>
+                            <h6 style="color: #FF0000;">Keynote Speech</h6>
+                            <h6 style="color: #000000;font-weight:bold;">{{$f['speakName']}}</h6>
+                            <h6 style="color: #000000;">{{$f['speakJob']}}</h6>
                             @elseif($f['speakPrioritas'] == 3)
-                            <h5 style="color: #FF0000;">Welcome Remarks</h5>
-                            <h5>{{$f['speakName']}}</h5>
-                            <h6>{{$f['speakJob']}}</h6>
+                            <h6 style="color: #FF0000;">Welcome Remarks</h6>
+                            <h6 style="color: #000000;font-weight:bold;">{{$f['speakName']}}</h6>
+                            <h6 style="color: #000000;">{{$f['speakJob']}}</h6>
                             @elseif($f['speakPrioritas'] == 4)
-                            <h5 style="color: #FF0000;">Opening Remarks</h5>
-                            <h5>{{$f['speakName']}}</h5>
-                            <h6>{{$f['speakJob']}}</h6>
+                            <h6 style="color: #FF0000;">Opening Remarks</h6>
+                            <h6 style="color: #000000;font-weight:bold;">{{$f['speakName']}}</h6>
+                            <h6 style="color: #000000;">{{$f['speakJob']}}</h6>
                             @else
-                            <h5 style="color: yellow;">Speakers</h5>
-                            <h5>{{$f['speakName']}}</h5>
+                            <h6 style="color: yellow;">Speakers</h6>
+                            <h6>{{$f['speakName']}}</h6>
                             <h6>{{$f['speakJob']}}</h6>
                             @endif
                         </div>
                     </div>
-                    <div class="gallery-item col-lg-4 col-md-6 col-sm-12 wow fadeIn">
-                        <div class="image-box">
-                            <figure class="image"><img src="{{asset('assets_user/images/gallery/1.jpg')}}"  style="height: 150px;width:150px" alt=""></figure>
-                            <div class="overlay-box"><a href="assets_user/images/gallery/1.jpg" class="lightbox-image" data-fancybox='gallery'><span class="icon fa fa-expand-arrows-alt"></span></a></div>
-                        </div>
-                        <div class="text-center">
-                            <h5>Test Image</h5>
-                            <h6>Test</h6>
-                        </div>
-                    </div>
+                    
         
                     @endforeach
                    
@@ -335,13 +326,13 @@
     <!--End Event Info Section -->
 
     <!-- Call to action -->
-    <section class="call-to-action" style="background-image: url(assets_user/images/background/11.jpg);">
+    <section class="call-to-action" style="background-image: url(assets_user/images/background/semi-banner.jpg);">
         <div class="auto-container">
             <div class="content-box">
-                <div class="text">WE’RE A LEADING MEETUP COMPANY</div>
+                <div class="text" style="color: #ffffff">WE’RE A LEADING MEETUP COMPANY</div>
                 <h2>We Are Always at The Forefront <br> of The Business Conference !</h2>
                 <div class="btn-box">
-                    <a href="{{route('user.contact')}}" class="theme-btn btn-style-one"><span class="btn-title">Contact Us</span></a>
+                    <a href="{{route('user.contact')}}" class="theme-btn btn-style-one" style="background-color: #FDD400;color:#D20000"><span class="btn-title">Contact Us</span></a>
                 </div>
             </div>
         </div>
@@ -358,7 +349,7 @@
         <div class="sec-title text-center">
             <span class="title">Get Ticket</span>
         </div>
-        @if ($offline)
+        @if (sizeof($offline))
             <div class="auto-container">
                 <div class="sec-title text-center">
                     <h2>Offline Tickets</h2>
@@ -388,7 +379,7 @@
             </div>
         @endif
 
-        @if ($online)
+        @if (sizeof($online))
             <div class="auto-container">
                 <div class="sec-title text-center">
                     <h2>Online Tickets</h2>

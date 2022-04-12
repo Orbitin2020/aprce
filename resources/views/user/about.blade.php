@@ -42,7 +42,7 @@
                 <!-- Image Column -->
                 <div class="image-column col-lg-6 col-md-12 col-sm-12">
                     <div class="image-box">
-                        <figure class="image wow fadeIn"><img src="{{asset('assets_user/images/resource/about-img-1.jpg')}}" alt=""></figure>
+                        <figure class="image wow fadeIn"><img src="{{asset('assets_user/images/gallery/about-pict.png')}}" alt=""></figure>
                     </div>
                 </div>
             </div>
