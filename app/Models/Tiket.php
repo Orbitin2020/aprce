@@ -10,4 +10,9 @@ class Tiket extends Model
     protected $fillable = [
         'harga','nama','kategori','participant'
     ];
+
+    public function pendaftar()
+    {
+        return $this->hasOne(Pendaftar::class, 'id');
+    }
 }

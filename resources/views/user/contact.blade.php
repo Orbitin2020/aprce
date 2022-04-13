@@ -64,7 +64,10 @@
                         <div class="sec-title">
                             <h2>Get in Touch</h2>
                         </div>
-                        <form method="post" action="sendemail.php" id="contact-form">
+                        <form method="post" id="frm_contact">
+                            {{ csrf_field() }}
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="hidden" name="_template" value="box">
                             <div class="row clearfix">
                                 <div class="col-lg-6 col-md-6 col-sm-12 form-group">
                                     <input type="text" name="username" placeholder="Name" required="">
@@ -87,7 +90,7 @@
                                 </div>
 
                                 <div class="col-lg-12 col-md-12 col-sm-12 form-group">
-                                    <button class="theme-btn btn-style-one" type="submit" name="submit-form"><span class="btn-title">Submit Now</span></button>
+                                    <button onclick="contact()" class="theme-btn btn-style-one" type="button" name="submit-form"><span class="btn-title">Submit Now</span></button>
                                 </div>
                             </div>
                         </form>
@@ -109,3 +112,46 @@
 </section>
 <!-- End Map Section -->
 @endsection
+@push('scripts')
+<script>
+    function contact() {
+        $.ajax({
+            // headers : {
+            //     'X-CSRF-TOKEN' : "{{csrf_token()}}"
+            // },
+            method: 'POST',
+            url: 'https://formsubmit.co/ajax/fikrihaidar24@gmail.com',
+            data: $('#frm_contact').serialize(),
+            beforeSend: function() {
+                Swal.fire({
+                    title: 'Please Wait...',
+                    text: 'Your data is being processed!',
+                    timer: 2000,
+                    timerProgressBar: true,
+                    didOpen: () => {
+                        Swal.showLoading()
+                    },
+                })
+            },
+            success: function(res) {
+                $('#frm_contact').trigger("reset");
+                Swal.fire({
+                    title: 'Action Success!',
+                    icon: 'success',
+                    text: 'Your Message Has Been Sent',
+                    showConfirmButton: true
+                })
+            },
+            error: function(xhr, ajaxOptions, thrownError) {
+                $('#frm_contact').trigger("reset");
+                Swal.fire({
+                    title: 'Whoopsss....',
+                    icon: 'error',
+                    text: 'Your Message Has Not Been Sent',
+                    showConfirmButton: true
+                })
+            }
+        });
+    }
+</script>
+@endpush

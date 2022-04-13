@@ -575,6 +575,17 @@
                 type: type,
                 contentType:false,
                 processData:false,
+                beforeSend: function() {
+                    Swal.fire({
+                        title: 'Please Wait...',
+                        text: 'Your data is being processed!',
+                        timer: 2000,
+                        timerProgressBar: true,
+                        didOpen: () => {
+                            Swal.showLoading()
+                        },
+                    })
+                },
                 success: function(response){
                     Swal.fire({
                         title : 'Success !',

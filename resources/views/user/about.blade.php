@@ -16,7 +16,7 @@
     <section class="about-section">
         <div class="anim-icons full-width">
             <span class="icon icon-circle-blue wow fadeIn"></span>
-            <span class="icon icon-dots wow fadeInleft"></span>
+            {{-- <span class="icon icon-dots wow fadeInleft"></span> --}}
             <span class="icon icon-circle-1 wow zoomIn"></span>
         </div>
         <div class="auto-container">
@@ -35,7 +35,11 @@
                             <li>Dedicated blog post thanking each Gold.</li>
                             <li>Acknowledgment and opening and closing.</li>
                         </ul>
-                        <div class="btn-box"><a href="contact.html" class="theme-btn btn-style-three"><span class="btn-title">Register Now</span></a></div>
+                        <div class="btn-box">
+                            <a href="" class="theme-btn btn-style-three">
+                                <span class="btn-title">Register Now</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
