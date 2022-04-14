@@ -47,9 +47,9 @@ class HomeController extends Controller
         SEOTools::setDescription('About Asia Pacific Retail Conference 2022');
         SEOTools::opengraph()->setUrl(url()->current());
         SEOTools::setCanonical(url()->current());
-
+        $sponsor = Sponsor::all();
       
-        return view('user.about');
+        return view('user.about',compact('sponsor'));
     }
 
     public function speaker()

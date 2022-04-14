@@ -1,7 +1,7 @@
 <!DOCTYPE html
     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office"
-    style="width:100%;font-family:Arial, sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;padding:0;Margin:0">
+    style="width:100%;font-family:arial, 'helvetica neue', helvetica, sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;padding:0;Margin:0">
 
 <head>
     <meta charset="UTF-8">
@@ -9,7 +9,21 @@
     <meta name="x-apple-disable-message-reformatting">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content="telephone=no" name="format-detection">
-    <title>Welcome Email APRCE</title>
+    <title>New email template 2022-04-14</title>
+    <!--[if (mso 16)]>
+<style type="text/css">
+a {text-decoration: none;}
+</style>
+<![endif]-->
+    <!--[if gte mso 9]><style>sup { font-size: 100% !important; }</style><![endif]-->
+    <!--[if gte mso 9]>
+<xml>
+<o:OfficeDocumentSettings>
+<o:AllowPNG></o:AllowPNG>
+<o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings>
+</xml>
+<![endif]-->
     <style type="text/css">
         #outlook a {
             padding: 0;
@@ -54,7 +68,7 @@
 
         [data-ogsb] .es-button {
             border-width: 0 !important;
-            padding: 10px 20px 10px 20px !important;
+            padding: 10px 15px 10px 15px !important;
         }
 
         @media only screen and (max-width:600px) {
@@ -76,7 +90,7 @@
             }
 
             h1 {
-                font-size: 30px !important;
+                font-size: 40px !important;
                 text-align: center
             }
 
@@ -90,16 +104,28 @@
                 text-align: center
             }
 
+            h1 a {
+                text-align: center
+            }
+
             .es-header-body h1 a,
             .es-content-body h1 a,
             .es-footer-body h1 a {
-                font-size: 30px !important
+                font-size: 40px !important
+            }
+
+            h2 a {
+                text-align: center
             }
 
             .es-header-body h2 a,
             .es-content-body h2 a,
             .es-footer-body h2 a {
                 font-size: 26px !important
+            }
+
+            h3 a {
+                text-align: center
             }
 
             .es-header-body h3 a,
@@ -109,35 +135,35 @@
             }
 
             .es-menu td a {
-                font-size: 16px !important
+                font-size: 14px !important
             }
 
             .es-header-body p,
             .es-header-body ul li,
             .es-header-body ol li,
             .es-header-body a {
-                font-size: 16px !important
+                font-size: 14px !important
             }
 
             .es-content-body p,
             .es-content-body ul li,
             .es-content-body ol li,
             .es-content-body a {
-                font-size: 16px !important
+                font-size: 14px !important
             }
 
             .es-footer-body p,
             .es-footer-body ul li,
             .es-footer-body ol li,
             .es-footer-body a {
-                font-size: 16 px !important
+                font-size: 12px !important
             }
 
             .es-infoblock p,
             .es-infoblock ul li,
             .es-infoblock ol li,
             .es-infoblock a {
-                font-size: 12px !important
+                font-size: 11px !important
             }
 
             *[class="gmail-fix"] {
@@ -172,14 +198,13 @@
             }
 
             .es-button-border {
-                display: block !important
+                display: inline-block !important
             }
 
             a.es-button,
             button.es-button {
-                font-size: 20px !important;
-                display: block !important;
-                border-width: 10px 0px 10px 0px !important
+                font-size: 18px !important;
+                display: inline-block !important
             }
 
             .es-btn-fw {
@@ -288,11 +313,11 @@
 </head>
 
 <body
-    style="width:100%;font-family:Arial, sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;padding:0;Margin:0">
-    <div class="es-wrapper-color" style="background-color:#F6F6F6">
+    style="width:100%;font-family:arial, 'helvetica neue', helvetica, sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;padding:0;Margin:0">
+    <div class="es-wrapper-color" style="background-color:#F7F7F7">
         <!--[if gte mso 9]>
 <v:background xmlns:v="urn:schemas-microsoft-com:vml" fill="t">
-<v:fill type="tile" color="#f6f6f6"></v:fill>
+<v:fill type="tile" color="#f7f7f7"></v:fill>
 </v:background>
 <![endif]-->
         <table class="es-wrapper" width="100%" cellspacing="0" cellpadding="0"
@@ -302,80 +327,54 @@
                     <table cellpadding="0" cellspacing="0" class="es-header" align="center"
                         style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;table-layout:fixed !important;width:100%;background-color:transparent;background-repeat:repeat;background-position:center top">
                         <tr style="border-collapse:collapse">
-                            <td align="center" style="padding:0;Margin:0">
-                                <table class="es-header-body" cellspacing="0" cellpadding="0" align="center"
-                                    bgcolor="#D20000"
-                                    style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:#d20000;width:600px">
+                            <td class="es-adaptive" align="center" style="padding:0;Margin:0">
+                                <table class="es-header-body"
+                                    style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:#3d5ca3;width:600px"
+                                    cellspacing="0" cellpadding="0" bgcolor="#3d5ca3" align="center">
                                     <tr style="border-collapse:collapse">
-                                        <td align="left"
-                                            style="Margin:0;padding-top:5px;padding-bottom:5px;padding-left:5px;padding-right:5px">
-                                            <!--[if mso]><table style="width:590px" cellpadding="0" cellspacing="0"><tr><td style="width:188px" valign="top"><![endif]-->
+                                        <td style="Margin:0;padding-top:20px;padding-bottom:20px;padding-left:20px;padding-right:20px;background-color:#d20000"
+                                            bgcolor="#D20000" align="left">
+                                            <!--[if mso]><table style="width:560px" cellpadding="0"
+cellspacing="0"><tr><td style="width:270px" valign="top"><![endif]-->
                                             <table class="es-left" cellspacing="0" cellpadding="0" align="left"
                                                 style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:left">
                                                 <tr style="border-collapse:collapse">
-                                                    <td class="es-m-p0r" valign="top" align="center"
-                                                        style="padding:0;Margin:0;width:188px">
+                                                    <td class="es-m-p20b" align="left"
+                                                        style="padding:0;Margin:0;width:270px">
                                                         <table width="100%" cellspacing="0" cellpadding="0"
                                                             role="presentation"
                                                             style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
                                                             <tr style="border-collapse:collapse">
-                                                                <td class="es-m-p0l" align="left"
-                                                                    style="padding:0;Margin:0;padding-bottom:5px;font-size:0px">
-                                                                    <a href="https://viewstripo.email" target="_blank"
-                                                                        style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:underline;color:#CCCCCC;font-size:14px"><img
-                                                                            src="https://wbnxex.stripocdn.email/content/guids/8753d003-616c-4337-820a-58253d0de054/images/logo_white.png"
-                                                                            al t alt="Sunrise logo" title="Sunrise logo"
-                                                                            width="108"
-                                                                            style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic"></a>
-                                                                </td>
+                                                                <td class="es-m-p0l es-m-txt-c" align="left"
+                                                                    style="padding:0;Margin:0;font-size:0px"><a
+                                                                        href="https://viewstripo.email" target="_blank"
+                                                                        style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:underline;color:#3D5CA3;font-size:14px"><img
+                                                                            src="https://wbnxex.stripocdn.email/content/guids/d37b0ea9-7bd8-4eab-87e9-eceaf40ed347/images/logo_white.png"
+                                                                            alt
+                                                                            style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic"
+                                                                            width="183"></a></td>
                                                             </tr>
                                                         </table>
                                                     </td>
                                                 </tr>
                                             </table>
-                                            <!--[if mso]></td><td style="width:20px"></td><td style="width:382px" valign="top"><![endif]-->
-                                            <table cellspacing="0" cellpadding="0" align="right"
-                                                style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                                            <!--[if mso]></td><td style="width:20px"></td><td style="width:270px" valign="top"><![endif]-->
+                                            <table class="es-right" cellspacing="0" cellpadding="0" align="right"
+                                                style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:right">
                                                 <tr style="border-collapse:collapse">
-                                                    <td align="left" style="padding:0;Margin:0;width:382px">
-                                                        <table c ellspacing="0" width="100%" cellpadding="0"
+                                                    <td align="left" style="padding:0;Margin:0;width:270px">
+                                                        <table width="100%" cellspacing="0" cellpadding="0"
                                                             role="presentation"
                                                             style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
                                                             <tr style="border-collapse:collapse">
-                                                                <td style="padding:0;Margin:0">
-                                                                    <table class="es-menu" width="100%"
-                                                                        cellspacing="0" cellpadding="0"
-                                                                        role="presentation"
-                                                                        style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
-                                                                        <tr class="links"
-                                                                            style="border-collapse:collapse">
-                                                                            <td style="Margin:0;padding-left:5px;padding-right:5px;padding-top:25px;padding-bottom:25px;border:0"
-                                                                                width="25.00%" bgcolor="transparent"
-                                                                                align="center"><a
-                                                                                    style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:none;display:block;font-family:Arial, sans-serif;color:#ffffff;font-size:14px;font-weight:bold"
-                                                                                    href="">Home</a>
-                                                                            </td>
-                                                                            <td style="Margin:0;padding-left:5px;padding-right:5px;padding-top:25px;padding-bottom:25px;border:0"
-                                                                                width="25.00%" bgcolor="transparent"
-                                                                                align="center"><a
-                                                                                    style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:none;display:block;font-family:Arial, sans-serif;color:#ffffff;font-size:14px;font-weight:bold"
-                                                                                    href="">About</a>
-                                                                            </td>
-                                                                            <td style="Margin:0;padding-left:5px;padding-right:5px;padding-top:25px;padding-bottom:25px;border:0"
-                                                                                width="25.00%" bgcolor="transparent"
-                                                                                align="center"><a
-                                                                                    style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:none;display:block;font-family:Arial, sans-serif;color:#ffffff;font-size:14px;font-weight:bold"
-                                                                                    href="">Speakers</a>
-                                                                            </td>
-                                                                            <td style="Margin:0;padding-left:5px;padding-right:5px;padding-top:25px;padding-bottom:25px;border:0"
-                                                                                width="25.00%" bgcolor="transparent"
-                                                                                align="center"><a
-                                                                                    style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:none;display:block;font-family:Arial, sans-serif;color:#ffffff;font-size:14px;font-weight:bold"
-                                                                                    href="">Schedule</a>
-                                                                            </td>
-                                                                        </tr>
-                                                                    </table>
-                                                                </td>
+                                                                <td class="es-m-txt-c" align="right"
+                                                                    style="padding:0;Margin:0;padding-top:10px"><span
+                                                                        class="es-button-border"
+                                                                        style="border-style:solid;border-color:#d20000;background:#ffffff;border-width:2px;display:inline-block;border-radius:4px;width:auto"><a
+                                                                            href="https://viewstripo.email/"
+                                                                            class="es-button" target="_blank"
+                                                                            style="mso-style-priority:100 !important;text-decoration:none;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;color:#d20000;font-size:16px;border-style:solid;border-color:#FFFFFF;border-width:10px 15px 10px 15px;display:inline-block;background:#FFFFFF;border-radius:4px;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-weight:normal;font-style:normal;line-height:19px;width:auto;text-align:center">APRCE
+                                                                            Official Website</a></span></td>
                                                             </tr>
                                                         </table>
                                                     </td>
@@ -392,35 +391,48 @@
                         style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;table-layout:fixed !important;width:100%">
                         <tr style="border-collapse:collapse">
                             <td align="center" style="padding:0;Margin:0">
-                                <table class="es-content-body" cellspacing="0" cellpadding="0" align="center"
-                                    style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:#FFFFFF;width:600px">
+                                <table class="es-content-body"
+                                    style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:#fafafa;width:600px"
+                                    cellspacing="0" cellpadding="0" bgcolor="#fafafa" align="center">
                                     <tr style="border-collapse:collapse">
-                                        <td style="padding:0;Margin:0;background-color:#ffffff" bgcolor="#ffffff"
+                                        <td style="Margin:0;padding-top:20px;padding-left:20px;padding-right:20px;padding-bottom:40px;background-repeat:no-repeat"
                                             align="left">
                                             <table width="100%" cellspacing="0" cellpadding="0"
                                                 style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
                                                 <tr style="border-collapse:collapse">
                                                     <td valign="top" align="center"
-                                                        style="padding:0;Margin:0;width:600px">
+                                                        style="padding:0;Margin:0;width:560px">
                                                         <table width="100%" cellspacing="0" cellpadding="0"
                                                             role="presentation"
                                                             style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
                                                             <tr style="border-collapse:collapse">
                                                                 <td align="center"
-                                                                    style="padding:0;Margin:0;padding-bottom:10px;padding-top:25px">
-                                                                    <h2
-                                                                        style="Margin:0;line-height:29px;mso-line-height-rule:exactly;font-family:Arial, sans-serif;font-size:24px;font-style:normal;font-weight:normal;color:#333333">
-                                                                        Hello {{$name}}</h2>
+                                                                    style="padding:0;Margin:0;padding-bottom:10px;padding-top:20px">
+                                                                    <h1
+                                                                        style="Margin:0;line-height:60px;mso-line-height-rule:exactly;font-family:lora, georgia, 'times new roman', serif;font-size:50px;font-style:normal;font-weight:normal;color:#333333">
+                                                                        <em>Welcome</em></h1>
                                                                 </td>
                                                             </tr>
                                                             <tr style="border-collapse:collapse">
                                                                 <td align="center"
-                                                                    style="Margin:0;padding-top:5px;padding-bottom:15px;padding-left:15px;padding-right:15px">
+                                                                    style="padding:0;Margin:0;padding-top:10px;padding-bottom:10px">
+                                                                    <h4
+                                                                        style="Margin:0;line-height:120%;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;color:#333333">
+                                                                        We're happy to have you with us.</h4>
+                                                                </td>
+                                                            </tr>
+                                                            <tr style="border-collapse:collapse">
+                                                                <td align="center"
+                                                                    style="padding:0;Margin:0;padding-bottom:20px">
                                                                     <p
-                                                                        style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Arial, sans-serif;line-height:21px;color:#333333;font-size:14px">
-                                                                       Quantity : {{$quantity}}<br>
-                                                                       tiket : {{$tiket_id}}
-                                                                    </p>
+                                                                        style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#333333;font-size:14px">
+                                                                        We teach classes in everything from business to
+                                                                        medicine.</p>
+                                                                    <p
+                                                                        style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#333333;font-size:14px">
+                                                                        Lorem ipsum dolor sit amet, consectetur
+                                                                        adipiscing elit, sed do eiusmod tempor
+                                                                        incididunt ut labore et dolore magna.</p>
                                                                 </td>
                                                             </tr>
                                                         </table>
@@ -433,46 +445,40 @@
                             </td>
                         </tr>
                     </table>
-                    <table cellpadding="0" cellspacing="0" class="es-footer" align="center"
-                        style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;table-layout:fixed !important;width:100%;background-color:transparent;background-repeat:repeat;background-position:center top">
+                    <table cellpadding="0" cellspacing="0" class="es-content" align="center"
+                        style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;table-layout:fixed !important;width:100%">
                         <tr style="border-collapse:collapse">
                             <td align="center" style="padding:0;Margin:0">
-                                <table class="es-footer-body" cellspacing="0" cellpadding="0" align="center"
-                                    bgcolor="#D20000"
-                                    style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:#d20000;width:600px">
+                                <table class="es-content-body" cellspacing="0" cellpadding="0" bgcolor="#ffffff"
+                                    align="center"
+                                    style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:#FFFFFF;width:600px">
                                     <tr style="border-collapse:collapse">
-                                        <td align="left"
-                                            style="Margin:0;padding-left:20px;padding-right:20px;padding-top:25px;padding-bottom:25px">
-                                            <!--[if mso]><table style="width:560px" cellpadding="0" cellspacing="0"><tr><td style="width:194px"><![endif]-->
+                                        <td style="Margin:0;padding-left:10px;padding-right:10px;padding-top:15px;padding-bottom:15px;background-color:#d20000"
+                                            bgcolor="#D20000" align="left">
+                                            <!--[if mso]><table style="width:580px" cellpadding="0"
+cellspacing="0"><tr><td style="width:200px" valign="top"><![endif]-->
                                             <table class="es-left" cellspacing="0" cellpadding="0" align="left"
                                                 style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:left">
                                                 <tr style="border-collapse:collapse">
                                                     <td class="es-m-p0r es-m-p20b" align="center"
-                                                        style="padding:0;Margin:0;width:174px">
+                                                        style="padding:0;Margin:0;width:180px">
                                                         <table width="100%" cellspacing="0" cellpadding="0"
                                                             role="presentation"
                                                             style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
                                                             <tr style="border-collapse:collapse">
-                                                                <td class="es-m-txt-с" align="left"
-                                                                    style="padding:0;Margin:0;padding-bottom:10px">
-                                                                    <h4
-                                                                        style="Margin:0;line-height:120%;mso-line-height-rule:exactly;font-family:Arial, sans-serif;color:#fec903">
-                                                                        Contact Us<br></h4>
-                                                                </td>
+                                                                <td align="center"
+                                                                    style="padding:0;Margin:0;padding-bottom:5px;font-size:0">
+                                                                    <img src="https://wbnxex.stripocdn.email/content/guids/CABINET_66498ea076b5d00c6f9553055acdb37a/images/39911527588288171.png"
+                                                                        alt
+                                                                        style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic"
+                                                                        width="24"></td>
                                                             </tr>
                                                             <tr style="border-collapse:collapse">
-                                                                <td class="es-m-txt-с" align="left"
-                                                                    style="padding:0;Margin:0">
+                                                                <td align="center"
+                                                                    style="padding:0;Margin:0;padding-left:5px;padding-right:5px">
                                                                     <p
-                                                                        style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Arial, sans-serif;line-height:21px;color:#A5A29B;font-size:14px">
-                                                                        <a target="_blank"
-                                                                            style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:none;color:#ffffff;font-size:14px"
-                                                                            href="tel:123456789">123456789</a></p>
-                                                                    <p
-                                                                        style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Arial, sans-serif;line-height:21px;color:#A5A29B;font-size:14px">
-                                                                        <a target="_blank" href="mailto:your@mail.com"
-                                                                            style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:none;color:#ffffff;font-size:14px">your@mail.com</a>
-                                                                    </p>
+                                                                        style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:24px;color:#ffffff;font-size:16px">
+                                                                        1513 Garfield Park Ave, Lebanon, OH 45036</p>
                                                                 </td>
                                                             </tr>
                                                         </table>
@@ -481,35 +487,31 @@
                                                     </td>
                                                 </tr>
                                             </table>
-                                            <!--[if mso]></td><td style="width:173px"><![endif]-->
+                                            <!--[if mso]></td><td style="width:180px" valign="top"><![endif]-->
                                             <table class="es-left" cellspacing="0" cellpadding="0" align="left"
                                                 style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:left">
                                                 <tr style="border-collapse:collapse">
-                                                    <td class="es-m-p0r es-m-p20b" align="center"
-                                                        style="padding:0;Margin:0;width:173px">
+                                                    <td class="es-m-p20b" align="center"
+                                                        style="padding:0;Margin:0;width:180px">
                                                         <table width="100%" cellspacing="0" cellpadding="0"
                                                             role="presentation"
                                                             style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
                                                             <tr style="border-collapse:collapse">
-                                                                <td align="left"
-                                                                    style="padding:0;Margin:0;padding-bottom:10px">
-                                                                    <h4
-                                                                        style="Margin:0;line-height:120%;mso-line-height-rule:exactly;font-family:Arial, sans-serif;color:#fec903">
-                                                                        Site Links<br></h4>
-                                                                </td>
+                                                                <td align="center"
+                                                                    style="padding:0;Margin:0;padding-bottom:5px;font-size:0">
+                                                                    <img src="https://wbnxex.stripocdn.email/content/guids/CABINET_66498ea076b5d00c6f9553055acdb37a/images/35681527588356492.png"
+                                                                        alt
+                                                                        style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic"
+                                                                        width="24"></td>
                                                             </tr>
                                                             <tr style="border-collapse:collapse">
-                                                                <td align="left" style="padding:0;Margin:0">
+                                                                <td esdev-links-color="#ffffff" align="center"
+                                                                    style="padding:0;Margin:0">
                                                                     <p
-                                                                        style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Arial, sans-serif;line-height:21px;color:#A5A29B;font-size:14px">
-                                                                        <a href="http://#" target="_blank"
-                                                                            style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:underline;color:#ffffff;font-size:14px">Home</a><br><a
-                                                                            href="http://#" target="_blank"
-                                                                            style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:underline;color:#ffffff;font-size:14px">About</a><br><a
-                                                                            href="http://#" target="_blank"
-                                                                            style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:underline;color:#ffffff;font-size:14px">Schedule</a><br><a
-                                                                            href="http://#" target="_blank"
-                                                                            style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:underline;color:#ffffff;font-size:14px">Speakers</a>
+                                                                        style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#ffffff;font-size:14px">
+                                                                        <a target="_blank"
+                                                                            style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:underline;color:#ffffff;font-size:18px"
+                                                                            href="mailto:your@mail.com">your@mail.com</a>
                                                                     </p>
                                                                 </td>
                                                             </tr>
@@ -517,56 +519,124 @@
                                                     </td>
                                                 </tr>
                                             </table>
-                                            <!--[if mso]></td><td style="width:20px"></td><td style="width:173px"><![endif]-->
+                                            <!--[if mso]></td><td style="width:20px"></td><td style="width:180px" valign="top"><![endif]-->
                                             <table class="es-right" cellspacing="0" cellpadding="0" align="right"
                                                 style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:right">
                                                 <tr style="border-collapse:collapse">
-                                                    <td class="es-m-p0r es-m-p20b" align="center"
-                                                        style="padding:0;Margin:0;width:173px">
+                                                    <td align="center" style="padding:0;Margin:0;width:180px">
                                                         <table width="100%" cellspacing="0" cellpadding="0"
                                                             role="presentation"
                                                             style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
                                                             <tr style="border-collapse:collapse">
-                                                                <td class="es-m-txt-с" align="left"
-                                                                    style="padding:0;Margin:0;padding-bottom:10px">
-                                                                    <h4
-                                                                        style="Margin:0;line-height:120%;mso-line-height-rule:exactly;font-family:Arial, sans-serif;color:#fec903">
-                                                                        Social networks<br></h4>
-                                                                </td>
+                                                                <td align="center"
+                                                                    style="padding:0;Margin:0;padding-bottom:5px;font-size:0">
+                                                                    <img src="https://wbnxex.stripocdn.email/content/guids/CABINET_66498ea076b5d00c6f9553055acdb37a/images/50681527588357616.png"
+                                                                        alt
+                                                                        style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic"
+                                                                        width="24"></td>
                                                             </tr>
                                                             <tr style="border-collapse:collapse">
-                                                                <td align="left" style="padding:0;Margin:0;font-size:0">
+                                                                <td align="center" style="padding:0;Margin:0">
+                                                                    <p
+                                                                        style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:24px;color:#ffffff;font-size:16px">
+                                                                        <a target="_blank"
+                                                                            style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:underline;color:#ffffff;font-size:16px"
+                                                                            href="tel:123456789">123456789</a></p>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <!--[if mso]></td></tr></table><![endif]-->
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                    <table cellpadding="0" cellspacing="0" class="es-footer" align="center"
+                        style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;table-layout:fixed !important;width:100%;background-color:transparent;background-repeat:repeat;background-position:center top">
+                        <tr style="border-collapse:collapse">
+                            <td align="center" style="padding:0;Margin:0">
+                                <table class="es-footer-body" cellspacing="0" cellpadding="0" align="center"
+                                    style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:transparent;width:600px">
+                                    <tr style="border-collapse:collapse">
+                                        <td align="left" bgcolor="#D20000"
+                                            style="padding:0;Margin:0;padding-left:10px;padding-right:10px;padding-top:20px;background-color:#d20000">
+                                            <!--[if mso]><table style="width:580px" cellpadding="0"
+cellspacing="0"><tr><td style="width:190px" valign="top"><![endif]-->
+                                            <table class="es-left" cellspacing="0" cellpadding="0" align="left"
+                                                style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:left">
+                                                <tr style="border-collapse:collapse">
+                                                    <td class="es-m-p0r es-m-p20b" valign="top" align="center"
+                                                        style="padding:0;Margin:0;width:190px">
+                                                        <table width="100%" cellspacing="0" cellpadding="0"
+                                                            role="presentation"
+                                                            style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                                                            <tr style="border-collapse:collapse">
+                                                                <td class="es-m-txt-c" esdev-links-color="#666666"
+                                                                    align="right"
+                                                                    style="padding:0;Margin:0;padding-top:5px">
+                                                                    <h4
+                                                                        style="Margin:0;line-height:120%;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;color:#ffffff">
+                                                                        Follow us:</h4>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <!--[if mso]></td><td style="width:20px"></td><td style="width:370px" valign="top"><![endif]-->
+                                            <table cellspacing="0" cellpadding="0" align="right"
+                                                style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                                                <tr style="border-collapse:collapse">
+                                                    <td align="left" style="padding:0;Margin:0;width:370px">
+                                                        <table width="100%" cellspacing="0" cellpadding="0"
+                                                            role="presentation"
+                                                            style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                                                            <tr style="border-collapse:collapse">
+                                                                <td class="es-m-txt-c" align="left"
+                                                                    style="padding:0;Margin:0;font-size:0px;background-color:#d20000"
+                                                                    bgcolor="#D20000">
                                                                     <table class="es-table-not-adapt es-social"
                                                                         cellspacing="0" cellpadding="0"
                                                                         role="presentation"
                                                                         style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
                                                                         <tr style="border-collapse:collapse">
                                                                             <td valign="top" align="center"
-                                                                                style="padding:0;Margin:0;padding-right:10px">
-                                                                                <img title="Twitter"
-                                                                                    src="https://stripo.email/cabinet/assets/editor/assets/img/social-icons/circle-white/twitter-circle-white.png"
-                                                                                    alt="Tw" width="32" height="32"
-                                                                                    style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic">
-                                                                            </td>
-                                                                            <td valign="top" align="center"
-                                                                                style="padding:0;Margin:0;padding-right:10px">
+                                                                                style="padding:0;Margin:0;padding-right:15px">
                                                                                 <img title="Facebook"
-                                                                                    src="https://stripo.email/cabinet/assets/editor/assets/img/social-icons/circle-white/facebook-circle-white.png"
+                                                                                    src="https://wbnxex.stripocdn.email/content/assets/img/social-icons/circle-colored/facebook-circle-colored.png"
                                                                                     alt="Fb" width="32" height="32"
                                                                                     style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic">
                                                                             </td>
                                                                             <td valign="top" align="center"
-                                                                                style="padding:0;Margin:0;padding-right:10px">
+                                                                                style="padding:0;Margin:0;padding-right:15px">
+                                                                                <img title="Twitter"
+                                                                                    src="https://wbnxex.stripocdn.email/content/assets/img/social-icons/circle-colored/twitter-circle-colored.png"
+                                                                                    alt="Tw" width="32" height="32"
+                                                                                    style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic">
+                                                                            </td>
+                                                                            <td valign="top" align="center"
+                                                                                style="padding:0;Margin:0;padding-right:15px">
+                                                                                <img title="Instagram"
+                                                                                    src="https://wbnxex.stripocdn.email/content/assets/img/social-icons/circle-colored/instagram-circle-colored.png"
+                                                                                    alt="Inst" width="32" height="32"
+                                                                                    style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic">
+                                                                            </td>
+                                                                            <td valign="top" align="center"
+                                                                                style="padding:0;Margin:0;padding-right:15px">
                                                                                 <img title="Youtube"
-                                                                                    src="https://stripo.email/cabinet/assets/editor/assets/img/social-icons/circle-white/youtube-circle-white.png"
+                                                                                    src="https://wbnxex.stripocdn.email/content/assets/img/social-icons/circle-colored/youtube-circle-colored.png"
                                                                                     alt="Yt" width="32" height="32"
                                                                                     style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic">
                                                                             </td>
                                                                             <td valign="top" align="center"
                                                                                 style="padding:0;Margin:0"><img
-                                                                                    title="Vkontakte"
-                                                                                    src="https://stripo.email/cabinet/assets/editor/assets/img/social-icons/circle-white/vk-circle-white.png"
-                                                                                    alt="Vk" width="32" height="32"
+                                                                                    title="Linkedin"
+                                                                                    src="https://wbnxex.stripocdn.email/content/assets/img/social-icons/circle-colored/linkedin-circle-colored.png"
+                                                                                    alt="In" width="32" height="32"
                                                                                     style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic">
                                                                             </td>
                                                                         </tr>
@@ -578,36 +648,6 @@
                                                 </tr>
                                             </table>
                                             <!--[if mso]></td></tr></table><![endif]-->
-                                        </td>
-                                    </tr>
-                                    <tr style="border-collapse:collapse">
-                                        <td align="left" style="padding:0;Margin:0">
-                                            <table width="100%" cellspacing="0" cellpadding="0"
-                                                style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
-                                                <tr style="border-collapse:collapse">
-                                                    <td valign="top" align="center"
-                                                        style="padding:0;Margin:0;width:600px">
-                                                        <table width="100%" cellspacing="0" cellpadding="0"
-                                                            role="presentation"
-                                                            style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
-                                                            <tr style="border-collapse:collapse">
-                                                                <td align="center"
-                                                                    style="padding:0;Margin:0;font-size:0">
-                                                                    <table width="100%" height="100%" cellspacing="0"
-                                                                        cellpadding="0" border="0" role="presentation"
-                                                                        style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
-                                                                        <tr style="border-collapse:collapse">
-                                                                            <td
-                                                                                style="padding:0;Margin:0;border-bottom:1px solid #cccccc;background:none;height:1px;width:100%;margin:0px">
-                                                                            </td>
-                                                                        </tr>
-                                                                    </table>
-                                                                </td>
-                                                            </tr>
-                                                        </table>
-                                                    </td>
-                                                </tr>
-                                            </table>
                                         </td>
                                     </tr>
                                 </table>

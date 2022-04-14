@@ -1,9 +1,9 @@
 @extends('layouts_user.master')
 @section('content')
     <!--Page Title-->
-    <section class="page-title" style="background-image:url(assets_user/images/background/5.jpg);">
+    <section class="page-title" style="background-image:url(assets_user/images/background/5.jpg);background-color:#D20000">
         <div class="auto-container">
-            <h1>About Us</h1>
+            <h1 >About Us</h1>
             <ul class="bread-crumb clearfix">
                 <li><a href="{{route('user.index')}}">Home</a></li>
                 <li><a href="{{route('user.about')}}">About</a></li>
@@ -36,7 +36,7 @@
                             <li>Acknowledgment and opening and closing.</li>
                         </ul>
                         <div class="btn-box">
-                            <a href="" class="theme-btn btn-style-three">
+                            <a href="" class="theme-btn btn-style-three" style="background: #D20000">
                                 <span class="btn-title">Register Now</span>
                             </a>
                         </div>
@@ -55,7 +55,7 @@
     <!--End About Section -->
 
     <!-- Fun Fact Section -->
-    <section class="fun-fact-section style-two" style="background-image: url(assets_user/images/background/9.jpg);">
+    <section class="fun-fact-section style-two" style="background-color:#D20000">
         <div class="auto-container">
             <div class="fact-counter">
                 <div class="row clearfix">
@@ -63,36 +63,36 @@
                     <!--Column-->
                     <div class="counter-column col-lg-3 col-md-6 col-sm-12 wow fadeInUp">
                         <div class="count-box">
-                            <span class="icon icon_headphones"></span>
+                            <span class="icon icon_headphones" style="background-color: white;color:#D20000"></span>
                             <span class="count-text" data-speed="3000" data-stop="190">0</span>
-                            <h4 class="counter-title">Participants</h4>
+                            <h4 class="counter-title" style="color: white">Participants</h4>
                         </div>
                     </div>
 
                     <!--Column-->
                     <div class="counter-column col-lg-3 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="400ms">
                         <div class="count-box">
-                            <span class="icon icon_ribbon_alt"></span>
+                            <span class="icon icon_ribbon_alt" style="background-color: white;color:#D20000"></span>
                             <span class="count-text" data-speed="3000" data-stop="62">0</span>
-                            <h4 class="counter-title">Awards Win</h4>
+                            <h4 class="counter-title" style="color: white">Awards Win</h4>
                         </div>
                     </div>
 
                     <!--Column-->
                     <div class="counter-column col-lg-3 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="800ms">
                         <div class="count-box">
-                            <span class="icon icon_like"></span>
+                            <span class="icon icon_like" style="background-color: white;color:#D20000"></span>
                             <span class="count-text" data-speed="3000" data-stop="54">0</span>
-                            <h4 class="counter-title">Certified Teachers</h4>
+                            <h4 class="counter-title" style="color: white">Certified Teachers</h4>
                         </div>
                     </div>
 
                     <!--Column-->
                     <div class="counter-column col-lg-3 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="1200ms">
                         <div class="count-box">
-                            <span class="icon icon_book_alt"></span>
+                            <span class="icon icon_book_alt" style="background-color: white;color:#D20000"></span>
                             <span class="count-text" data-speed="3000" data-stop="38">0</span>
-                            <h4 class="counter-title">Courses</h4>
+                            <h4 class="counter-title" style="color: white">Courses</h4>
                         </div>
                     </div>
                 </div>
@@ -101,88 +101,25 @@
     </section>
     <!--End Fun Fact Section -->
 
-    <!-- Features Section Two -->
-    <section class="features-section-two">
+    <!--Sponsor Section-->
+    <section class="clients-section-three" style="">
+        <div class="sec-title text-center">
+            <span class="title">Our Sponsor</span>
+        </div>
         <div class="auto-container">
-            <div class="anim-icons">
-                <span class="icon twist-line-1 wow zoomIn"></span>
-                <span class="icon twist-line-2 wow zoomIn" data-wow-delay="1s"></span>
-                <span class="icon twist-line-3 wow zoomIn" data-wow-delay="2s"></span>
-            </div>
-
-            <div class="row">
-                <!-- Title Block -->
-                <div class="title-block col-lg-4 col-md-6 col-sm-12 wow fadeInUp">
-                    <div class="inner-box">
-                        <div class="sec-title">
-                            <span class="title">Features</span>
-                            <h2>Our Feature</h2>
-                        </div>
+            <div class="sponsors-outer">
+                <div class="sponsors-carousel owl-carousel owl-theme">
+                    <!-- Client Block -->
+                    @foreach ($sponsor as $spon)
+                    <div class="client-block">
+                        <figure class="image-box"><a href="#"><img src="{{asset('uploads/sponsor/'.$spon['gambar'])}}" alt=""></a></figure>
                     </div>
-                </div>
-
-                <!-- Feature Block -->
-                <div class="feature-block-two col-lg-4 col-md-6 col-sm-12 wow fadeInUp">
-                    <div class="inner-box">
-                        <div class="icon-box"><span class="icon flaticon-lecture"></span></div>
-                        <h4><a href="about.html">Great Speakers</a></h4>
-                        <div class="text">Dolor sit amet consectetur elit sed do eiusmod tempor incd.</div>
-                    </div>
-                </div>
-
-                <!-- Feature Block -->
-                <div class="feature-block-two col-lg-4 col-md-6 col-sm-12 wow fadeInUp">
-                    <div class="inner-box">
-                        <div class="icon-box"><span class="icon flaticon-search"></span></div>
-                        <h4><a href="about.html">Experience</a></h4>
-                        <div class="text">Dolor sit amet consectetur elit sed do eiusmod tempor incd.</div>
-                    </div>
-                </div>
-
-                <!-- Feature Block -->
-                <div class="feature-block-two col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="400ms">
-                    <div class="inner-box">
-                        <div class="icon-box"><span class="icon flaticon-diamond-1"></span></div>
-                        <h4><a href="about.html">Networking</a></h4>
-                        <div class="text">Dolor sit amet consectetur elit sed do eiusmod tempor incd.</div>
-                    </div>
-                </div>
-
-                <!-- Feature Block -->
-                <div class="feature-block-two col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="800ms">
-                    <div class="inner-box">
-                        <div class="icon-box"><span class="icon flaticon-success"></span></div>
-                        <h4><a href="about.html">Party</a></h4>
-                        <div class="text">Dolor sit amet consectetur elit sed do eiusmod tempor incd.</div>
-                    </div>
-                </div>
-
-                <!-- Feature Block -->
-                <div class="feature-block-two col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="1200ms">
-                    <div class="inner-box">
-                        <div class="icon-box"><span class="icon flaticon-employee"></span></div>
-                        <h4><a href="about.html">New People</a></h4>
-                        <div class="text">Dolor sit amet consectetur elit sed do eiusmod tempor incd.</div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
     </section>
-    <!--End Features Section -->
-
-    <!-- Call to action -->
-    <section class="call-to-action" style="background-image: url(assets_user/images/background/11.jpg);">
-        <div class="auto-container">
-            <div class="content-box">
-                <div class="text">WE’RE A LEADING MEETUP COMPANY</div>
-                <h2>We Are Always at The Forefront <br> of The Business Conference !</h2>
-                <div class="btn-box">
-                    <a href="contact.html" class="theme-btn btn-style-one"><span class="btn-title">Contact Us</span></a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--End Call to action -->
+    <!--End Sponsor Section-->
 
      <!-- Event Info Section -->
     <section class="event-info-section">
@@ -237,7 +174,7 @@
                     <!--Map Outer-->
                     <div class="map-outer">
                         <!--Map Canvas-->
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25216.765666144616!2d144.9456413371385!3d-37.8112271492458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642b8c21cb29b%3A0x1c045678462e3510!2sMelbourne%20VIC%203000%2C%20Australia!5e0!3m2!1sen!2s!4v1599237324751!5m2!1sen!2s" height="435"></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.1592746665556!2d106.84278481435332!3d-6.242729595481177!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3b9259615c5%3A0x1fa5a36bd5f609ec!2sSOHO%20Pancoran!5e0!3m2!1sid!2sid!4v1649906085873!5m2!1sid!2sid" height="435"></iframe>
                     </div>
                 </div>
             </div>

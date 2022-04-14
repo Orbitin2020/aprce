@@ -90,7 +90,7 @@
         </div>
 
         <!--Scroll to top-->
-        <div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-double-up"></span></div>
+        <div class="scroll-to-top scroll-to-target" data-target="html" style="background: #D20000"><span class="fa fa-angle-double-up"></span></div>
         
         {{-- Script --}}
             @include('layouts_user.incl_bot')

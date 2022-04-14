@@ -13,44 +13,37 @@
 <!--End Page Title-->
 
 <!-- Speakers Section -->
-<section class="speakers-section-two">
-    <div class="anim-icons">
-        <span class="icon icon-circle-4 wow zoomIn"></span>
-        <span class="icon icon-circle-3 wow zoomIn"></span>
-    </div>
-
+<section class="speakers-section" style="background-image: url(assets_user/images/background/semi-banner.jpg);">
     <div class="auto-container">
-        <div class="sec-title text-center">
-            <span class="title">Speakers</span>
+        <div class="sec-title light text-center">
+            <span class="title" style="background: none">Speakers</span>
             <h2>Todays Performers</h2>
         </div>
 
         <div class="row">
-
-            <!-- Speaker Block -->
             @foreach ($speaker as $d)
-            <div class="speaker-block-two col-xl-3 col-lg-4 col-md-6 col-sm-12 wow fadeInUp">
-                <div class="inner-box">
-                    <div class="info-box">
-                        <h4 class="name"><a href="speakers-detail.html">{{$d->speakName}}</a></h4>
-                        <span class="designation">{{$d->speakJob}}</span>
+                 <!-- Speaker Block -->
+                <div class="speaker-block col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                    <div class="inner-box">
+                        <div class="image-box">
+                            <figure class="image"><a href="speakers-detail.html"><img src="{{asset('uploads/speaker/'.$d->speakFoto)}}" alt=""></a></figure>
+                        </div>
+                        <div class="info-box" style="background-color: rgb(219 5 5 / 90%);">
+                            <div class="inner">
+                                <h4 class="name"><a href="speakers-detail.html">{{($d->speakName)}}</a></h4>
+                                <span class="designation">{{($d->speakJob)}}</span>
+                                <ul class="social-links social-icon-colored">
+                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-dribbble"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <div class="image-box">
-                        <figure class="image"><a href=""><img src="{{ asset('uploads/speaker/'.$d->speakFoto)}}" alt=""></a></figure>
-                    </div>
-                    {{-- <div class="social-box">
-                        <ul class="social-links social-icon-colored">
-                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
-                            <li><a href="#"><i class="fab fa-dribbble"></i></a></li>
-                        </ul>
-                    </div> --}}
                 </div>
-            </div>
             @endforeach
-            
-
+           
         </div>
     </div>
 </section>

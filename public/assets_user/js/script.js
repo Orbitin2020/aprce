@@ -276,7 +276,7 @@
 	if ($('.schedule-carousel').length) {
 		$('.schedule-carousel').owlCarousel({
 			loop:false,
-			// margin:30,
+			margin:30,
 			items:2,
 			nav:true,
 			lazyLoad: true,

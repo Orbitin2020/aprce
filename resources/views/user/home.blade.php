@@ -35,25 +35,25 @@
                     @foreach ($speaker as $f)
                     <div class="gallery-item col-lg-4 col-md-6 col-sm-12 wow fadeIn">
                         <div class="image-box">
-                            <figure class="image"><img class="" src="{{ asset('uploads/speaker/'.$f['speakFoto'])}}" alt="" style="height: 150px;width:150px"></figure>
-                            <div class="overlay-box" style="left: 0; right: 0;height: 150px;width:150px">
+                            <figure class="image"><img class="mx-auto" src="{{ asset('uploads/speaker/'.$f['speakFoto'])}}" alt="" style="height: 150px;width:150px"></figure>
+                            <div class="overlay-box" style="left: 0; right: 0;margin-left: auto; margin-right: auto;height: 150px;width:150px">
                                 <a href="{{ asset('uploads/speaker/'.$f['speakFoto'])}}" class="lightbox-image" data-fancybox="gallery"><span class="icon fa fa-expand-arrows-alt"></span>
                                 </a>
                             </div>
                         </div>
                         <div class="">
                             @if ($f['speakPrioritas'] == 2)
-                            <h6 style="color: #FF0000;">Keynote Speech</h6>
-                            <h6 style="color: #000000;font-weight:bold;">{{$f['speakName']}}</h6>
-                            <h6 style="color: #000000;">{{$f['speakJob']}}</h6>
+                            <h6 class="text-center" style="color: #FF0000;">Keynote Speech</h6>
+                            <h6 class="text-center" style="color: #000000;font-weight:bold;">{{$f['speakName']}}</h6>
+                            <h6 class="text-center" style="color: #000000;">{{$f['speakJob']}}</h6>
                             @elseif($f['speakPrioritas'] == 3)
-                            <h6 style="color: #FF0000;">Welcome Remarks</h6>
-                            <h6 style="color: #000000;font-weight:bold;">{{$f['speakName']}}</h6>
-                            <h6 style="color: #000000;">{{$f['speakJob']}}</h6>
+                            <h6 class="text-center" style="color: #FF0000;">Welcome Remarks</h6>
+                            <h6 class="text-center" style="color: #000000;font-weight:bold;">{{$f['speakName']}}</h6>
+                            <h6 class="text-center" style="color: #000000;">{{$f['speakJob']}}</h6>
                             @elseif($f['speakPrioritas'] == 4)
-                            <h6 style="color: #FF0000;">Opening Remarks</h6>
-                            <h6 style="color: #000000;font-weight:bold;">{{$f['speakName']}}</h6>
-                            <h6 style="color: #000000;">{{$f['speakJob']}}</h6>
+                            <h6 class="text-center" style="color: #FF0000;">Opening Remarks</h6>
+                            <h6 class="text-center" style="color: #000000;font-weight:bold;">{{$f['speakName']}}</h6>
+                            <h6 class="text-center" style="color: #000000;">{{$f['speakJob']}}</h6>
                             @else
                             <h6 style="color: yellow;">Speakers</h6>
                             <h6>{{$f['speakName']}}</h6>
@@ -317,7 +317,7 @@
                     <!--Map Outer-->
                     <div class="map-outer">
                         <!--Map Canvas-->
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25216.765666144616!2d144.9456413371385!3d-37.8112271492458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642b8c21cb29b%3A0x1c045678462e3510!2sMelbourne%20VIC%203000%2C%20Australia!5e0!3m2!1sen!2s!4v1599237324751!5m2!1sen!2s" height="435"></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.1592746665556!2d106.84278481435332!3d-6.242729595481177!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3b9259615c5%3A0x1fa5a36bd5f609ec!2sSOHO%20Pancoran!5e0!3m2!1sid!2sid!4v1649906085873!5m2!1sid!2sid" height="435"></iframe>
                     </div>
                 </div>
             </div>
@@ -352,7 +352,7 @@
         @if (sizeof($offline))
             <div class="auto-container">
                 <div class="sec-title text-center">
-                    <h2>Offline Tickets</h2>
+                    <h2>Choose a Tickets</h2>
                 </div>
 
                 <div class="outer-box">
@@ -382,7 +382,7 @@
         @if (sizeof($online))
             <div class="auto-container">
                 <div class="sec-title text-center">
-                    <h2>Online Tickets</h2>
+                    <h2>Choose a Tickets</h2>
                 </div>
 
                 <div class="outer-box">
@@ -579,7 +579,7 @@
                     Swal.fire({
                         title: 'Please Wait...',
                         text: 'Your data is being processed!',
-                        timer: 2000,
+                        timer: 5000,
                         timerProgressBar: true,
                         didOpen: () => {
                             Swal.showLoading()
