@@ -12,7 +12,7 @@
                 <h2 style="margin-bottom: 0px;margin-top:10px;">World Digital <br>APRCE Indonesia Conference 2022</h2>
                 <span style="margin-bottom: 40px" class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit.<br> Quaerat illum hic aperiam temporibus nostrum veniam aut, debitis ab dolorum magni commodi rem atque numquam voluptates eius consectetur error! Neque, error.</span>
                 <div class="time-counter"><div class="time-countdown clearfix" data-countdown="09/27/2022"></div></div>
-                <div class="btn-box"><a href="buy-ticket.html" class="theme-btn btn-style-two"><span class="btn-title">Booking Now</span></a></div>
+                <div class="btn-box"><a href="#tiket" class="theme-btn btn-style-two"><span class="btn-title">Booking Now</span></a></div>
             </div>
         </div>
     </section>
@@ -203,8 +203,8 @@
     <!-- Schedule Section Style two -->
     <section class="schedule-section style-three">
         <div class="auto-container">
-            <div class="sec-title text-center">
-                <span class="title">About Conference</span>
+            <div class="sec-title text-center" >
+                <span class="title" style="background: none">About Conference</span>
                 <h2>Schedule Plan</h2>
             </div>
 
@@ -340,7 +340,7 @@
     <!--End Call to action -->
 
     <!-- Pricing Section -->
-    <section class="pricing-section-three">
+    <section class="pricing-section-three" id="tiket">
         <div class="anim-icons">
             <span class="icon icon-line-1 wow zoomIn"></span>
             <span class="icon icon-circle-1 wow zoomIn"></span>
