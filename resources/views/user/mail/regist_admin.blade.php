@@ -410,7 +410,7 @@ cellspacing="0"><tr><td style="width:270px" valign="top"><![endif]-->
                                                                     style="padding:0;Margin:0;padding-bottom:10px;padding-top:20px">
                                                                     <h1
                                                                         style="Margin:0;line-height:60px;mso-line-height-rule:exactly;font-family:lora, georgia, 'times new roman', serif;font-size:50px;font-style:normal;font-weight:normal;color:#333333">
-                                                                        <em>Welcome {{$name}}</em></h1>
+                                                                        <em>Hi Admin</em></h1>
                                                                 </td>
                                                             </tr>
                                                             <tr style="border-collapse:collapse">
@@ -418,7 +418,7 @@ cellspacing="0"><tr><td style="width:270px" valign="top"><![endif]-->
                                                                     style="padding:0;Margin:0;padding-top:10px;padding-bottom:10px">
                                                                     <h4
                                                                         style="Margin:0;line-height:120%;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;color:#333333">
-                                                                        We're happy to have you with us.</h4>
+                                                                        New Registran</h4>
                                                                 </td>
                                                             </tr>
                                                             <tr style="border-collapse:collapse">
@@ -426,7 +426,10 @@ cellspacing="0"><tr><td style="width:270px" valign="top"><![endif]-->
                                                                     style="padding:0;Margin:0;padding-bottom:20px">
                                                                     <p
                                                                         style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#333333;font-size:14px">
-                                                                        We got your order! we will notify you via email or whatsapp to process the payment</p>
+                                                                        Name : {{$name}}<br>
+                                                                        email : {{$email}}<br>
+                                                                    </p>
+
                                                                     <p
                                                                         style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#333333;font-size:14px">
                                                                         Thanks for buy </p>

@@ -26,7 +26,7 @@
                 <div class="speaker-block col-xl-3 col-lg-4 col-md-6 col-sm-12">
                     <div class="inner-box">
                         <div class="image-box">
-                            <figure class="image"><a href="speakers-detail.html"><img src="{{asset('uploads/speaker/'.$d->speakFoto)}}" alt=""></a></figure>
+                            <figure class="image"><a href="speakers-detail.html"><img src="{{asset('uploads/speaker/'.$d->speakFoto)}}" style="height: 270px;width:270px" alt=""></a></figure>
                         </div>
                         <div class="info-box" style="background-color: rgb(219 5 5 / 90%);">
                             <div class="inner">

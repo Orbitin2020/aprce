@@ -9,9 +9,9 @@
 
         <div class="auto-container">
             <div class="content-box">
-                <h2 style="margin-bottom: 0px;margin-top:10px;">World Digital <br>APRCE Indonesia Conference 2022</h2>
-                <span style="margin-bottom: 40px" class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit.<br> Quaerat illum hic aperiam temporibus nostrum veniam aut, debitis ab dolorum magni commodi rem atque numquam voluptates eius consectetur error! Neque, error.</span>
-                <div class="time-counter"><div class="time-countdown clearfix" data-countdown="09/27/2022"></div></div>
+                <h2 style="margin-bottom: 0px;margin-top:10px;">Asia Pacific Retailers<br>Convention & Exhibition</h2>
+                <span style="margin-bottom: 40px;margin-top: 40px" class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit.<br> Quaerat illum hic aperiam temporibus nostrum veniam aut, debitis ab dolorum magni commodi rem atque numquam voluptates eius consectetur error! Neque, error.</span>
+                <div class="time-counter"><div class="time-countdown clearfix" data-countdown="11/11/2022"></div></div>
                 <div class="btn-box"><a href="#tiket" class="theme-btn btn-style-two"><span class="btn-title">Booking Now</span></a></div>
             </div>
         </div>
@@ -185,8 +185,8 @@
                     <div class="shape-1"></div>
                 </div>
                 <div class="inner-column">
-                    <h3>Welcome to the APRCE <br>Indonesia Summit 2022</h3>
-                    <div class="text">Dolor sit amet consectetur elit sed do eiusmod tempor incd idunt labore et dolore magna aliqua enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip exea commodo consequat</div>
+                    <h3>Welcome to the <br> Asia Pacific Retailers Convention & Exhibition</h3>
+                    <div class="text"> The major project of the Federation of Asia-Pacific Retailers Associations.</div>
                 </div>
             </div>
 
@@ -266,64 +266,7 @@
     </section>
     <!--End schedule Section -->
 
-    <!-- Event Info Section -->
-    <section class="event-info-section">
-        <div class="auto-container">
-            <div class="row">
-                <!-- Info Column -->
-                <div class="info-column col-lg-6 col-md-12 col-sm-12 order-2">
-                    <div class="inner-column">
-                        <div class="sec-title style-two">
-                            <span class="title">Reach us</span>
-                            <h2>Direction for the <br>Event hall</h2>
-                        </div>
-
-                        <div class="event-info-tabs tabs-box">
-                            <!--Tabs Box-->
-                            <ul class="tab-buttons clearfix">
-                                <li class="tab-btn active-btn" data-tab="#tab1">Time</li>
-                            </ul>
-
-                            <div class="tabs-content">
-                                <!--Tab-->
-                                <div class="tab active-tab" id="tab1">
-                                    <h4><span class="icon far fa-calendar"></span> January 20, 2020</h4>
-                                    <div class="text">9.00 AM - 04.00 PM</div>
-                                    <ul class="info-list">
-                                        <li><span class="icon icon_profile"></span> Dianne Ameter</li>
-                                        <li><span class="icon icon_phone"></span> <a href="tel:+690-147-265-345">+123 456 7890</a></li>
-                                        <li><span class="icon icon_mail"></span> <a href="mailto:sopport@Eventrox.com">sopport@Eventrox.com</a></li>
-                                    </ul>
-                                </div>
-
-                                <!--Tab-->
-                                <div class="tab" id="tab2">
-                                    <h4><span class="icon fa fa-map-marker-alt"></span>Pearl hotel, New york, USA</h4>
-                                    <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt labore et dolore magna aliqua. Aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.</div>
-                                </div>
-
-                                <!--Tab-->
-                                <div class="tab" id="tab3">
-                                    <h4><span class="icon fa fa-directions"></span> How to get there</h4>
-                                    <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt labore et dolore magna aliqua. Aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Image Column -->
-                <div class="map-column col-lg-6 col-md-12 col-sm-12">
-                    <!--Map Outer-->
-                    <div class="map-outer">
-                        <!--Map Canvas-->
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.1592746665556!2d106.84278481435332!3d-6.242729595481177!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3b9259615c5%3A0x1fa5a36bd5f609ec!2sSOHO%20Pancoran!5e0!3m2!1sid!2sid!4v1649906085873!5m2!1sid!2sid" height="435"></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--End Event Info Section -->
+   
 
     <!-- Call to action -->
     <section class="call-to-action" style="background-image: url(assets_user/images/background/semi-banner.jpg);">
@@ -349,65 +292,36 @@
         <div class="sec-title text-center">
             <span class="title">Get Ticket</span>
         </div>
-        @if (sizeof($offline))
-            <div class="auto-container">
-                <div class="sec-title text-center">
-                    <h2>Choose a Tickets</h2>
-                </div>
+        
+        <div class="auto-container">
+            <div class="sec-title text-center">
+                <h2>Choose a Tickets</h2>
+            </div>
 
-                <div class="outer-box">
-                    <div class="row">
-                        @foreach ($offline as $d)
-                            <div class="pricing-block-three col-lg-4 col-md-6 col-sm-12 wow fadeInUp centered">
-                                <div class="inner-box">
-                                    <div class="title">{{$d->nama}}</div>
-                                    <h4 class="price">${{$d->harga}}</h4>
-                                    <ul class="features">
-                                        <li>01 Conference Tickets</li>
-                                        <li>Free Lunch And Coffee</li>
-                                        <li>Certificate</li>
-                                    </ul>
-                                    <input id type="hidden" value="{{$d->id}}">
-                                    <button id="userRegist" class="theme-btn btn-style-one" type="button" data-id="{{$d->id}}" data-toggle="modal" data-target="#modalRegist">
-                                        <span class="btn-title">BUY Ticket</span>
-                                    </button>
-                                </div>
+            <div class="outer-box">
+                <div class="row">
+                    @foreach ($tiket as $d)
+                        <div class="pricing-block-three col-lg-4 col-md-6 col-sm-12 wow fadeInUp centered">
+                            <div class="inner-box">
+                                <div class="title">{{$d->nama}}</div>
+                                <h4 class="price">${{$d->harga}}</h4>
+                                <ul class="features">
+                                    <li>01 Conference Tickets</li>
+                                    <li>Free Lunch And Coffee</li>
+                                    <li>Certificate</li>
+                                </ul>
+                                {{-- <input id="tiket" type="hidden" value="{{$d->id}}"> --}}
+                                <button id="userRegist" class="theme-btn btn-style-one" type="button" data-id="{{$d->id}}" data-toggle="modal" data-target="#modalRegist">
+                                    <span class="btn-title">BUY Ticket</span>
+                                </button>
                             </div>
-                        @endforeach
-                    </div>
+                        </div>
+                    @endforeach
                 </div>
             </div>
-        @endif
-
-        @if (sizeof($online))
-            <div class="auto-container">
-                <div class="sec-title text-center">
-                    <h2>Choose a Tickets</h2>
-                </div>
-
-                <div class="outer-box">
-                    <div class="row">
-                        @foreach ($online as $d)
-                            <div class="pricing-block-three col-lg-4 col-md-6 col-sm-12 wow fadeInUp centered">
-                                <div class="inner-box">
-                                    <div class="title">{{$d->nama}}</div>
-                                    <h4 class="price">${{$d->harga}}</h4>
-                                    <ul class="features">
-                                        <li>01 Conference Tickets</li>
-                                        <li>Free Lunch And Coffee</li>
-                                        <li>Certificate</li>
-                                    </ul>
-                                    <input id type="hidden" value="{{$d->id}}">
-                                    <button id="userRegist" class="theme-btn btn-style-one" type="button" data-toggle="modal" data-id="{{$d->id}}" data-target="#modalRegist">
-                                        <span class="btn-title">Buy Ticket</span>
-                                    </button>
-                                </div>
-                            </div>
-                        @endforeach
-                    </div>
-                </div>
-            </div>
-        @endif
+        </div>
+        
+       
     </section>
     <!--End Pricing Section -->
 
@@ -519,7 +433,7 @@
                             <input type="number" name="quantity" placeholder="Quantity" required="">
                         </div>
                         <div class="form-group">
-                            <input type="hidden" id="tiket" name="tiket">
+                            <input type="hidden" id="tiket_id" name="tiket_id">
                         </div>
                         <div class="form-group">
                             <button id="saveBtn" class="theme-btn btn-style-three" type="button" name="submit">
@@ -560,7 +474,8 @@
         // Store Pengaduan
         $('#saveBtn').click(function(e){
             e.preventDefault();
-            $('#tiket').val(idTiket);
+            $('#tiket_id').val(idTiket);
+            console.log( $('#tiket_id').val())
             var formData = new FormData(document.getElementById("frm_regist"));
             var url;
             var type;

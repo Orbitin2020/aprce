@@ -34,11 +34,10 @@ class HomeController extends Controller
         $schedule = array_values($schedule);
         // dd($schedule);
         
-        $offline = Tiket::where('kategori','offline')->orderBy('harga')->get();
-        $online = Tiket::where('kategori','online')->orderBy('harga')->get();
+        $tiket = Tiket::orderBy('harga')->get();
         $sponsor = Sponsor::all();
         // dd($online);
-        return view('user.home',compact('jokowi','speaker','schedule','offline','online','sponsor'));
+        return view('user.home',compact('jokowi','speaker','schedule','tiket','sponsor'));
     }
 
     public function about()

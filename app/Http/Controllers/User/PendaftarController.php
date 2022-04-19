@@ -28,10 +28,10 @@ class PendaftarController extends Controller
         $pendaftar->email = $request->email;
         $pendaftar->nohp = $request->nohp;
         $pendaftar->quantity = $request->quantity;
-        $pendaftar->tiket_id = $request->tiket;
+        $pendaftar->tiket_id = $request->tiket_id;
         $pendaftar->save();
 
-        $data_tiket = $this->getTiket($request->tiket);
+        $data_tiket = $this->getTiket($request->tiket_id);
         // email data
         $email_data = array(
             'name' => $request->nama,
@@ -44,7 +44,13 @@ class PendaftarController extends Controller
         
         Mail::send('user.mail.regist_mail', $email_data, function ($message) use ($email_data) {
             $message->to($email_data['email'], $email_data['name'])
-                ->subject('Welcome to Fikri Haidar')
+                ->subject('Welcome to APRCE')
+                ->from('fikrihaidar24@gmail.com', 'Fikri Haidar');
+        });
+
+        Mail::send('user.mail.regist_admin', $email_data, function ($message) use ($email_data) {
+            $message->to('sosmed.orbitin@gmail.com', 'Orbitin ID')
+                ->subject('New Registran')
                 ->from('fikrihaidar24@gmail.com', 'Fikri Haidar');
         });
         
