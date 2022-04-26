@@ -186,7 +186,7 @@
                 </div>
                 <div class="inner-column">
                     <h3>Welcome to the <br> Asia Pacific Retailers Convention & Exhibition</h3>
-                    <div class="text"> The major project of the Federation of Asia-Pacific Retailers Associations.</div>
+                    <div class="text">Asia's biggest and longest running retail convention and exhibition</div>
                 </div>
             </div>
 

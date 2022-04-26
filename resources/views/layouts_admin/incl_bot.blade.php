@@ -1,5 +1,5 @@
 <script src="{{asset('assets/js/codebase.core.min.js')}}"></script>
-<script src="{{asset('assets/js/codebase.app.min.js')}}""></script>
+<script src="{{asset('assets/js/codebase.app.min.js')}}"></script>
 
 <!-- Page JS Plugins -->
 {{-- chart --}}
@@ -45,8 +45,8 @@
 
 <!-- Page JS Helpers (Select2 plugin) -->
 <script>jQuery(function(){ Codebase.helpers('select2'); });</script>
-<script>jQuery(function(){ Codebase.helpers('content-filter'); });</script>
-
+<script>jQuery(function(){ Codebase.helpers(['summernote']); });</script>
+<script src="{{asset('assets/js/pages/be_tables_datatables.min.js')}}"></script>
 <script>
      $.ajaxSetup({
       headers: {

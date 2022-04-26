@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get("/page", function(){
-    return view('user.mail.regist_mail');
- });
+// Route::get("/page", function(){
+//     return view('user.mail.regist_mail');
+//  });
 Route::get('/','User\HomeController@index')->name('user.index');
 Route::get('/home','User\HomeController@index')->name('user.index');
 Route::get('/about','User\HomeController@about')->name('user.about');

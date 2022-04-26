@@ -5,9 +5,8 @@
             <!--Top Left-->
             <div class="top-left clearfix">
                 <ul class="links clearfix">
-                    <li><a href="#"><span class="icon fa fa-phone"></span>Call : 1-000-000-0000</a></li>
-                    <li><a href="#"><span class="icon fa fa-envelope"></span>info@eventrox.com</a></li>
-                    <li><a href="#"><span class="icon fa fa-clock"></span>Open Hours 09:00 am - 06:00 pm</a></li>
+                    <li><a href="#"><span class="icon fa fa-phone" style="color: white"></span>Call : Nomor Telpon APRCE</a></li>
+                    <li><a href="#"><span class="icon fa fa-envelope" style="color: white"></span>info@aprce.com</a></li>
                 </ul>
             </div>
 
