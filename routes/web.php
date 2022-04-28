@@ -13,9 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get("/page", function(){
-//     return view('user.mail.regist_mail');
-//  });
+Route::get("/page", function(){
+    return view('user.mail.regist_mail');
+ });
+
+Route::get('/snap', 'User\CheckoutController@snap')->name('snap'); 
+Route::post('/snaptoken', 'User\CheckoutController@token')->name('snaptoken');
+Route::post('/snapFinish', 'User\CheckoutController@finish');
+
 Route::get('/','User\HomeController@index')->name('user.index');
 Route::get('/home','User\HomeController@index')->name('user.index');
 Route::get('/about','User\HomeController@about')->name('user.about');
@@ -23,5 +28,3 @@ Route::get('/speaker','User\HomeController@speaker')->name('user.speaker');
 Route::get('/schedule','User\HomeController@schedule')->name('user.schedule');
 Route::get('/contact','User\HomeController@contact')->name('user.contact');
 Route::post('/registrasi','User\PendaftarController@store')->name('daftar.store');
-
-

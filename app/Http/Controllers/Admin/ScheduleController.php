@@ -38,6 +38,7 @@ class ScheduleController extends Controller
                 ->addColumn('speaker', function ($schedule) {
                     if ($schedule != null) {
                         $data = array();
+                        $fx = array();
                         foreach($schedule->speaker as $d)
                         {
                             $data[] = $d->speakName;
@@ -47,7 +48,6 @@ class ScheduleController extends Controller
                         return $string;
                     }
                 })
-
                 ->addColumn('action', function ($row) {
                     $btn = '';
                     $btn = $btn . '<button href="javascript:void(0)" data-id="' . $row->id . '" id="edit" type="button" class="edit btn btn-primary btn-sm m-1" tittle="Edit"><i class="fa fa-pencil" ></i></button>';

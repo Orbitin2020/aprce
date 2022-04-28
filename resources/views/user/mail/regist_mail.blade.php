@@ -308,7 +308,6 @@ a {text-decoration: none;}
                 display: inline-block !important
             }
         }
-
     </style>
 </head>
 
@@ -410,7 +409,9 @@ cellspacing="0"><tr><td style="width:270px" valign="top"><![endif]-->
                                                                     style="padding:0;Margin:0;padding-bottom:10px;padding-top:20px">
                                                                     <h1
                                                                         style="Margin:0;line-height:60px;mso-line-height-rule:exactly;font-family:lora, georgia, 'times new roman', serif;font-size:50px;font-style:normal;font-weight:normal;color:#333333">
-                                                                        <em>Welcome {{$name}}</em></h1>
+                                                                        {{-- <em>Welcome {{$name}}</em> --}}
+                                                                        <em>Welcome Example</em>
+                                                                    </h1>
                                                                 </td>
                                                             </tr>
                                                             <tr style="border-collapse:collapse">
@@ -426,7 +427,8 @@ cellspacing="0"><tr><td style="width:270px" valign="top"><![endif]-->
                                                                     style="padding:0;Margin:0;padding-bottom:20px">
                                                                     <p
                                                                         style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#333333;font-size:14px">
-                                                                        We got your order! we will notify you via email or whatsapp to process the payment</p>
+                                                                        We got your order! we will notify you via email
+                                                                        or whatsapp to process the payment</p>
                                                                     <p
                                                                         style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#333333;font-size:14px">
                                                                         Thanks for buy </p>
@@ -468,7 +470,8 @@ cellspacing="0"><tr><td style="width:200px" valign="top"><![endif]-->
                                                                     <img src="https://wbnxex.stripocdn.email/content/guids/CABINET_66498ea076b5d00c6f9553055acdb37a/images/39911527588288171.png"
                                                                         alt
                                                                         style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic"
-                                                                        width="24"></td>
+                                                                        width="24">
+                                                                </td>
                                                             </tr>
                                                             <tr style="border-collapse:collapse">
                                                                 <td align="center"
@@ -499,7 +502,8 @@ cellspacing="0"><tr><td style="width:200px" valign="top"><![endif]-->
                                                                     <img src="https://wbnxex.stripocdn.email/content/guids/CABINET_66498ea076b5d00c6f9553055acdb37a/images/35681527588356492.png"
                                                                         alt
                                                                         style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic"
-                                                                        width="24"></td>
+                                                                        width="24">
+                                                                </td>
                                                             </tr>
                                                             <tr style="border-collapse:collapse">
                                                                 <td esdev-links-color="#ffffff" align="center"
@@ -530,7 +534,8 @@ cellspacing="0"><tr><td style="width:200px" valign="top"><![endif]-->
                                                                     <img src="https://wbnxex.stripocdn.email/content/guids/CABINET_66498ea076b5d00c6f9553055acdb37a/images/50681527588357616.png"
                                                                         alt
                                                                         style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic"
-                                                                        width="24"></td>
+                                                                        width="24">
+                                                                </td>
                                                             </tr>
                                                             <tr style="border-collapse:collapse">
                                                                 <td align="center" style="padding:0;Margin:0">
@@ -538,7 +543,8 @@ cellspacing="0"><tr><td style="width:200px" valign="top"><![endif]-->
                                                                         style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:24px;color:#ffffff;font-size:16px">
                                                                         <a target="_blank"
                                                                             style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:underline;color:#ffffff;font-size:16px"
-                                                                            href="tel:123456789">123456789</a></p>
+                                                                            href="tel:123456789">123456789</a>
+                                                                    </p>
                                                                 </td>
                                                             </tr>
                                                         </table>

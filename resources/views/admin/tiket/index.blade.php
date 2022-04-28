@@ -8,7 +8,7 @@
         <div class="block-content block-content-full">
             <button type="button" id="addTiket" data-toggle="modal" data-target="#modalTiket"
                 class="btn btn-outline-primary mb-4"><i class="fa fa-plus"></i> Add Tiket</button>
-            <table  class="table table-bordered table-striped table-vcenter js-dataTable-full-pagination tableTiket">
+            <table class="table table-bordered table-striped table-vcenter js-dataTable-full-pagination tableTiket">
                 <thead>
                     <tr>
                         <th class="text-center" style="width: 5%">no</th>
@@ -16,6 +16,7 @@
                         <th class="text-center">harga</th>
                         <th class="text-center">kategori</th>
                         <th class="text-center">participant</th>
+                        <th class="text-center">Limit</th>
                         <th class="d-none d-sm-table-cell text-center" style="width: 15%;">created_at</th>
                         <th class="text-center" style="width: 15%;">action</th>
                     </tr>
@@ -53,26 +54,33 @@
                                         <i class="fa fa-dollar"></i>
                                     </span>
                                 </div>
-                                <input type="text" class="form-control" id="harga" name="harga" placeholder="Harga">
+                                <input type="number" class="form-control" id="harga" name="harga" placeholder="Harga">
                             </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="Limit">Limit</label>
+                            <input type="number" class="form-control" id="limit" name="limit" placeholder="Limit Tiket">
                         </div>
                         <div class="form-group">
                             <label for="nama">Kategori</label>
                             <div class="s_kategori">
-                                <select class="js-select2 form-control" name="kategori" id="kategori" style="width: 100%;" data-placeholder="Choose one">
+                                <select class="js-select2 form-control" name="kategori" id="kategori"
+                                    style="width: 100%;" data-placeholder="Choose one">
                                     <option value=""></option>
-                                    <option value="offline">offline</option><!-- Required for data-placeholder attribute to work with Select2 plugin -->
+                                    <option value="offline">offline</option>
+                                    <!-- Required for data-placeholder attribute to work with Select2 plugin -->
                                     <option value="online">online</option>
-
                                 </select>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="nama">Participant</label>
                             <div class="s_participant">
-                                <select class="js-select2 form-control" name="participant" id="participant" style="width: 100%;" data-placeholder="Choose one">
+                                <select class="js-select2 form-control" name="participant" id="participant"
+                                    style="width: 100%;" data-placeholder="Choose one">
                                     <option value=""></option>
-                                    <option value="FAPRA">FAPRA</option><!-- Required for data-placeholder attribute to work with Select2 plugin -->
+                                    <option value="FAPRA">FAPRA</option>
+                                    <!-- Required for data-placeholder attribute to work with Select2 plugin -->
                                     <option value="NON-FAPRA">NON-FAPRA</option>
                                 </select>
                             </div>

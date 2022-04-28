@@ -97,6 +97,7 @@
                 
                 type = "POST"
             }
+
             $.ajax({
                 headers : {
                     'X-CSRF-TOKEN' : "{{csrf_token()}}"
@@ -150,7 +151,6 @@
                     // $("#admin").append('<option value="'+res.data.id+'">Default=='+data.default.name+'</option>');
                     $.each(res.speaker,function(key, value)
                     {
-                        
                         $("#speaker").append('<option value=' + value.id + '>' + value.speakName + '</option>');
                     });
 

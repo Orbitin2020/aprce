@@ -8,7 +8,7 @@
         <div class="block-content block-content-full">
             <button type="button" id="addSchedule" data-toggle="modal" data-target="#modalSchedule"
                 class="btn btn-outline-primary mb-4"><i class="fa fa-plus"></i> Add Speaker</button>
-            <table  class="table table-bordered table-striped table-vcenter js-dataTable-full-pagination tableSchedule">
+            <table class="table table-bordered table-striped table-vcenter js-dataTable-full-pagination tableSchedule">
                 <thead>
                     <tr>
                         <th class="text-center" style="width: 5%">no</th>
@@ -27,7 +27,8 @@
 </div>
 
 {{-- Modal Add Wilayah --}}
-<div class="modal fade" id="modalSchedule" tabindex="-1" role="dialog" aria-labelledby="modalSchedule" aria-hidden="true">
+<div class="modal fade" id="modalSchedule" tabindex="-1" role="dialog" aria-labelledby="modalSchedule"
+    aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="block block-themed block-transparent mb-0">
@@ -48,24 +49,29 @@
                         </div>
                         <div class="form-group">
                             <label for="nama">Tanggal Mulai</label>
-                            <input type="text" class="form-control" id="tgl_mulai" name="tgl_mulai" placeholder="Tanggal Mulai">
+                            <input type="text" class="form-control" id="tgl_mulai" name="tgl_mulai"
+                                placeholder="Tanggal Mulai">
                         </div>
                         <div class="form-group">
                             <label for="nama">Tanggal Akhir</label>
-                            <input type="text" class="form-control" id="tgl_akhir" name="tgl_akhir" placeholder="Tanggal Akhir">
+                            <input type="text" class="form-control" id="tgl_akhir" name="tgl_akhir"
+                                placeholder="Tanggal Akhir">
                         </div>
                         <div class="form-group">
                             <label for="nama">Speaker</label>
                             <div class="s_speaker">
-                                <select class="js-select2 form-control" id="speaker" name="speaker[]" style="width: 100%;" data-placeholder="Choose many.." multiple>
-                                    <option></option><!-- Required for data-placeholder attribute to work with Select2 plugin -->
+                                <select class="js-select2 form-control" id="speaker" name="speaker[]"
+                                    style="width: 100%;" data-placeholder="Choose many.." multiple>
+                                    <option></option>
+                                    <!-- Required for data-placeholder attribute to work with Select2 plugin -->
 
                                 </select>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="description">Deskripsi</label>
-                            <textarea name="description" id="description" class="form-control" cols="30" rows="10" placeholder="Deskripsi Schedule" ></textarea>
+                            <textarea name="description" id="description" class="form-control" cols="30" rows="10"
+                                placeholder="Deskripsi Schedule"></textarea>
                         </div>
                     </form>
                 </div>

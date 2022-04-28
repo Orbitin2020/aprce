@@ -17,6 +17,12 @@ Route::group(['prefix' => 'admin'], function () {
     Auth::routes();
     Route::get('/registrasi', 'Admin\RegistrasiController@index')->name('admin.registrasi');
 
+    Route::group(['prefix' => 'dashboard'], function() {
+        Route::group(['middleware' => 'auth'], function() {
+            Route::get('/', 'Admin\DashboardController@index')->name('admin.dashboard.index');
+        });
+    });
+
     Route::group(['prefix' => 'speaker'], function () {
         Route::get('/', 'Admin\SpeakerController@index')->name('admin.speaker.index');
         Route::get('/getData', 'Admin\SpeakerController@getData')->name('admin.speaker.data');

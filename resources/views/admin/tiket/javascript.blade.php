@@ -31,6 +31,7 @@
                 {data: 'harga', name: 'harga'},
                 {data: 'kategori', name: 'kategori'},
                 {data: 'participant', name: 'participant'},
+                {data: 'limit', name: 'limit'},
                 {data: 'created_at', name: 'created_at'},
                 {data: 'action', name: 'action', orderable: false, searchable: false},
             ]
@@ -56,7 +57,7 @@
             {
                 url = "{{ route('admin.tiket.store') }}"
                 type = "POST"
-            }else{
+            } else {
                 formData.append('_method', 'PUT');
                 url = '{{ route("admin.tiket.update", ":id") }}';
                 url = url.replace(':id', idEdit );

@@ -1,4 +1,3 @@
-
 <nav id="sidebar">
     <!-- Sidebar Content -->
     <div class="sidebar-content enable-cookies">
@@ -27,9 +26,12 @@
                 <!-- Logo -->
                 <div class="content-header-item">
                     <a class=" font-w700" href="javascript:void(0)">
-                        {{-- <img src="{{asset('assets/media/favicons/favicon2.png')}}" alt="" style="max-height: 45%"> --}}
-                        {{-- <img class="" src="{{asset('assets/media/favicons/ugl1.png')}}" alt="" style="max-height: 30px"> --}}
-                        <span class="font-size-xl text-dual-primary-dark">Ap</span><span class="font-size-xl text-primary">rce</span>
+                        {{-- <img src="{{asset('assets/media/favicons/favicon2.png')}}" alt="" style="max-height: 45%">
+                        --}}
+                        {{-- <img class="" src="{{asset('assets/media/favicons/ugl1.png')}}" alt=""
+                            style="max-height: 30px"> --}}
+                        <span class="font-size-xl text-dual-primary-dark">Ap</span><span
+                            class="font-size-xl text-primary">rce</span>
                     </a>
                 </div>
                 <!-- END Logo -->
@@ -73,7 +75,7 @@
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                             @csrf
                         </form>
-                        
+
                     </li>
                 </ul>
             </div>
@@ -83,8 +85,7 @@
         <div class="content-side content-side-full">
             <ul class="nav-main">
                 <li>
-                    <a href=""><i class="si si-bar-chart"></i><span
-                            class="sidebar-mini-hide">Dashboard</span></a>
+                    <a href="#"><i class="si si-bar-chart"></i><span class="sidebar-mini-hide">Dashboard</span></a>
                 </li>
                 <li>
                     <a href="{{route('admin.speaker.index')}}"><i class="si si-users"></i><span
@@ -109,7 +110,7 @@
             </ul>
         </div>
         <!-- END Side Navigation -->
-        
+
     </div>
     <!-- Sidebar Content -->
 </nav>
