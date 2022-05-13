@@ -71,6 +71,7 @@ class TiketController extends Controller
         $tiket->nama = $request->nama;
         $tiket->kategori = $request->kategori;
         $tiket->participant = $request->participant;
+        $tiket->limit = $request->limit;
         $tiket->save();
         return response()->json([
             'message' => 'Tiket Berhasil Di Update'

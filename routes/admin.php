@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['prefix' => 'admin'], function () {
     Auth::routes();
-    Route::get('/registrasi', 'Admin\RegistrasiController@index')->name('admin.registrasi');
+    // Route::get('/registrasi', '')->name('admin.registrasi');
 
     Route::group(['prefix' => 'dashboard'], function() {
         Route::group(['middleware' => 'auth'], function() {
@@ -60,7 +60,18 @@ Route::group(['prefix' => 'admin'], function () {
         Route::delete('/delete/{id}', 'Admin\SponsorController@delete')->name('admin.sponsor.delete');
     });
    
-    
+    Route::group(['prefix' => 'transaction'], function() {
+        Route::get('/', 'Admin\TransactionController@index');
+        Route::get('/getData', 'Admin\TransactionController@getData');
+        Route::get('/getDetail/{id}', 'Admin\TransactionController@detailData');
+        Route::delete('/delete/{id}', 'Admin\TransactionController@delete');
+    });
+
+    Route::group(['prefix' => 'registrasi'], function() {
+        Route::get('/', 'Admin\RegistrasiController@index')->name('admin.registrasi');
+        Route::get('/getData', 'Admin\RegistrasiController@getData');
+        Route::get('/getEdit/{id}', 'Admin\RegistrasiController@getEdit');
+    });
 });
 
 

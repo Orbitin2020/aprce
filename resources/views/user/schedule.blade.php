@@ -30,12 +30,13 @@
                 <!--Tabs Box-->
                 <ul class="tab-buttons clearfix">
                     @foreach ($schedule as $key => $value)
-                        {{-- {{var_dump($value[$key]["tgl_mulai"])}} --}}
-                        <li class="tab-btn {{$key == 0 ? 'active-btn': '' }} " data-tab="#{{$key}}">
-                            <span class="day">Day {{$key + 1}}</span>
-                            <span class="date">{{date('d', strtotime($value[0]["tgl_mulai"]))}}</span>
-                            <span class="month">{{date('M', strtotime($value[0]["tgl_mulai"]))}}</span> {{date('Y', strtotime($value[0]["tgl_mulai"]))}}
-                        </li>
+                    {{-- {{var_dump($value[$key]["tgl_mulai"])}} --}}
+                    <li class="tab-btn {{$key == 0 ? 'active-btn': '' }} " data-tab="#{{$key}}">
+                        <span class="day">Day {{$key + 1}}</span>
+                        <span class="date">{{date('d', strtotime($value[0]["tgl_mulai"]))}}</span>
+                        <span class="month">{{date('M', strtotime($value[0]["tgl_mulai"]))}}</span> {{date('Y',
+                        strtotime($value[0]["tgl_mulai"]))}}
+                    </li>
                     @endforeach
                 </ul>
             </div>
@@ -46,17 +47,42 @@
                 <div class="tab {{$key == 0 ? 'active-tab': '' }} " id="{{$key}}">
                     <div class="schedule-timeline">
                         @foreach ($value as $d)
-                        <!-- schedule Block -->
-                        <div class="schedule-block {{$loop->iteration % 2 == 0 ? 'even': '' }}">
+                        <div class="schedule-block">
                             <div class="inner-box">
                                 <div class="inner">
-                                    <div class="date">{{date('h:i A', strtotime($d['tgl_mulai']))}}<br>{{date('h:i A', strtotime($d['tgl_akhir']))}}</div>
+                                    <div class="date">{{date('h:i A', strtotime($d['tgl_mulai']))}}<br>{{date('h:i A',
+                                        strtotime($d['tgl_akhir']))}}</div>
+                                    @foreach ($d['speaker'] as $s)
+                                    <div class="speaker-info">
+                                        <figure class="thumb"><img src="{{ asset('uploads/speaker/'.$s['speakFoto'])}}"
+                                                alt="Image">
+                                        </figure>
+                                        <h5 class="name">{{$s['speakName']}}</h5>
+                                        <span class="designation">{{$s['speakJob']}}</span>
+                                    </div>
+                                    @endforeach
+                                    <h4 class="mt-2">{{$d['agenda']}}</h4>
+                                    <div class="text">{!!$d['description']!!}</div>
+                                    <div class="btn-box">
+                                        <a href="event-detail.html" class="theme-btn">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- schedule Block -->
+                        {{-- <div class="schedule-block {{$loop->iteration % 2 == 0 ? 'even': '' }}">
+                            <div class="inner-box">
+                                <div class="inner">
+                                    <div class="date">{{date('h:i A', strtotime($d['tgl_mulai']))}}<br>{{date('h:i A',
+                                        strtotime($d['tgl_akhir']))}}</div>
                                     <div class="schedule-carousel owl-carousel owl-theme">
                                         @foreach ($d['speaker'] as $s)
                                         <div class="speaker-info">
-                                            <figure class="thumb"><img src="{{ asset('uploads/speaker/'.$s['speakFoto'])}}" alt=""></figure>
+                                            <figure class="thumb"><img
+                                                    src="{{ asset('uploads/speaker/'.$s['speakFoto'])}}" alt="">
+                                            </figure>
                                             <h5 class="name">{{$s['speakName']}}</h5>
-                                            <span class="designation">{{$s['speakJob']}}</span>
+                                            <p class="designation jobDesc">{{$s['speakJob']}}</p>
                                         </div>
                                         @endforeach
                                     </div>
@@ -67,7 +93,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                         @endforeach
                     </div>
                 </div>

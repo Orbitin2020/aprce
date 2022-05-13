@@ -44,14 +44,16 @@
 <script src="{{asset('assets/js/pages/be_pages_dashboard.min.js')}}"></script>
 
 <!-- Page JS Helpers (Select2 plugin) -->
-<script>jQuery(function(){ Codebase.helpers('select2'); });</script>
-<script>jQuery(function(){ Codebase.helpers(['summernote']); });</script>
 <script>
-     $.ajaxSetup({
+  jQuery(function(){ Codebase.helpers('select2'); });
+</script>
+<script>
+  jQuery(function(){ Codebase.helpers(['summernote']); });
+</script>
+<script>
+  $.ajaxSetup({
       headers: {
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
       }
     });
 </script>
-
-

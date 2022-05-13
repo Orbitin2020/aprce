@@ -16,4 +16,14 @@ class Pendaftar extends Model
     {
         return $this->belongsTo(Tiket::class, 'tiket_id');
     }
+
+    public function transaction()
+    {
+        return $this->hasOne(Transaction::class, 'id_transaction', 'transaction_id');
+    }
+
+    public function getTiket()
+    {
+        return $this->hasOne(Tiket::class, 'id', 'tiket_id');
+    }
 }

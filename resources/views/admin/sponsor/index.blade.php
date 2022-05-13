@@ -3,12 +3,12 @@
 <div class="content">
     <div class="block">
         <div class="block-header block-header-default">
-            <h3 class="block-title">List Sponsor</h3>
+            <h3 class="block-title text-white">List Sponsor</h3>
         </div>
         <div class="block-content block-content-full">
             <button type="button" id="addSponsor" data-toggle="modal" data-target="#modalSponsor"
                 class="btn btn-outline-primary mb-4"><i class="fa fa-plus"></i> Add Sponsor</button>
-            <table  class="table table-bordered table-striped table-vcenter js-dataTable-full-pagination tableSponsor">
+            <table class="table table-bordered table-striped table-vcenter js-dataTable-full-pagination tableSponsor">
                 <thead>
                     <tr>
                         <th class="text-center" style="width: 5%">no</th>
@@ -46,7 +46,7 @@
                         <div class="">
                             <div class="form-group ">
                                 <label class="" for="foto">Gambar</label>
-                                <input type="file" class="form-control" name="gambar" id="gambar" >
+                                <input type="file" class="form-control" name="gambar" id="gambar">
                             </div>
                         </div>
                         <div class="col-xl-12">

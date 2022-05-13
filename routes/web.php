@@ -14,8 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get("/page", function(){
-    return view('user.mail.regist_mail');
- });
+    return view('user.mail.regist_admin');
+});
+
+Route::get('/hasilTransaction', 'User\CheckoutController@done');
 
 Route::get('/snap', 'User\CheckoutController@snap')->name('snap'); 
 Route::post('/snaptoken', 'User\CheckoutController@token')->name('snaptoken');

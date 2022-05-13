@@ -3,7 +3,7 @@
 <div class="content">
     <div class="block">
         <div class="block-header block-header-default">
-            <h3 class="block-title">List Schedule</h3>
+            <h3 class="block-title text-white">List Schedule</h3>
         </div>
         <div class="block-content block-content-full">
             <button type="button" id="addSchedule" data-toggle="modal" data-target="#modalSchedule"

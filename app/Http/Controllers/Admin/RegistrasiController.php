@@ -5,6 +5,11 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Pendaftar;
+use App\Models\Tiket;
+use Auth;
+use DataTables;
+use Validator;
+
 class RegistrasiController extends Controller
 {
     public function __construct()
@@ -14,37 +19,26 @@ class RegistrasiController extends Controller
 
     public function index()
     {
-        return view('admin.registrasi.index');
+        $tiket = Tiket::get();
+        return view('admin.registrasi.index', compact('tiket'));
     }
 
-    public function getData(Request $request)
+    public function getData()
     {
-        // $schedule = Schedule::with('speaker')->latest()->get();
-        // dd($schedule[0]->speaker);
+        $query = Pendaftar::with(['transaction'])->get();
+        return DataTables::of($query) 
+            ->addIndexColumn()
+            ->addColumn('Actions', function($query) {
+                $html = '<button href="javascript:void(0)" data-id="' . $query->id_pendaftar . '" id="editRegistrasi" type="button" class="detail btn btn-warning btn-sm m-1" tittle="detail"><i class="fa fa-edit" ></i></button><button href="javascript:void(0)" data-id="' . $query->id_pendaftar . '" id="deleteTransaction" type="button" class="delete btn btn-danger btn-sm m-1" tittle="Hapus"><i class="fa fa-trash" ></i></button>';
+                return $html;
+            })
+            ->rawColumns(['Actions'])
+            ->make(true);
+    }
 
-        if ($request->ajax()) {
-            $regist = Pendaftar::with('tiket')->latest()->get();
-            return Datatables::of($regist)
-                ->addIndexColumn()
-                ->addColumn('created_at', function ($regist) {
-
-                    return date('d-m-Y', strtotime($regist->created_at));
-                })
-                ->addColumn('tiket', function ($regist) {
-                    if ($regist->tiket_id != null) {
-                        return $regist->tiket->nama;
-                    }
-                })
-
-                ->addColumn('action', function ($row) {
-                    $btn = '';
-                    $btn = $btn . '<button href="javascript:void(0)" data-id="' . $row->id . '" id="edit" type="button" class="edit btn btn-primary btn-sm m-1" tittle="Edit"><i class="fa fa-pencil" ></i></button>';
-                    $btn = $btn . '<button href="javascript:void(0)" data-id="' . $row->id . '" id="delete" type="button" class="delete btn btn-danger btn-sm m-1" tittle="Hapus"><i class="fa fa-trash" ></i></button>';
-    
-                    return $btn;
-                })
-                ->rawColumns(['speaker','action'])
-                ->make(true);
-        }
+    public function getEdit($id) 
+    {
+        $data = Pendaftar::where('id_pendaftar', $id)->first();
+        return $data;
     }
 }

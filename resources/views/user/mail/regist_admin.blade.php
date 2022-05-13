@@ -25,6 +25,46 @@ a {text-decoration: none;}
 </xml>
 <![endif]-->
     <style type="text/css">
+        .column {
+            float: left;
+            width: 50%;
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        #customers {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #customers td,
+        #customers th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #customers tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #customers tr:hover {
+            background-color: #ddd;
+        }
+
+        #customers th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #DC381F;
+            color: white;
+        }
+
         #outlook a {
             padding: 0;
         }
@@ -307,6 +347,18 @@ a {text-decoration: none;}
             table.es-social td {
                 display: inline-block !important
             }
+
+            .column {
+                float: left;
+                width: 50%;
+            }
+
+            /* Clear floats after the columns */
+            .row:after {
+                content: "";
+                display: table;
+                clear: both;
+            }
         }
     </style>
 </head>
@@ -414,25 +466,44 @@ cellspacing="0"><tr><td style="width:270px" valign="top"><![endif]-->
                                                                 </td>
                                                             </tr>
                                                             <tr style="border-collapse:collapse">
-                                                                <td align="center"
+                                                                <td
                                                                     style="padding:0;Margin:0;padding-top:10px;padding-bottom:10px">
                                                                     <h4
                                                                         style="Margin:0;line-height:120%;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;color:#333333">
-                                                                        New Registran</h4>
+                                                                        New People Registration</h4>
+                                                                    <p>
+                                                                        Full Name: {{ $namaLengkap }}, <br>
+                                                                        Email: {{ $email }}, <br>
+                                                                        Phone: {{ $nohp }}, <br>
+                                                                        Order ID: {{ $order_id }}, <br>
+                                                                        Gross Amount: {{
+                                                                        number_format($gross_amount) }}, <br>
+                                                                        Virtual Account: {{ $va_number }}
+                                                                    </p>
+                                                                    <br>
                                                                 </td>
                                                             </tr>
                                                             <tr style="border-collapse:collapse">
-                                                                <td align="center"
-                                                                    style="padding:0;Margin:0;padding-bottom:20px">
-                                                                    <p
-                                                                        style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#333333;font-size:14px">
-                                                                        Name : {{$name}}<br>
-                                                                        email : {{$email}}<br>
-                                                                    </p>
+                                                                <td style="padding:0;Margin:0;padding-bottom:20px">
+                                                                    <h4
+                                                                        style="Margin:0;line-height:120%;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;color:#333333">
+                                                                        Ticket Details.</h4>
+                                                                    <table id="customers">
+                                                                        <tr>
+                                                                            <th>Nama Ticket</th>
+                                                                            <th>Kategori</th>
+                                                                            <th>Participant</th>
+                                                                            <th>Quantity</th>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>{{ $nm_tiket }}</td>
+                                                                            <td>{{ $kategori }}</td>
+                                                                            <td>{{ $participant }}</td>
+                                                                            <td>{{ $quantity }}</td>
+                                                                        </tr>
 
-                                                                    <p
-                                                                        style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#333333;font-size:14px">
-                                                                        Thanks for buy </p>
+                                                                    </table>
+
                                                                 </td>
                                                             </tr>
                                                         </table>

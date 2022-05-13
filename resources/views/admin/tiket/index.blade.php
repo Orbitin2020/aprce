@@ -3,25 +3,27 @@
 <div class="content">
     <div class="block">
         <div class="block-header block-header-default">
-            <h3 class="block-title">List Tiket</h3>
+            <h3 class="block-title text-white">List Tiket</h3>
         </div>
         <div class="block-content block-content-full">
             <button type="button" id="addTiket" data-toggle="modal" data-target="#modalTiket"
                 class="btn btn-outline-primary mb-4"><i class="fa fa-plus"></i> Add Tiket</button>
-            <table class="table table-bordered table-striped table-vcenter js-dataTable-full-pagination tableTiket">
-                <thead>
-                    <tr>
-                        <th class="text-center" style="width: 5%">no</th>
-                        <th class="text-center" style="width: 5%">nama</th>
-                        <th class="text-center">harga</th>
-                        <th class="text-center">kategori</th>
-                        <th class="text-center">participant</th>
-                        <th class="text-center">Limit</th>
-                        <th class="d-none d-sm-table-cell text-center" style="width: 15%;">created_at</th>
-                        <th class="text-center" style="width: 15%;">action</th>
-                    </tr>
-                </thead>
-            </table>
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped table-vcenter js-dataTable-full-pagination tableTiket">
+                    <thead>
+                        <tr>
+                            <th class="text-center" style="width: 5%">no</th>
+                            <th class="text-center" style="width: 5%">nama</th>
+                            <th class="text-center">harga</th>
+                            <th class="text-center">kategori</th>
+                            <th class="text-center">participant</th>
+                            <th class="text-center">Limit</th>
+                            <th class="d-none d-sm-table-cell text-center" style="width: 15%;">created_at</th>
+                            <th class="text-center" style="width: 15%;">action</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
         </div>
     </div>
 </div>

@@ -25,6 +25,34 @@ a {text-decoration: none;}
 </xml>
 <![endif]-->
     <style type="text/css">
+        #customers {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #customers td,
+        #customers th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #customers tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #customers tr:hover {
+            background-color: #ddd;
+        }
+
+        #customers th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #DC381F;
+            color: white;
+        }
+
         #outlook a {
             padding: 0;
         }
@@ -410,7 +438,7 @@ cellspacing="0"><tr><td style="width:270px" valign="top"><![endif]-->
                                                                     <h1
                                                                         style="Margin:0;line-height:60px;mso-line-height-rule:exactly;font-family:lora, georgia, 'times new roman', serif;font-size:50px;font-style:normal;font-weight:normal;color:#333333">
                                                                         {{-- <em>Welcome {{$name}}</em> --}}
-                                                                        <em>Welcome Example</em>
+                                                                        <em>Welcome {{ $namaLengkap }}</em>
                                                                     </h1>
                                                                 </td>
                                                             </tr>
@@ -420,6 +448,60 @@ cellspacing="0"><tr><td style="width:270px" valign="top"><![endif]-->
                                                                     <h4
                                                                         style="Margin:0;line-height:120%;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;color:#333333">
                                                                         We're happy to have you with us.</h4>
+                                                                </td>
+                                                            </tr>
+                                                            <tr style="border-collapse:collapse">
+                                                                <td
+                                                                    style="padding:0;Margin:0;padding-top:10px;padding-bottom:10px">
+                                                                    <p>
+                                                                        Full Name: {{ $namaLengkap }}, <br>
+                                                                        Email: {{ $email }}, <br>
+                                                                        Phone: {{ $nohp }}
+                                                                    </p>
+                                                                    <br>
+                                                                    <h4
+                                                                        style="Margin:0;line-height:120%;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;color:#333333">
+                                                                        Ticket Details.</h4>
+                                                                    <table id="customers">
+                                                                        <tr>
+                                                                            <th>Nama Ticket</th>
+                                                                            <th>Kategori</th>
+                                                                            <th>Participant</th>
+                                                                            <th>Quantity</th>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>{{ $nm_tiket }}</td>
+                                                                            <td>{{ $kategori }}</td>
+                                                                            <td>{{ $participant }}</td>
+                                                                            <td>{{ $quantity }}</td>
+                                                                        </tr>
+
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                            <tr style="border-collapse:collapse">
+                                                                <td
+                                                                    style="padding:0;Margin:0;padding-top:10px;padding-bottom:10px">
+                                                                    <h4
+                                                                        style="Margin:0;line-height:120%;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;color:#333333">
+                                                                        Transaction Details.</h4>
+                                                                    <table id="customers">
+                                                                        <tr>
+                                                                            <th>Order ID</th>
+                                                                            <th>Gross Amount</th>
+                                                                            <th>Virtual Account</th>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>{{ $order_id }}</td>
+                                                                            <td>Rp. {{ number_format($gross_amount) }}
+                                                                            </td>
+                                                                            <td>{{ $va_number }}</td>
+                                                                        </tr>
+                                                                    </table>
+
+                                                                    <p>Silahkan hubungi kami jika memerlukan bantuan ke
+                                                                        email: coxford200012@gmail.com atau telfon ke :
+                                                                        088212987850</p>
                                                                 </td>
                                                             </tr>
                                                             <tr style="border-collapse:collapse">

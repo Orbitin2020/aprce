@@ -8,15 +8,21 @@ use App\Veritrans\Midtrans;
 use App\Models\Tiket;
 use App\Models\Pendaftar;
 use App\Models\Transaction;
-use Mail;
+// use Mail;
+use Illuminate\Support\Facades\Mail;
+use Validator;
 
 class CheckoutController extends Controller
 {
     public function __construct()
     {   
-        Midtrans::$serverKey = 'SB-Mid-server-rsgj0LM_eZRsZEiL08tgq9b6';
-        //set is production to true for production mode
-        Midtrans::$isProduction = false;
+        // Production
+        // Midtrans::$serverKey = 'Mid-server-J61X_k8ons-cqRbjMO-2K9m-';
+        // Midtrans::$isProduction = true;
+
+        // Development       
+        Midtrans::$serverKey = 'Mid-server-J61X_k8ons-cqRbjMO-2K9m-';
+        Midtrans::$isProduction = true;
     }
 
     public function snap()
@@ -27,7 +33,11 @@ class CheckoutController extends Controller
     public function token(Request $request)
     {
         $data = $request->all();
-        // debugbar()->info($data);
+        // $validator = Validator::make($request->all(), [
+        //     ''
+        // ]);
+        debugbar()->info($data);
+
         $tiket = Tiket::where('id', $data['tiket_id'])->first();
 
         $qty = $data['quantity'];
@@ -99,7 +109,7 @@ class CheckoutController extends Controller
         $custom_expiry = array(
             'start_time' => date("Y-m-d H:i:s O",$time),
             'unit'       => 'hour', 
-            'duration'   => 24
+            'duration'   => 1
         );
         
         $transaction_data = array(
@@ -128,14 +138,33 @@ class CheckoutController extends Controller
         // $result = $request->input('result_data');
 
         $result = json_decode($request->input('result_data'), true);
-        debugbar()->info($result);
-
-        var_dump('Hello');
+        $tiket = Tiket::where('id', $data['tiket_id'])->first();
+        $tiket->limit   = $tiket->limit - $data['quantity'];
+        $tiket->save();
+        
         $paymentType = $result['payment_type'];
 
         if(!$paymentType) {
-            echo 'Gagal';
+            return redirect()->route('user.index');
         } else if($paymentType == 'echannel') {
+            $email_data = array(
+                'nm_tiket' => $tiket['nama'],
+                'kategori' => $tiket['kategori'],
+                'participant' => $tiket['participant'],
+                'quantity' => $tiket['quantity'],
+                'order_id' => $result['order_id'],
+                'gross_amount' => $result['gross_amount'],
+                'va_number' => $result['bill_key'],
+                'namaLengkap' => $data['firstName']. ' ' . $data['lastName'],
+                'email' => $data['email'],
+                'nohp' => $data['nohp'],
+                'quantity' => $data['quantity'],
+                'tiket_id' => $tiket['nama'],
+                'harga_tiket' => $tiket['harga'] * 14000,
+                'transaction_time' => $result['transaction_time'],
+                'payment_type' => $result['payment_type'],
+            );
+
             $transaction = Transaction::create([
                 'order_id' => $result['order_id'],
                 'gross_amount' => $result['gross_amount'],
@@ -143,6 +172,57 @@ class CheckoutController extends Controller
                 'transaction_time' => $result['transaction_time'],
                 'transaction_status' => $result['transaction_status'],
                 'va_number' => $result['bill_key'],
+                'pdf_url' => $result['pdf_url'],
+                'status_code' => $result['status_code'],
+            ]);
+
+            Pendaftar::create([
+                'nama' => $data['firstName'],
+                'email' => $data['email'],
+                'nohp' => $data['nohp'],
+                'quantity' => $data['quantity'],
+                'tiket_id' => $data['tiket_id'],
+                'transaction_id' => $transaction->id_transaction,
+            ]);
+            
+            Mail::send('user.mail.regist_mail', $email_data, function ($message) use ($email_data) {
+                $message->to('fazrilramadhan2000@gmail.com', 'Orbitin ID')
+                    ->subject('New Registran')
+                    ->from('fikrihaidar24@gmail.com', 'Aprindo');
+            });
+            Mail::send('user.mail.regist_admin', $email_data, function ($message) use ($email_data) {
+                $message->to('coxford200012@gmail.com', 'Orbitin ID')
+                    ->subject('New Registran')
+                    ->from('fikrihaidar24@gmail.com', 'Aprindo');
+            });
+
+            return $this->done($email_data);
+        } else if($result['permata_va_number'] == true) {
+            $email_data = array(
+                'nm_tiket' => $tiket['nama'],
+                'kategori' => $tiket['kategori'],
+                'participant' => $tiket['participant'],
+                'quantity' => $tiket['quantity'],
+                'order_id' => $result['order_id'],
+                'gross_amount' => $result['gross_amount'],
+                'va_number' => $result['permata_va_number'],
+                'namaLengkap' => $data['firstName']. ' ' . $data['lastName'],
+                'email' => $data['email'],
+                'nohp' => $data['nohp'],
+                'quantity' => $data['quantity'],
+                'tiket_id' => $tiket['nama'],
+                'harga_tiket' => $tiket['harga'] * 14000,
+                'transaction_time' => $result['transaction_time'],
+                'payment_type' => $result['payment_type'],
+            );
+
+            $transaction = Transaction::create([
+                'order_id' => $result['order_id'],
+                'gross_amount' => $result['gross_amount'],
+                'payment_type' => $result['payment_type'],
+                'transaction_time' => $result['transaction_time'],
+                'transaction_status' => $result['transaction_status'],
+                'va_number' => $result['permata_va_number'],
                 'pdf_url' => $result['pdf_url'],
                 'status_code' => $result['status_code'],
             ]);
@@ -154,7 +234,33 @@ class CheckoutController extends Controller
                 'tiket_id' => $data['tiket_id'],
                 'transaction_id' => $transaction->id_transaction,
             ]);
-        } else if($paymentType == 'bank_transfer') {
+            
+            Mail::send('user.mail.regist_mail', $email_data, function ($message) use ($email_data) {
+                $message->to('fazrilramadhan2000@gmail.com', 'Orbitin ID')
+                    ->subject('New Registran')
+                    ->from('fikrihaidar24@gmail.com', 'Aprindo');
+            });
+
+            return $this->done($email_data);
+        } else if($paymentType == 'bank_transfer' && !$result['permata_va_number']) {
+            $email_data = array(
+                'nm_tiket' => $tiket['nama'],
+                'kategori' => $tiket['kategori'],
+                'participant' => $tiket['participant'],
+                'quantity' => $tiket['quantity'],
+                'order_id' => $result['order_id'],
+                'gross_amount' => $result['gross_amount'],
+                'va_number' => $result['va_numbers'][0]['va_number'],
+                'namaLengkap' => $data['firstName']. ' ' . $data['lastName'],
+                'email' => $data['email'],
+                'nohp' => $data['nohp'],
+                'quantity' => $data['quantity'],
+                'tiket_id' => $tiket['nama'],
+                'harga_tiket' => $tiket['harga'] * 14000,
+                'transaction_time' => $result['transaction_time'],
+                'payment_type' => $result['payment_type'],
+            );
+
             $transaction = Transaction::create([
                 'order_id' => $result['order_id'],
                 'gross_amount' => $result['gross_amount'],
@@ -173,14 +279,40 @@ class CheckoutController extends Controller
                 'tiket_id' => $data['tiket_id'],
                 'transaction_id' => $transaction->id_transaction,
             ]);
-        } else if($paymentType == 'cstore') {
+            
+            Mail::send('user.mail.regist_mail', $email_data, function ($message) use ($email_data) {
+                $message->to('fazrilramadhan2000@gmail.com', 'Orbitin ID')
+                    ->subject('New Registran')
+                    ->from('fikrihaidar24@gmail.com', 'Aprindo');
+            });
+
+            return $this->done($email_data);
+        } else if($paymentType == 'gopay') {
+            $email_data = array(
+                'nm_tiket' => $tiket['nama'],
+                'kategori' => $tiket['kategori'],
+                'participant' => $tiket['participant'],
+                'quantity' => $tiket['quantity'],
+                'order_id' => $result['order_id'],
+                'gross_amount' => $result['gross_amount'],
+                'va_number' => $result['va_numbers'][0]['va_number'],
+                'namaLengkap' => $data['firstName']. ' ' . $data['lastName'],
+                'email' => $data['email'],
+                'nohp' => $data['nohp'],
+                'quantity' => $data['quantity'],
+                'tiket_id' => $tiket['nama'],
+                'harga_tiket' => $tiket['harga'] * 14000,
+                'transaction_time' => $result['transaction_time'],
+                'payment_type' => $result['payment_type'],
+            );
+
             $transaction = Transaction::create([
                 'order_id' => $result['order_id'],
                 'gross_amount' => $result['gross_amount'],
                 'payment_type' => $result['payment_type'],
                 'transaction_time' => $result['transaction_time'],
                 'transaction_status' => $result['transaction_status'],
-                'va_number' => $result['payment_code'],
+                // 'va_number' => ,
                 'pdf_url' => $result['pdf_url'],
                 'status_code' => $result['status_code'],
             ]);
@@ -192,44 +324,24 @@ class CheckoutController extends Controller
                 'tiket_id' => $data['tiket_id'],
                 'transaction_id' => $transaction->id_transaction,
             ]);
-        } else if($paymentType == 'qris') {
-            $transaction = Transaction::create([
-                'order_id' => $result['order_id'],
-                'gross_amount' => $result['gross_amount'],
-                'payment_type' => 'shopeePay',
-                'transaction_time' => $result['transaction_time'],
-                'transaction_status' => $result['transaction_status'],
-                'va_number' => 'Via Barcode',
-                'status_code' => $result['status_code'],
-            ]);
-            Pendaftar::create([
-                'nama' => $data['firstName'],
-                'email' => $data['email'],
-                'nohp' => $data['nohp'],
-                'quantity' => $data['quantity'],
-                'tiket_id' => $data['tiket_id'],
-                'transaction_id' => $transaction->id_transaction,
-            ]);
-        } else if($paymentType == 'gopay') {
-            $transaction = Transaction::create([
-                'order_id' => $result['order_id'],
-                'gross_amount' => $result['gross_amount'],
-                'payment_type' => 'gopay',
-                'transaction_time' => $result['transaction_time'],
-                'transaction_status' => $result['transaction_status'],
-                'va_number' => 'Via Barcode',
-                'status_code' => $result['status_code'],
-            ]);
-            Pendaftar::create([
-                'nama' => $data['firstName'],
-                'email' => $data['email'],
-                'nohp' => $data['nohp'],
-                'quantity' => $data['quantity'],
-                'tiket_id' => $data['tiket_id'],
-                'transaction_id' => $transaction->id_transaction,
-            ]);
-        }
-        
+            
+            Mail::send('user.mail.regist_mail', $email_data, function ($message) use ($email_data) {
+                $message->to('fazrilramadhan2000@gmail.com', 'Orbitin ID')
+                    ->subject('New Registran')
+                    ->from('fikrihaidar24@gmail.com', 'Aprindo');
+            });
+
+            return $this->done($email_data);
+        }        
+    }
+
+    public function done($data) 
+    {
+        $result = $data; 
+        $title = 'Hasil Transaction';
+        $judul = 'Detail Transaction';
+        debugbar()->info($result);
+        return view('user.hasilTransaction', compact('title', 'judul', 'result'));
     }
 
     public function notification()

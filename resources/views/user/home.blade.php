@@ -1,7 +1,9 @@
 @extends('layouts_user.master')
 @push('css')
-<script type="text/javascript" src="https://app.sandbox.midtrans.com/snap/snap.js"
-    data-client-key="SB-Mid-client-gYvJ6xZoeUFqC-Q3">
+<script type="text/javascript" src="https://app.midtrans.com/snap/snap.js"
+    data-client-key="Mid-client-M8haSFVE-_Y9aWW1">
+    // <script type="text/javascript" src="https://app.midtrans.com/snap/snap.js"
+//     data-client-key="Mid-client-M8haSFVE-_Y9aWW1">
 </script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 @endpush
@@ -35,16 +37,15 @@
     <div class="row">
         <!-- Content Column -->
         <div class="content-column col-lg-6 col-md-12 col-sm-12 order-2">
-            @if ($jokowi !== null)
-            <div class="mb-3">
-                <h2 style="color: #FF0000;line-height: 50px;font-weight: 700;">Keynote Speech</h2>
-                <h1 style="color: #000000;font-weight:bold;line-height: 50px;">{{$jokowi->speakName}}</h1>
-                <h3 style="color: #000000;line-height: 50px;font-weight: 400;font-size: 20px;">{{$jokowi->speakJob}}
-                </h3>
+            {{-- @if ($jokowi !== null)
+            <div class="mb-3 ml-4">
+                <h4 style="color:#FF0000; font-weight: 700;">Keynote Speech</h4>
+                <h2 style="color: #000000; font-weight:bold; line-height: 80%">{{ $jokowi->speakName }}</h2>
+                <h4 style="color: #000000; font-weight:400;">{{ $jokowi->speakJob }}</h4>
             </div>
             @else
-            @endif
-            <div class="row">
+            @endif --}}
+            <div class="row speaker-men">
                 @foreach ($speaker as $f)
                 <div class="gallery-item col-lg-4 col-md-6 col-sm-12 wow fadeIn">
                     <div class="image-box">
@@ -59,17 +60,18 @@
                     </div>
                     <div class="">
                         @if ($f['speakPrioritas'] == 2)
-                        <h6 class="text-center" style="color: #FF0000;">Keynote Speech</h6>
-                        <h6 class="text-center" style="color: #000000;font-weight:bold;">{{$f['speakName']}}</h6>
-                        <h6 class="text-center" style="color: #000000;">{{$f['speakJob']}}</h6>
+                        {{-- <h6 class="text-center" style="color: #FF0000;">Keynote Speech</h6> --}}
+                        <h6 class="text-center mt-2" style="color: #000000;font-weight:bold;">{{$f['speakName']}}</h6>
+                        <h6 class="text-center" style="color: #000000; line-height: 100%">{{$f['speakJob']}}</h6>
                         @elseif($f['speakPrioritas'] == 3)
-                        <h6 class="text-center" style="color: #FF0000;">Welcome Remarks</h6>
-                        <h6 class="text-center" style="color: #000000;font-weight:bold;">{{$f['speakName']}}</h6>
+                        {{-- <h6 class="text-center" style="color: #FF0000;">Welcome Remarks</h6> --}}
+                        <h6 class="text-center mt-2" style="color: #000000;font-weight:bold; line-height: 80%">
+                            {{$f['speakName']}}</h6>
                         <h6 class="text-center" style="color: #000000;">{{$f['speakJob']}}</h6>
                         @elseif($f['speakPrioritas'] == 4)
-                        <h6 class="text-center" style="color: #FF0000;">Opening Remarks</h6>
-                        <h6 class="text-center" style="color: #000000;font-weight:bold;">{{$f['speakName']}}</h6>
-                        <h6 class="text-center" style="color: #000000;">{{$f['speakJob']}}</h6>
+                        {{-- <h6 class="text-center" style="color: #FF0000;">Opening Remarks</h6> --}}
+                        <h6 class="text-center mt-2" style="color: #000000;font-weight:bold;">{{$f['speakName']}}</h6>
+                        <h6 class="text-center" style="color: #000000; line-height: 80%">{{$f['speakJob']}}</h6>
                         @else
                         <h6 style="color: yellow;">Speakers</h6>
                         <h6>{{$f['speakName']}}</h6>
@@ -77,6 +79,27 @@
                         @endif
                     </div>
                 </div>
+                {{-- <div class="speaker-block col-xl- col-lg-4 col-md-6 col-sm-12">
+                    <div class="inner-box">
+                        <div class="image-box">
+                            <figure class="image"><a href="speakers-detail.html"><img
+                                        src="images/resource/speaker-1.jpg" alt=""></a>
+                            </figure>
+                        </div>
+                        <div class="info-box">
+                            <div class="inner">
+                                <h4 class="name"><a href="speakers-detail.html">Dale Marke</a></h4>
+                                <span class="designation">Event Manager</span>
+                                <ul class="social-links social-icon-colored">
+                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-dribbble"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div> --}}
 
 
                 @endforeach
@@ -99,10 +122,13 @@
                         </a>
                     </div>
                 </div>
+                <div class="text-center">
+                    <h4 style="color:#FF0000; font-weight: 700;">Keynote Speech</h4>
+                    <h2 style="color: #000000; font-weight:bold; line-height: 80%">{{ $jokowi->speakName }}</h2>
+                    <h4 style="color: #000000; font-weight:400;">{{ $jokowi->speakJob }}</h4>
+                </div>
                 @else
-
                 @endif
-
             </div>
         </div>
     </div>
@@ -254,7 +280,30 @@
                     <div class="schedule-timeline row">
                         @foreach ($value as $d)
                         <!-- schedule Block -->
-                        <div class="schedule-block col-lg-6 col-md-12 col-sm-12">
+                        <div class="schedule-block">
+                            <div class="inner-box">
+                                <div class="inner">
+                                    <div class="date">{{date('h:i A', strtotime($d['tgl_mulai']))}} - {{date('h:i A',
+                                        strtotime($d['tgl_akhir']))}}</div>
+                                    @foreach ($d['speaker'] as $s)
+                                    <div class="speaker-info">
+                                        <figure class="thumb"><img src="{{ asset('uploads/speaker/'.$s['speakFoto'])}}"
+                                                alt="Image">
+                                        </figure>
+                                        <h5 class="name">{{$s['speakName']}}</h5>
+                                        <span class="designation">{{$s['speakJob']}}</span>
+                                    </div>
+                                    @endforeach
+                                    <h4 class="mt-2">{{$d['agenda']}}</h4>
+                                    <div class="text">{!!$d['description']!!}</div>
+                                    <div class="btn-box">
+                                        <a href="event-detail.html" class="theme-btn">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {{-- <div class="schedule-block col-lg-6 col-md-12 col-sm-12">
                             <div class="inner-box">
                                 <div class="inner">
                                     <div class="date">{{date('h:i A', strtotime($d['tgl_mulai']))}} - {{date('h:i A',
@@ -279,7 +328,27 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
+
+                        {{-- <div class="schedule-block">
+                            <div class="inner-box">
+                                <div class="inner">
+                                    <div class="date">9.00 AM - 10.00 AM</div>
+                                    <div class="speaker-info">
+                                        <figure class="thumb"><img src="images/resource/thumb-1.jpg" alt="">
+                                        </figure>
+                                        <h5 class="name">Ashli Scroggy</h5>
+                                        <span class="designation">Founder & CEO</span>
+                                    </div>
+                                    <h4><a href="event-detail.html">Modern Marketing Summit Sydney 2018</a></h4>
+                                    <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                                        sed do eiusmtempor incididunt labore et</div>
+                                    <div class="btn-box">
+                                        <a href="event-detail.html" class="theme-btn">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> --}}
                         @endforeach
 
                     </div>
@@ -325,6 +394,7 @@
         </div>
 
         <div class="outer-box">
+
             <div class="row">
                 @foreach ($tiket as $d)
                 <div class="pricing-block-three col-lg-4 col-md-6 col-sm-12 wow fadeInUp centered">
@@ -567,7 +637,7 @@
     $('#payBtn').click(function(e) {
         e.preventDefault();
 
-        $(this).attr('disabled', 'disabled');
+        // $(this).attr('disabled', 'disabled');
 
         let token = $('input[name="_token"]').val();
         let firstName = $('input[name="firstName"]').val();
@@ -607,16 +677,40 @@
                         console.log(result.status_message);
                         console.log(result);
                         $('#paymentForm').submit();
+                        Swal.fire(
+                            'Good job!',
+                            'You clicked the button!',
+                            'success'
+                        );
+                        // setTimeout(() => {
+                        //     window.location.href = '/';
+                        // }, 5000);
                     },
                     onPending: function(result) {
                         changeResult('pending', result);
                         console.log(result.status_message);
                         $('#paymentForm').submit();
+                        Swal.fire(
+                            'Good job!',
+                            'You clicked the button!',
+                            'success'
+                        );
+                        // setTimeout(() => {
+                        //     window.location.href = '/';
+                        // }, 5000);
                     },
                     onError: function(result) {
                         changeResult('error', result);
                         console.log(result.status_message);
                         $('#paymentForm').submit();
+                        Swal.fire(
+                            'Good job!',
+                            'You clicked the button!',
+                            'success'
+                        );
+                        // setTimeout(() => {
+                        //     window.location.href = '/';
+                        // }, 5000);
                     }
                 });
             }

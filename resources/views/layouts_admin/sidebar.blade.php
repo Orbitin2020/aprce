@@ -85,7 +85,8 @@
         <div class="content-side content-side-full">
             <ul class="nav-main">
                 <li>
-                    <a href="#"><i class="si si-bar-chart"></i><span class="sidebar-mini-hide">Dashboard</span></a>
+                    <a href="{{ url('admin/dashboard') }}"><i class="si si-bar-chart"></i><span
+                            class="sidebar-mini-hide">Dashboard</span></a>
                 </li>
                 <li>
                     <a href="{{route('admin.speaker.index')}}"><i class="si si-users"></i><span
@@ -102,6 +103,10 @@
                 <li>
                     <a href="{{route('admin.sponsor.index')}}"><i class="fa fa-dollar"></i><span
                             class="sidebar-mini-hide">Sponsor</span></a>
+                </li>
+                <li>
+                    <a href="{{ url('admin/transaction') }}"><i class="si si-wallet"></i><span
+                            class="sidebar-mini-hide">Transaction</span></a>
                 </li>
                 <li>
                     <a href="{{route('admin.registrasi')}}"><i class="si si-user"></i><span

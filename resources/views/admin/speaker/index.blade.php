@@ -3,12 +3,12 @@
 <div class="content">
     <div class="block">
         <div class="block-header block-header-default">
-            <h3 class="block-title">List Speaker</h3>
+            <h3 class="block-title text-white">List Speaker</h3>
         </div>
         <div class="block-content block-content-full">
             <button type="button" id="addSpeaker" data-toggle="modal" data-target="#modalSpeaker"
                 class="btn btn-outline-primary mb-4"><i class="fa fa-plus"></i> Add Speaker</button>
-            <table  class="table table-bordered table-striped table-vcenter js-dataTable-full-pagination tableSpeaker">
+            <table class="table table-bordered table-striped table-vcenter js-dataTable-full-pagination tableSpeaker">
                 <thead>
                     <tr>
                         <th class="text-center" style="width: 5%">no</th>
@@ -54,9 +54,11 @@
                         <div class="form-group">
                             <label for="nama">Prioritas</label>
                             <div class="s_prioritas">
-                                <select class="js-select2 form-control" name="prioritas" id="prioritas" style="width: 100%;" data-placeholder="Choose one">
+                                <select class="js-select2 form-control" name="prioritas" id="prioritas"
+                                    style="width: 100%;" data-placeholder="Choose one">
                                     <option value=""></option>
-                                    <option value="1">1(President)</option><!-- Required for data-placeholder attribute to work with Select2 plugin -->
+                                    <option value="1">1(President)</option>
+                                    <!-- Required for data-placeholder attribute to work with Select2 plugin -->
                                     <option value="2">2(Menteri)</option>
                                     <option value="3">3(Aprindo & Fapra Chairman)</option>
                                     <option value="4">4(APRCE OC Chairman)</option>
@@ -67,21 +69,24 @@
                         <div class="form-group">
                             <label for="nama">Kategori</label>
                             <div class="s_kategori">
-                                <select class="js-select2 form-control" name="kategori" id="kategori" style="width: 100%;" data-placeholder="Choose one">
+                                <select class="js-select2 form-control" name="kategori" id="kategori"
+                                    style="width: 100%;" data-placeholder="Choose one">
                                     <option value=""></option>
-                                    <option value="Lokal">Lokal</option><!-- Required for data-placeholder attribute to work with Select2 plugin -->
+                                    <option value="Lokal">Lokal</option>
+                                    <!-- Required for data-placeholder attribute to work with Select2 plugin -->
                                     <option value="International">International</option>
                                 </select>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="nama">Deskripsi</label>
-                            <input type="text" class="form-control" id="deskripsi" name="deskripsi" placeholder="Deskripsi">
+                            <input type="text" class="form-control" id="deskripsi" name="deskripsi"
+                                placeholder="Deskripsi">
                         </div>
                         <div class="">
                             <div class="form-group ">
                                 <label class="" for="foto">Foto</label>
-                                <input type="file" class="form-control" name="foto" id="foto" >
+                                <input type="file" class="form-control" name="foto" id="foto">
                             </div>
                         </div>
                         <div class="col-xl-12">
