@@ -51,8 +51,8 @@
                 {data: 'tgl_akhir', name: 'tgl_akhir'},
                 {data: 'description', name: 'description'},
                 {data: 'speaker', name: 'speaker'},
-                {data: 'created_at', name: 'created_at'},
-                {data: 'action', name: 'action', orderable: false, searchable: false},
+                {data: 'created_at', name: 'created_at', sClass: 'text-center'},
+                {data: 'action', name: 'action', sClass: 'text-center', orderable: false, searchable: false},
             ]
         });
 
@@ -75,6 +75,33 @@
                 })
             });
         // End Open
+
+        $('body').on('click', '#detailSchedule', function() {
+            let id = $(this).data('id');
+
+            $.ajax({
+                url: `{{ url('admin/schedule/detail/${id}') }}`,
+                type: 'GET',
+                dataType: 'JSON',
+                success: function(data) {
+                    console.log(data);
+                    $('#modalDetailSchedule').modal('show');
+
+                    $('#detailAgenda').html(data.agenda);
+                    $('#detailTglMulai').html(data.tgl_mulai);
+                    $('#detailTglAkhir').html(data.tgl_akhir);
+                    // $('#detailSpeaker').html(data.speaker)
+                    $.each(data.speaker, function(key, value) {
+                        $('#detailSpeaker').append('<ul><li><b>' + value.speakName + '</b></li></ul>');
+                    });
+
+                    $('#detailDescription').html(data.description);
+                },
+                error: function(err) {
+                    alert('Nothing Data...');
+                }
+            })
+        });
 
         // Store Data
         $('#saveBtn').click(function(e){
@@ -126,6 +153,12 @@
             })
         })
         // End Store Data
+
+        // Close Detail Modal
+        $('body').on('click', '.closeModal', function() {
+            $('#detailSpeaker').trigger('reset');
+        });
+        // End Close Detail Modal
 
         // EDIT DATA
         $('body').on('click','#edit',function(){

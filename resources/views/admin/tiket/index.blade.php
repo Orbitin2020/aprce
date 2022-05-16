@@ -84,6 +84,7 @@
                                     <option value="FAPRA">FAPRA</option>
                                     <!-- Required for data-placeholder attribute to work with Select2 plugin -->
                                     <option value="NON-FAPRA">NON-FAPRA</option>
+                                    <option value="DOMESTIC">DOMESTIC</option>
                                 </select>
                             </div>
                         </div>

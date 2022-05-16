@@ -9,6 +9,7 @@ use App\Models\Schedule_speaker;
 use App\Models\Speaker;
 use DataTables;
 use File;
+use Str;
 
 class ScheduleController extends Controller
 {
@@ -48,9 +49,13 @@ class ScheduleController extends Controller
                         return $string;
                     }
                 })
+                ->addColumn('description', function($schedule) {
+                    return strip_tags(Str::limit($schedule->description, 200));
+                })
                 ->addColumn('action', function ($row) {
                     $btn = '';
-                    $btn = $btn . '<button href="javascript:void(0)" data-id="' . $row->id . '" id="edit" type="button" class="edit btn btn-primary btn-sm m-1" tittle="Edit"><i class="fa fa-pencil" ></i></button>';
+                    $btn = $btn . '<button href="javascript:void(0)" data-id="' . $row->id . '" id="detailSchedule" type="button" class="edit btn btn-info btn-sm m-1" tittle="Detail"><i class="fa fa-eye" ></i></button>';
+                    $btn = $btn . '<button href="javascript:void(0)" data-id="' . $row->id . '" id="edit" type="button" class="edit btn btn-warning btn-sm m-1" tittle="Edit"><i class="fa fa-pencil" ></i></button>';
                     $btn = $btn . '<button href="javascript:void(0)" data-id="' . $row->id . '" id="delete" type="button" class="delete btn btn-danger btn-sm m-1" tittle="Hapus"><i class="fa fa-trash" ></i></button>';
     
                     return $btn;
@@ -120,8 +125,11 @@ class ScheduleController extends Controller
             'success' => false,
             'message' => 'speaker Gagal Di Hapus'
         ]);
-            
-        
-       
+    }
+    
+    public function detail($id) 
+    {
+        $result = Schedule::with('speaker')->where('id', $id)->first();
+        return $result;
     }
 }

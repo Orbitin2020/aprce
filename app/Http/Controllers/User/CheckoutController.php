@@ -188,12 +188,12 @@ class CheckoutController extends Controller
             Mail::send('user.mail.regist_mail', $email_data, function ($message) use ($email_data) {
                 $message->to('fazrilramadhan2000@gmail.com', 'Orbitin ID')
                     ->subject('New Registran')
-                    ->from('fikrihaidar24@gmail.com', 'Aprindo');
+                    ->from('coxford200012@gmail.com', 'Aprindo');
             });
             Mail::send('user.mail.regist_admin', $email_data, function ($message) use ($email_data) {
                 $message->to('coxford200012@gmail.com', 'Orbitin ID')
                     ->subject('New Registran')
-                    ->from('fikrihaidar24@gmail.com', 'Aprindo');
+                    ->from('coxford200012@gmail.com', 'Aprindo');
             });
 
             return $this->done($email_data);
@@ -238,7 +238,7 @@ class CheckoutController extends Controller
             Mail::send('user.mail.regist_mail', $email_data, function ($message) use ($email_data) {
                 $message->to('fazrilramadhan2000@gmail.com', 'Orbitin ID')
                     ->subject('New Registran')
-                    ->from('fikrihaidar24@gmail.com', 'Aprindo');
+                    ->from('coxford200012@gmail.com', 'Aprindo');
             });
 
             return $this->done($email_data);
@@ -283,7 +283,7 @@ class CheckoutController extends Controller
             Mail::send('user.mail.regist_mail', $email_data, function ($message) use ($email_data) {
                 $message->to('fazrilramadhan2000@gmail.com', 'Orbitin ID')
                     ->subject('New Registran')
-                    ->from('fikrihaidar24@gmail.com', 'Aprindo');
+                    ->from('coxford200012@gmail.com', 'Aprindo');
             });
 
             return $this->done($email_data);
@@ -328,7 +328,7 @@ class CheckoutController extends Controller
             Mail::send('user.mail.regist_mail', $email_data, function ($message) use ($email_data) {
                 $message->to('fazrilramadhan2000@gmail.com', 'Orbitin ID')
                     ->subject('New Registran')
-                    ->from('fikrihaidar24@gmail.com', 'Aprindo');
+                    ->from('coxford200012@gmail.com', 'Aprindo');
             });
 
             return $this->done($email_data);
@@ -340,7 +340,7 @@ class CheckoutController extends Controller
         $result = $data; 
         $title = 'Hasil Transaction';
         $judul = 'Detail Transaction';
-        debugbar()->info($result);
+        // debugbar()->info($result);
         return view('user.hasilTransaction', compact('title', 'judul', 'result'));
     }
 

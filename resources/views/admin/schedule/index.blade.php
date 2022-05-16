@@ -85,6 +85,55 @@
         </div>
     </div>
 </div>
+
+{{-- Detail Schedule --}}
+<div class="modal fade" id="modalDetailSchedule" tabindex="-1" role="dialog" aria-labelledby="modalDetailSchedule"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="block block-themed block-transparent mb-0">
+                <div class="block-header bg-primary-dark">
+                    <h3 class="block-title">Detail Schedule</h3>
+                    <div class="block-options">
+                        <button type="button" class="btn-block-option closeModal" data-dismiss="modal"
+                            aria-label="Close">
+                            <i class="si si-close"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="block-content">
+
+                    <table class="table table-bordered">
+                        <tbody>
+                            <tr>
+                                <th scope="row">Agenda</th>
+                                <td id="detailAgenda">Mark</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Tanggal Mulai</th>
+                                <td id="detailTglMulai">Mark</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Tanggal Akhir</th>
+                                <td id="detailTglAkhir">Mark</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Speaker</th>
+                                <td id="detailSpeaker"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    Description :
+                    <div id="detailDescription" align="justify">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-alt-secondary closeModal" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection
 @push('scripts')
 @include('admin.schedule.javascript')

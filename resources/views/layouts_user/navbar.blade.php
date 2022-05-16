@@ -21,7 +21,7 @@
                 </div>
 
                 <div class="collapse navbar-collapse clearfix" id="navbarSupportedContent">
-                    <ul class="navigation clearfix">
+                    <ul class="navigation clearfix mt-3">
                         <li class="dropdown"><a href="{{route('user.index')}}">Home</a></li>
                         {{-- <li class="dropdown"><a href="">About</a></li>
                         <li class="dropdown"><a href="">Speakers</a></li>

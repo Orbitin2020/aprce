@@ -18,6 +18,7 @@ Route::get("/page", function(){
 });
 
 Route::get('/hasilTransaction', 'User\CheckoutController@done');
+Route::get('/detailSchedule/{id}', 'User\HomeController@detailSchedule');
 
 Route::get('/snap', 'User\CheckoutController@snap')->name('snap'); 
 Route::post('/snaptoken', 'User\CheckoutController@token')->name('snaptoken');

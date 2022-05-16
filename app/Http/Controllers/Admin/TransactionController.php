@@ -15,8 +15,8 @@ class TransactionController extends Controller
     public function index()
     {
         $query = Pendaftar::with(['transaction', 'getTiket'])->get();
-        debugbar()->info($query);
-        return view('admin.transaction.index');
+        $totalTransaction = Transaction::sum('gross_amount');
+        return view('admin.transaction.index', compact('totalTransaction'));
     }
 
     public function getData()

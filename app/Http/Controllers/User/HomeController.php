@@ -10,6 +10,7 @@ use App\Models\Schedule;
 use App\Models\Tiket;
 use App\Models\Sponsor;
 use DB;
+use Str;
 
 class HomeController extends Controller
 {
@@ -71,6 +72,7 @@ class HomeController extends Controller
         $schedule = Schedule::with('speaker')
         ->select('*',DB::raw('DATE(tgl_mulai) as date'))
         ->get()->groupBy('date')->toArray();
+        // debugbar()->info($schedule);
         $schedule = array_values($schedule);
         return view('user.schedule',compact('schedule'));
     }
@@ -83,5 +85,26 @@ class HomeController extends Controller
         SEOTools::setCanonical(url()->current());
 
         return view('user.contact');
+    }
+
+    public function detailSchedule($id) 
+    {
+        SEOTools::setTitle('Ticket Schedule Asia Pacific Retail Conference 2022',false);
+        SEOTools::setDescription('Ticket Schedule Asia Pacific Retail Conference 2022');
+        SEOTools::opengraph()->setUrl(url()->current());
+        SEOTools::setCanonical(url()->current());
+
+        // $schedule = Schedule::with('speaker')->where('id', $id)->first();
+        // $schedule = Schedule::with('speaker')->findOrFail($id);
+        $count = Schedule::with('speaker')->where('id', $id)->first();
+        $hasil = $count->speaker->count();
+        $schedule = Schedule::with('speaker')
+        ->select('*',DB::raw('DATE(tgl_mulai) as date'))
+        ->where('id', $id)
+        ->get()
+        ->groupBy('date')->toArray();
+        // debugbar()->info(strip_tags(Str::limit($count->description, 200)));
+        // $schedule = array_values($schedule);
+        return view('user.detailSchedule', compact('schedule', 'hasil'));
     }
 }

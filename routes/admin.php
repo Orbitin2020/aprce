@@ -40,6 +40,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/edit/{id}', 'Admin\ScheduleController@edit')->name('admin.schedule.edit');
         Route::put('/update/{id}', 'Admin\ScheduleController@update')->name('admin.schedule.update');
         Route::delete('/delete/{id}', 'Admin\ScheduleController@delete')->name('admin.schedule.delete');
+        Route::get('/detail/{id}', 'Admin\ScheduleController@detail');
     });
 
     Route::group(['prefix' => 'tiket'], function () {
@@ -71,7 +72,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/', 'Admin\RegistrasiController@index')->name('admin.registrasi');
         Route::get('/getData', 'Admin\RegistrasiController@getData');
         Route::get('/getEdit/{id}', 'Admin\RegistrasiController@getEdit');
+        Route::put('/update/{id}', 'Admin\RegistrasiController@update');
+        Route::post('/add', 'Admin\RegistrasiController@add');
     });
 });
-
-

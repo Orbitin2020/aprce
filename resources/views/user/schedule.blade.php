@@ -53,7 +53,7 @@
                                     <div class="date">{{date('h:i A', strtotime($d['tgl_mulai']))}}<br>{{date('h:i A',
                                         strtotime($d['tgl_akhir']))}}</div>
                                     @foreach ($d['speaker'] as $s)
-                                    <div class="speaker-info">
+                                    <div class="speaker-info mt-3">
                                         <figure class="thumb"><img src="{{ asset('uploads/speaker/'.$s['speakFoto'])}}"
                                                 alt="Image">
                                         </figure>
@@ -62,9 +62,11 @@
                                     </div>
                                     @endforeach
                                     <h4 class="mt-2">{{$d['agenda']}}</h4>
-                                    <div class="text">{!!$d['description']!!}</div>
+                                    <div class="text">{{strip_tags(Str::limit($d['description'], 300))}}</div>
                                     <div class="btn-box">
-                                        <a href="event-detail.html" class="theme-btn">Read More</a>
+                                        <?php $url = url('/detailSchedule/'.$d['id'].'') ?>;
+                                        <a href="{{ $url }}" class="theme-btn">Read
+                                            More</a>
                                     </div>
                                 </div>
                             </div>

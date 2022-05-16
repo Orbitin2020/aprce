@@ -16,7 +16,7 @@
                         <th class="text-center" style="width: 5%">Nama</th>
                         <th class="text-center" style="width: 5%">Email</th>
                         <th class="d-none d-sm-table-cell text-center" style="width: 15%;">No Telepon</th>
-                        <th class="text-center" style="width: 15%;">action</th>
+                        {{-- <th class="text-center" style="width: 15%;">action</th> --}}
                     </tr>
                 </thead>
             </table>
@@ -39,7 +39,8 @@
                     </div>
                 </div>
                 <div class="block-content">
-                    <form action="" name="frm_schedule" id="frm_schedule" method="post" enctype="multipart/form-data">
+                    <form action="" name="frm_registrasiAdd" id="frm_registrationAdd" method="post"
+                        enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
                             <label for="nama">Nama Lengkap</label>
@@ -99,7 +100,8 @@
                     </div>
                 </div>
                 <div class="block-content">
-                    <form action="" name="frm_schedule" id="frm_schedule" method="post" enctype="multipart/form-data">
+                    <form action="" name="frm_registrasi" id="frm_registrasi" method="post"
+                        enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
                             <label for="nama">Nama Lengkap</label>

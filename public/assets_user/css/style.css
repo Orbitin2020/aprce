@@ -874,7 +874,7 @@ img{
 	line-height: 1em;
 	color: #D20000;
 	font-weight: bold;
-	background: white;
+	/* background: white; */
 	/* background: rgb(247,0,104);
 	background: -moz-linear-gradient(to left, rgba(247,0,104,1) 0%, rgba(68,16,102,1) 25%, rgba(247,0,104,1) 75%, rgba(68,16,102,1) 100%);
 	background: -webkit-linear-gradient(to left, rgba(247,0,104,1) 0%,rgba(68,16,102,1) 25%,rgba(247,0,104,1) 75%,rgba(68,16,102,1) 100%);
@@ -4422,6 +4422,10 @@ img{
 	box-shadow: 0 20px 30px rgba(0,0,0,.10);
 }
 
+.spekJobs {
+	line-height: 80%;
+}
+
 /* .schedule-tabs .tab-buttons li:nth-child(4n + 1) .day{
 	background-color: #FF7B7B;
 }
@@ -4582,7 +4586,7 @@ img{
 }
 
 .jobDesc {
-	line-height: 110%;
+	line-height: 100%;
 }
 
 .schedule-block h4{

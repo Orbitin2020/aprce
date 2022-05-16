@@ -4,6 +4,7 @@
     <div class="block">
         <div class="block-header block-header-default">
             <h3 class="block-title text-white">Management Peserta / Transaction</h3>
+            <span class="float-right text-white">Total : Rp. {{ number_format($totalTransaction) }}</span>
         </div>
         <div class="block-content block-content-full">
             {{-- <button type="button" id="addTiket" data-toggle="modal" data-target="#modalTiket"

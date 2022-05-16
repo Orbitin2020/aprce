@@ -285,19 +285,25 @@
                                 <div class="inner">
                                     <div class="date">{{date('h:i A', strtotime($d['tgl_mulai']))}} - {{date('h:i A',
                                         strtotime($d['tgl_akhir']))}}</div>
-                                    @foreach ($d['speaker'] as $s)
-                                    <div class="speaker-info">
-                                        <figure class="thumb"><img src="{{ asset('uploads/speaker/'.$s['speakFoto'])}}"
-                                                alt="Image">
-                                        </figure>
-                                        <h5 class="name">{{$s['speakName']}}</h5>
-                                        <span class="designation">{{$s['speakJob']}}</span>
+                                    <div class="row">
+                                        @foreach ($d['speaker'] as $s)
+                                        <div class="col-md-4">
+                                            <div class="speaker-info">
+                                                <figure class="thumb"><img
+                                                        src="{{ asset('uploads/speaker/'.$s['speakFoto'])}}"
+                                                        alt="Image">
+                                                </figure>
+                                                <h5 class="name">{{$s['speakName']}}</h5>
+                                                <span class="designation spekJobs">{{$s['speakJob']}}</span>
+                                            </div>
+                                        </div>
+                                        @endforeach
                                     </div>
-                                    @endforeach
-                                    <h4 class="mt-2">{{$d['agenda']}}</h4>
-                                    <div class="text">{!!$d['description']!!}</div>
+                                    <h4 class="mt-4">{{$d['agenda']}}</h4>
+                                    <div class="text">{{ strip_tags(Str::limit($d['description'], 400)) }}</div>
                                     <div class="btn-box">
-                                        <a href="event-detail.html" class="theme-btn">Read More</a>
+                                        <?php $url = url('/detailSchedule/'.$d['id'].'') ?>;
+                                        <a href="{{ $url }}" class="theme-btn">Read More</a>
                                     </div>
                                 </div>
                             </div>
