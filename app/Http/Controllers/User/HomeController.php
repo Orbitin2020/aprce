@@ -49,7 +49,7 @@ class HomeController extends Controller
         SEOTools::setCanonical(url()->current());
         $sponsor = Sponsor::all();
       
-        return view('user.about',compact('sponsor'));
+        return view('user.aboutDev',compact('sponsor'));
     }
 
     public function speaker()

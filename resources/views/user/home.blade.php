@@ -259,7 +259,6 @@
             <div class="btns-box">
                 <!--Tabs Box-->
                 <ul class="tab-buttons clearfix">
-
                     @foreach ($schedule as $key => $value)
                     {{-- {{var_dump($value[0]["tgl_mulai"])}} --}}
                     <li class="tab-btn {{$key == 0 ? 'active-btn': '' }} " data-tab="#{{$key}}">

@@ -2,7 +2,7 @@
     <div class="auto-container clearfix">
         <div class="logo-box">
             <div class="logo"><a href="index.html"><img src="{{asset('assets_user/images/logo_white.png')}}"
-                        style="width:160px" alt="" title=""></a></div>
+                        style="width:160px; height" alt="" title=""></a></div>
         </div>
 
         <!--Nav Box-->
@@ -21,7 +21,7 @@
                 </div>
 
                 <div class="collapse navbar-collapse clearfix" id="navbarSupportedContent">
-                    <ul class="navigation clearfix mt-3">
+                    <ul class="navigation clearfix">
                         <li class="dropdown"><a href="{{route('user.index')}}">Home</a></li>
                         {{-- <li class="dropdown"><a href="">About</a></li>
                         <li class="dropdown"><a href="">Speakers</a></li>
