@@ -153,8 +153,9 @@
         @for ($i = 0; $i < 20; $i++) <!-- Gallery Item -->
             <div class="gallery-item">
                 <div class="image-box">
-                    <figure class="image"><img class="mx-auto" src="{{asset('assets_user/images/gallery/1.jpg')}}"
-                            alt="" style="height: 150px;width:150px"></figure>
+                    <figure class="image"><img class="mx-auto"
+                            src="{{asset('assets_user/images/gallery/speakerTest.png')}}" alt=""
+                            style="height: 150px;width:150px"></figure>
                     <div class="overlay-box"
                         style=" left: 0; right: 0;margin-left: auto; margin-right: auto;height: 150px;width:150px ">
                         <a href="assets_user/images/gallery/1.jpg" class="lightbox-image" data-fancybox='gallery'><span
@@ -163,8 +164,8 @@
                     </div>
                 </div>
                 <div class="text-center">
-                    <h5>Test Image</h5>
-                    <h6>Test</h6>
+                    <h5>Nama Speaker</h5>
+                    <h6>Speaker</h6>
                 </div>
             </div>
             @endfor
@@ -238,7 +239,9 @@
         </div>
 
         <!-- Image Column -->
-        <div class="image-column" style="background-image: url(assets_user/images/resource//image-1.jpg);">
+        {{-- url(assets_user/images/resource/image-1.jpg) --}}
+        <div class="image-column backgroundMerah"
+            style="background-image: url(assets_user/images/resource/homeImage.png);">
             <div class="image-box">
                 <figure class="image"><img src="{{asset('assets_user/images/resource/image-1.jpg')}}" alt=""></figure>
             </div>

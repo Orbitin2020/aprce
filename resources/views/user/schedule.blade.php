@@ -1,7 +1,9 @@
 @extends('layouts_user.master')
 @section('content')
 <!--Page Title-->
-<section class="page-title" style="background-image:url(assets_user/images/background/5.jpg);">
+{{-- url(assets_user/images/background/5.jpg) --}}
+<section class="page-title backgroundMerah"
+    style="background-image:url(assets_user/images/background/semi-banner.jpg);">
     <div class="auto-container">
         <h1>Schedule</h1>
         <ul class="bread-crumb clearfix">

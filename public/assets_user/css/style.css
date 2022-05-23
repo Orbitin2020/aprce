@@ -7375,6 +7375,27 @@ img{
 
 ***/
 
+.backgroundMerah {
+	position: relative;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding: 100px 0;
+}
+
+.backgroundMerah::before {
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background-color: #D20000;
+	opacity: .75;
+	/* background-color: #000000;
+	opacity: .50; */
+	content: "";
+}
+
 .call-to-action{
 	position: relative;
 	background-position: center;
