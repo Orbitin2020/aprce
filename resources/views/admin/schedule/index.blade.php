@@ -63,9 +63,19 @@
                                 <select class="js-select2 form-control" id="speaker" name="speaker[]"
                                     style="width: 100%;" data-placeholder="Choose many.." multiple>
                                     <option></option>
-                                    <!-- Required for data-placeholder attribute to work with Select2 plugin -->
 
                                 </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="description">Image</label>
+                                    <input type="file" class="form-control-file" name="foto" id="foto">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <img class="img-previews img-fluid mt-3 col-sm-5">
                             </div>
                         </div>
                         <div class="form-group">

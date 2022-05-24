@@ -8,13 +8,14 @@
     <div class="auto-container">
         <!-- Footer Content -->
         <div class="footer-content">
-            <div class="footer-logo"><a href="#"><img src="{{asset('assets_user/images/logo_white.png')}}" style="width:160px;margin-left:60px" alt=""></a></div>
+            <div class="footer-logo"><a href="#"><img src="{{asset('assets_user/images/logo_white.png')}}"
+                        style="width:160px;margin-left:60px" alt=""></a></div>
             <ul class="footer-nav">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Speakers</a></li>
-                <li><a href="#">Schedule</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="{{ route('user.index') }}">Home</a></li>
+                <li><a href="{{ route('user.about') }}">About</a></li>
+                <li><a href="{{ route('user.speaker') }}">Speakers</a></li>
+                <li><a href="{{ route('user.schedule') }}">Schedule</a></li>
+                <li><a href="{{ route('user.contact') }}">Contact</a></li>
             </ul>
             <div class="copyright-text">© Copyright 2022 All Rights Reserved by <a href="index.html">APRCE</a></div>
             <ul class="social-icon-one">

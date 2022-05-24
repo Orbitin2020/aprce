@@ -1,9 +1,9 @@
 @extends('layouts_user.master')
 @section('content')
 <!--Page Title-->
-<section class="page-title"
-    style="background-image:url(../assets_user/images/background/5.jpg);background-color:#D20000">
-    <div class="auto-container">
+<section class="page-title backgroundMerah"
+    style="background-image:url(../assets_user/images/background/semi-banner.jpg)">
+    <div class=" auto-container">
         <h1>Detail Schedule</h1>
         <ul class="bread-crumb clearfix">
             <li><a href="{{ route('user.index') }}">Home</a></li>
@@ -17,10 +17,12 @@
 <section class="event-detail">
     @foreach($schedule as $key => $value)
     <div class="auto-container">
+        {{-- {{ var_dump($value[0]['image']) }} --}}
         <div class="image-box">
+            {{-- asset('assets_user/images/resource/event-detail.jpg') --}}
             <figure class="image wow fadeIn"><a href="{{ asset('assets_user/images/resource/event-detail.jpg') }}"
-                    class="lightbox-image"><img src="{{ asset('assets_user/images/resource/event-detail.jpg') }}"
-                        alt=""></a></figure>
+                    class="lightbox-image"><img src="{{ asset('uploads/schedule/' . $value[0]['image']) }}" alt=""></a>
+            </figure>
         </div>
 
         <div class="content-box">

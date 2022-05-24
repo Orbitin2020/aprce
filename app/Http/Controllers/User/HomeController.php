@@ -103,6 +103,7 @@ class HomeController extends Controller
         ->where('id', $id)
         ->get()
         ->groupBy('date')->toArray();
+        debugbar()->info($schedule);
         // debugbar()->info(strip_tags(Str::limit($count->description, 200)));
         // $schedule = array_values($schedule);
         return view('user.detailSchedule', compact('schedule', 'hasil'));

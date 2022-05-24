@@ -16,6 +16,23 @@
     });
     // EndDatePicker
 
+    // Upload Image
+    function readURL(input) {
+        if(input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function(e) {
+                $('.img-previews').attr('src', e.target.result);
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    $('#foto').change(function() {
+        readURL(this);
+    });
+    // End Upload Image
+
     // inisiasi summernote
      $('#description').summernote({
       placeholder: 'Deskripsi Schedule',
@@ -144,6 +161,7 @@
                     idEdit = 0;
                     $('#frm_schedule').trigger("reset");
                     $('#modalSchedule').modal('hide');
+                    $('.img-previews').attr('src', '');
                     table.draw()
                     // perform operation
                 },

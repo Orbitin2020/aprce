@@ -10,6 +10,7 @@ use App\Models\Speaker;
 use DataTables;
 use File;
 use Str;
+use Image;
 
 class ScheduleController extends Controller
 {
@@ -76,13 +77,23 @@ class ScheduleController extends Controller
 
     public function store(Request $request)
     {
-        
+        $random = Str::random(10);
+        $gambar = $request->file('foto');
+        $extension = $gambar->getClientOriginalExtension();
+        $name = $random.'.'.$extension;
+        $path = public_path() . '/uploads/schedule';
+        $img = Image::make($gambar->path());
+        $img->resize(1000, 585, function($constraint) {
+            $constraint->aspectRatio();
+        })->save($path. '/'. $name);
+
         $schedule = new Schedule;
        
         $schedule->agenda = $request->agenda;
         $schedule->description = $request->description;
         $schedule->tgl_mulai = $request->tgl_mulai;
         $schedule->tgl_akhir = $request->tgl_akhir;
+        $schedule->image     = $name;
         $schedule->save();
         $schedule->speaker()->attach($request->speaker);
         return response()->json([
@@ -104,17 +115,44 @@ class ScheduleController extends Controller
 
     public function update(Request $request, $id)
     {
-        $schedule = Schedule::find($id);
-       
-        $schedule->agenda = $request->agenda;
-        $schedule->description = $request->description;
-        $schedule->tgl_mulai = $request->tgl_mulai;
-        $schedule->tgl_akhir = $request->tgl_akhir;
-        $schedule->speaker()->sync($request->speaker);
-        $schedule->save();
-        return response()->json([
-            'message' => 'Schedule berhasil di Update',
-        ],200);
+        $random = Str::random(10);
+        $gambar = $request->file('foto');
+
+        if(!$gambar) {
+            $schedule = Schedule::find($id);
+
+            $schedule->agenda = $request->agenda;
+            $schedule->description = $request->description;
+            $schedule->tgl_mulai = $request->tgl_mulai;
+            $schedule->tgl_akhir = $request->tgl_akhir;
+            // $schedule->image     = $name;
+            $schedule->speaker()->sync($request->speaker);
+            $schedule->save();
+            return response()->json([
+                'message' => 'Schedule berhasil di Update',
+            ],200);
+        } else {
+            $extension = $gambar->getClientOriginalExtension();
+            $name = $random.'.'.$extension;
+            $path = public_path() . '/uploads/schedule';
+            $img = Image::make($gambar->path());
+            $img->resize(1000, 585, function($constraint) {
+                $constraint->aspectRatio();
+            })->save($path. '/'. $name);
+
+            $schedule = Schedule::find($id);
+        
+            $schedule->agenda = $request->agenda;
+            $schedule->description = $request->description;
+            $schedule->tgl_mulai = $request->tgl_mulai;
+            $schedule->tgl_akhir = $request->tgl_akhir;
+            $schedule->image     = $name;
+            $schedule->speaker()->sync($request->speaker);
+            $schedule->save();
+            return response()->json([
+                'message' => 'Schedule berhasil di Update',
+            ],200);
+        }
     }
 
     public function delete($id)

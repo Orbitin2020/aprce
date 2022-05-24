@@ -6200,17 +6200,17 @@ img{
 }
 
 
-@media screen and (min-width: 800px) {
-	.speaker-men {
+@media only screen and (min-width: 800px) {
+	.marginTops {
 		margin-top: 200px;
 	}
 }
 
-@media screen and (min-width: 1200px) {
+/* @media only screen and (min-width: 1200px) {
 	.speaker-men {
 		margin-top: 350px;
 	}
-}
+} */
 
 /***
 
@@ -7390,16 +7390,16 @@ img{
 }
 
 .backgroundMerah::before {
-	position: absolute;
-	left: 0;
-	top: 0;
-	height: 100%;
-	width: 100%;
-	background-color: #D20000;
-	opacity: .75;
-	/* background-color: #000000;
-	opacity: .50; */
-	content: "";
+		position: absolute;
+		left: 0;
+		top: 0;
+		height: 100%;
+		width: 100%;
+		background-color: #D20000;
+		opacity: .75;
+		/* background-color: #000000;
+		opacity: .50; */
+		content: "";
 }
 
 .call-to-action{

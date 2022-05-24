@@ -45,7 +45,7 @@
             </div>
             @else
             @endif --}}
-            <div class="row speaker-men">
+            <div class="row marginTops">
                 @foreach ($speaker as $f)
                 <div class="gallery-item col-lg-4 col-md-6 col-sm-12 wow fadeIn">
                     <div class="image-box">
