@@ -120,14 +120,11 @@ class CheckoutController extends Controller
             'expiry'             => $custom_expiry
         );
     
-        try
-        {
+        try{
             $snap_token = $midtrans->getSnapToken($transaction_data);
             //return redirect($vtweb_url);
             echo $snap_token;
-        } 
-        catch (Exception $e) 
-        {   
+        } catch (Exception $e) {   
             return $e->getMessage;
         }
     }
@@ -238,7 +235,7 @@ class CheckoutController extends Controller
             Mail::send('user.mail.regist_mail', $email_data, function ($message) use ($email_data) {
                 $message->to('fazrilramadhan2000@gmail.com', 'Orbitin ID')
                     ->subject('New Registran')
-                    ->from('coxford200012@gmail.com', 'Aprindo');
+                    ->from('devorbitin@provenforceindonesia.com', 'Aprindo');
             });
 
             return $this->done($email_data);
