@@ -7,7 +7,9 @@ use Illuminate\Http\Request;
 use App\Models\Schedule;
 use App\Models\Schedule_speaker;
 use App\Models\Speaker;
+use App\Models\Tiket;
 use DataTables;
+use Validator;
 use File;
 use Str;
 use Image;
@@ -21,22 +23,16 @@ class ScheduleController extends Controller
 
     public function index()
     {
-        return view('admin.schedule.index');
+        $tiket = Tiket::get();
+        return view('admin.schedule.index', compact('tiket'));
     }
 
     public function getData(Request $request)
     {
-        // $schedule = Schedule::with('speaker')->latest()->get();
-        // dd($schedule[0]->speaker);
-
         if ($request->ajax()) {
-            $schedule = Schedule::with('speaker')->latest()->get();
+            $schedule = Schedule::with('speaker', 'tiket')->latest()->get();
             return Datatables::of($schedule)
                 ->addIndexColumn()
-                ->addColumn('created_at', function ($schedule) {
-
-                    return date('d-m-Y', strtotime($schedule->created_at));
-                })
                 ->addColumn('speaker', function ($schedule) {
                     if ($schedule != null) {
                         $data = array();
@@ -61,7 +57,10 @@ class ScheduleController extends Controller
     
                     return $btn;
                 })
-                ->rawColumns(['speaker','action'])
+                ->addColumn('tiket', function($schedule) {
+                    return $schedule['tiket']['nama'];
+                })
+                ->rawColumns(['speaker','action', 'tiket'])
                 ->make(true);
         }
     }
@@ -69,9 +68,20 @@ class ScheduleController extends Controller
     public function getSpeaker()
     {
         $speak = Speaker::all();
+        $tiket = Tiket::all();
         return response()->json([
             'message' => 'List Speaker',
-            'data'    => $speak
+            'data'    => $speak,
+            'tiket'   => $tiket,
+        ]);
+    }
+
+    public function getTiket() 
+    {
+        $tiket = Tiket::get();
+        return response()->json([
+            'message' => 'List Tiket',
+            'data' => $tiket
         ]);
     }
 
@@ -89,11 +99,12 @@ class ScheduleController extends Controller
 
         $schedule = new Schedule;
        
-        $schedule->agenda = $request->agenda;
+        $schedule->agenda    = $request->agenda;
         $schedule->description = $request->description;
         $schedule->tgl_mulai = $request->tgl_mulai;
         $schedule->tgl_akhir = $request->tgl_akhir;
         $schedule->image     = $name;
+        $schedule->tiket_id  = $request->tiket;
         $schedule->save();
         $schedule->speaker()->attach($request->speaker);
         return response()->json([
@@ -105,11 +116,12 @@ class ScheduleController extends Controller
     {
         $speaker = Speaker::all();
         $schedule = Schedule::find($id);
+        $tiket = Tiket::all();
         return response()->json([
             'message' => 'Edit speaker',
             'data' => $schedule,
-            'speaker' => $speaker
-            
+            'speaker' => $speaker,
+            'tiket' => $tiket,
         ]);
     }
 
@@ -125,6 +137,7 @@ class ScheduleController extends Controller
             $schedule->description = $request->description;
             $schedule->tgl_mulai = $request->tgl_mulai;
             $schedule->tgl_akhir = $request->tgl_akhir;
+            $schedule->tiket_id  = $request->tiket;
             // $schedule->image     = $name;
             $schedule->speaker()->sync($request->speaker);
             $schedule->save();
@@ -146,6 +159,7 @@ class ScheduleController extends Controller
             $schedule->description = $request->description;
             $schedule->tgl_mulai = $request->tgl_mulai;
             $schedule->tgl_akhir = $request->tgl_akhir;
+            $schedule->tiket_id  = $request->tiket;
             $schedule->image     = $name;
             $schedule->speaker()->sync($request->speaker);
             $schedule->save();
@@ -167,7 +181,7 @@ class ScheduleController extends Controller
     
     public function detail($id) 
     {
-        $result = Schedule::with('speaker')->where('id', $id)->first();
+        $result = Schedule::with('speaker', 'tiket')->where('id', $id)->first();
         return $result;
     }
 }

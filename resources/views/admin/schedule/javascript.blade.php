@@ -3,6 +3,10 @@
     $('#speaker').select2({
         theme: 'bootstrap4',
     });
+
+    // $('#tiket').select2({
+    //     theme: 'bootstrap4',
+    // });
     // End
     // Datepicker
     $("#tgl_mulai").flatpickr({ 
@@ -62,13 +66,13 @@
             url: "{{ route('admin.schedule.data') }}",
             },
             columns: [
-                {data: 'id', name: 'id'},
+                {data: 'DT_RowIndex', name: 'DT_RowIndex', orderable: false, searchable: false},
                 {data: 'agenda', name: 'agenda'},
                 {data: 'tgl_mulai', name: 'tgl_mulai'},
                 {data: 'tgl_akhir', name: 'tgl_akhir'},
                 {data: 'description', name: 'description'},
                 {data: 'speaker', name: 'speaker'},
-                {data: 'created_at', name: 'created_at', sClass: 'text-center'},
+                {data: 'tiket', name: 'tiket', sClass: 'text-center'},
                 {data: 'action', name: 'action', sClass: 'text-center', orderable: false, searchable: false},
             ]
         });
@@ -82,12 +86,16 @@
                     url:"{{ route('admin.schedule.speaker.data') }}",
                     type:'GET',
                     success:function(res){
-                        console.log(res.data)
+                        console.log(res.data);
                         $("#speaker").empty();
+                        $('#tiket').empty();
                         $.each(res.data,function(key, value)
                         {
                             $("#speaker").append('<option value=' + value.id + '>' + value.speakName + '</option>');
                         });
+                        $.each(res.tiket, function(key, value) {
+                            $("#tiket").append('<option value="'+value.id+'">'+value.nama+'</option>');
+                        }) 
                     }
                 })
             });
@@ -107,7 +115,6 @@
                     $('#detailAgenda').html(data.agenda);
                     $('#detailTglMulai').html(data.tgl_mulai);
                     $('#detailTglAkhir').html(data.tgl_akhir);
-                    // $('#detailSpeaker').html(data.speaker)
                     $.each(data.speaker, function(key, value) {
                         $('#detailSpeaker').append('<ul><li><b>' + value.speakName + '</b></li></ul>');
                     });
@@ -162,7 +169,7 @@
                     $('#frm_schedule').trigger("reset");
                     $('#modalSchedule').modal('hide');
                     $('.img-previews').attr('src', '');
-                    table.draw()
+                    table.draw();
                     // perform operation
                 },
                 error: function(json) {
@@ -196,14 +203,18 @@
                     $('#tgl_mulai').val(res.data.tgl_mulai);
                     $('#tgl_akhir').val(res.data.tgl_akhir);
                     $('#description').summernote('code', res.data.description)
-                    $("#speaker").empty()
+                    // $("#speaker").empty()
                     $("div.s_speaker select").val(res.speaker).change();
+                    // $("#speaker").val(res.speaker).change();
                        
                     // $("#admin").append('<option value="'+res.data.id+'">Default=='+data.default.name+'</option>');
-                    $.each(res.speaker,function(key, value)
-                    {
+                    $.each(res.speaker,function(key, value){
                         $("#speaker").append('<option value=' + value.id + '>' + value.speakName + '</option>');
                     });
+                    
+                    $.each(res.tiket, function(key, value) {
+                        $("#tiket").append('<option value="'+value.id+'">'+value.nama+'</option>');
+                    })
 
                 }
             })
